@@ -134,12 +134,12 @@
 <!-- Main Sidebar Container -->
    <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('admin.dashboard') }}" class="text-center brand-link">
+    <a href="{{ route('admin.dashboard') }}" class=" brand-link">
       <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="Evinsto Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="text-xl text-green-300  font-weight-bold">GRH</span>
     </a>
 
-    <!-- Sidebar -->
+    <!-- 02Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -150,12 +150,79 @@
           <a href="{{ route('profile.edit')}}" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
-
-     
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+      <li class="nav-item">
+        <a href="{{ route('admin.dashboard')}}" class="nav-link {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>Dashboard</p>
+        </a>
+    </li>
+     </ul>
+     </nav>
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-    
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+            </a>
+        </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>Employees</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-briefcase"></i>
+                <p>Jobs</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-history"></i>
+                <p>Jobs  History</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-star"></i>
+                <p>Jobs  Grades</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-building"></i>
+                <p>Departement</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-flag"></i>
+                <p>Countries</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-map-marker-alt"></i>
+                <p>Locations</p>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-asterisk "></i>
+                <p>Regions</p>
+            </a>
+         </li>
+
+
+
+
             @if (Auth::user()->user_type === 1) {{-- Admin --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/dashboard') }}" class="nav-link {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
@@ -295,7 +362,7 @@
             {{-- 02-Lien de Déconnexion --}}
             
             <li class="nav-item ">
-                     <a href="{{ route('profile.edit')}}" class="nav-link">
+                     <a href="{{ route('profile.edit')}}" class="nav-link {{ Request::segment(2) === 'Profile' ? 'active' : '' }}">
                       <i class="text-green-400 nav-icon fas fa-pencil-alt"></i> 
                       <p class="text-white">Profile</p>
                    </a>
@@ -305,7 +372,7 @@
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <a href="{{ route('logout') }}"  class="nav-link  hover:bg-gray-600 "
+                <a href="{{ route('logout') }}"  class="nav-link {{ Request::segment(2) === 'Logout' ? 'active' : '' }}  hover:bg-gray-600 "
                         onclick="event.preventDefault();
                                     this.closest('form').submit();">
                     <i class="text-red-600 nav-icon fas fa-power-off"></i>
