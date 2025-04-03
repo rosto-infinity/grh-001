@@ -82,7 +82,7 @@
 <script src="{{asset('plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- T03-empusdominus Bootstrap 4 -->
 <script src="{{asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
+<!-- 08-Summernote -->
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
