@@ -270,7 +270,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Unités d'Enseignement --}}
+                {{-- 06-Gestion des Unités d'Enseignement --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/ue/list') }}" class="nav-link {{ Request::segment(2) === 'ue' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
