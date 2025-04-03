@@ -134,7 +134,7 @@
 <!-- Main Sidebar Container -->
    <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('admin.dashboard') }}" class=" brand-link">
+    <a href="/" class=" brand-link">
       <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="Evinsto Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="text-xl text-green-300  font-weight-bold">GRH</span>
     </a>
@@ -151,6 +151,7 @@
         </div>
       </div>
       <nav class="mt-2">
+        @if(auth()->check() && auth()->user()->usertype === 'admin')
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
       <li class="nav-item">
@@ -221,8 +222,27 @@
          </li>
 
 
-
-
+      @endif
+      @if(auth()->check() && auth()->user()->usertype === 'default')
+      <li class="nav-item">
+        {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
+            <i class="nav-icon fas fa-asterisk "></i>
+            <p>default 1</p>
+        </a>
+     </li
+      <li class="nav-item">
+        {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
+            <i class="nav-icon fas fa-asterisk "></i>
+            <p>default 2</p>
+        </a>
+     </li
+      <li class="nav-item">
+        {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
+            <i class="nav-icon fas fa-asterisk "></i>
+            <p>default 3</p>
+        </a>
+     </li
+      @endif
             @if (Auth::user()->user_type === 1) {{-- Admin --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/dashboard') }}" class="nav-link {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
