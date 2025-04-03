@@ -278,7 +278,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion de l'Année Scolaire --}}
+                {{-- 07-Gestion de l'Année Scolaire --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/annee-scolaire/list') }}" class="nav-link {{ Request::segment(2) === 'annee-scolaire' ? 'active' : '' }}">
                         <i class="nav-icon far fa-calendar-alt"></i>
