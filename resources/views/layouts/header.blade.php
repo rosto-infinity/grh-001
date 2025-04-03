@@ -294,7 +294,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Semestres --}}
+                {{-- 09-Gestion des Semestres --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/semestre/list') }}" class="nav-link {{ Request::segment(2) === 'semestre' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
