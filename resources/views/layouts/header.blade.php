@@ -231,7 +231,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Administrateurs --}}
+                {{-- 03-Gestion des Administrateurs --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/admin/list') }}" class="nav-link {{ Request::segment(2) === 'admin' ? 'active' : '' }}">
                         <i class="nav-icon far fa-user"></i>
