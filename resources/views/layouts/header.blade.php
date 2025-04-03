@@ -42,7 +42,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{url('public/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="{{asset('dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -58,7 +58,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{url('public/dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{asset('dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -74,7 +74,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="{{url('public/dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{asset('dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -134,9 +134,9 @@
 <!-- Main Sidebar Container -->
    <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="javascript:;" class="text-center brand-link">
-      {{-- <img src="{{url('public/dist/img/AdminLTELogo.png')}}" alt="Evinsto Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-      <span class="text-xl text-green-300 text-center font-weight-bold">School</span>
+    <a href="{{ route('admin.dashboard') }}" class="text-center brand-link">
+      <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="Evinsto Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="text-xl text-green-300  font-weight-bold">GRH</span>
     </a>
 
     <!-- Sidebar -->
@@ -144,10 +144,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{url('public/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          <a href="{{ route('profile.edit')}}" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -292,26 +292,25 @@
                 </li>
             @endif
             
-            {{-- Lien de Déconnexion --}}
+            {{-- 02-Lien de Déconnexion --}}
             
             <li class="nav-item ">
                      <a href="{{ route('profile.edit')}}" class="nav-link">
-                    <i class="text-red-600 nav-icon fas fa-power-off"></i>
-                    <p class="text-white">Profile</p>
-                </a>
-              </li>
-
+                      <i class="text-green-400 nav-icon fas fa-pencil-alt"></i> 
+                      <p class="text-white">Profile</p>
+                   </a>
+             </li>
 
             <li class="nav-item ">
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <x-dropdown-link :href="route('logout')"  class="nav-link hover:bg-gray-600"
+                <a href="{{ route('logout') }}"  class="nav-link  hover:bg-gray-600 "
                         onclick="event.preventDefault();
                                     this.closest('form').submit();">
                     <i class="text-red-600 nav-icon fas fa-power-off"></i>
                     <p class="text-white ">Logout</p>
-                </x-dropdown-link>
+                </a>
             </form>
                 {{-- <a href="{{ route('logout') }}" class="nav-link">
                     <i class="text-red-600 nav-icon fas fa-power-off"></i>
@@ -320,7 +319,7 @@
             </li>
     
         </ul>
-    </nav>
+      </nav>
     
     
     
