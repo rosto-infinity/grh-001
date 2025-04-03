@@ -262,7 +262,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Intitulés --}}
+                {{-- 05-Gestion des Intitulés --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/intitule/list') }}" class="nav-link {{ Request::segment(2) === 'intitule' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
