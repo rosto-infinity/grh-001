@@ -1,7 +1,7 @@
 @extends('layouts.application')
 
  @section('content')
-<!-- Content Wrapper. Contains page content -->
+<!-- 01-Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
     <!-- Content Header (Page header) -->
