@@ -229,7 +229,7 @@
             <i class="nav-icon fas fa-asterisk "></i>
             <p>default 1</p>
         </a>
-     </li
+      </li>
       <li class="nav-item">
         {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
             <i class="nav-icon fas fa-asterisk "></i>
@@ -370,7 +370,7 @@
                     </a>
                 </li>
     
-                {{-- Modifier Password --}}
+                {{--01- Modifier Password --}}
                 <li class="nav-item">
                     <a href="{{ url('parent/change_password') }}" class="nav-link {{ Request::segment(2) === 'change-pass' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
