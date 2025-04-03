@@ -72,7 +72,7 @@
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 <!-- 02-Sparkline -->
 <script src="{{asset('plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
+<!-- 04-JQVMap -->
 <script src="{{asset('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
