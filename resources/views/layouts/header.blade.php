@@ -131,7 +131,7 @@
   </nav>
   <!-- /.navbar -->
 
-<!-- Main Sidebar Container -->
+<!-- 02-Main Sidebar Container -->
    <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- 01-Brand Logo -->
     <a href="/" class=" brand-link">
