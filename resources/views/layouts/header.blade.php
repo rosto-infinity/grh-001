@@ -302,7 +302,7 @@
                     </a>
                 </li>
     
-                {{-- Modifier Password --}}
+                {{-- 10-Modifier Password --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/change_password') }}" class="nav-link {{ Request::segment(2) === 'change-pass' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
