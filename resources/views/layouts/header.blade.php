@@ -294,7 +294,7 @@
             
             {{-- Lien de Déconnexion --}}
             <li class="nav-item">
-                <a href="{{ url('logout') }}" class="nav-link">
+                <a href="{{ route('logout') }}" class="nav-link">
                     <i class="text-red-600 nav-icon fas fa-power-off"></i>
                     <p class="text-white">Logout</p>
                 </a>
