@@ -246,7 +246,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Filières --}}
+                {{-- 03-Gestion des Filières --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/filiere/list') }}" class="nav-link {{ Request::segment(2) === 'filiere' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
