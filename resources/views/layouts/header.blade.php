@@ -293,11 +293,30 @@
             @endif
             
             {{-- Lien de Déconnexion --}}
-            <li class="nav-item">
-                <a href="{{ route('logout') }}" class="nav-link">
+            
+            <li class="nav-item ">
+                     <a href="{{ route('profile.edit')}}" class="nav-link">
+                    <i class="text-red-600 nav-icon fas fa-power-off"></i>
+                    <p class="text-white">Profile</p>
+                </a>
+              </li>
+
+
+            <li class="nav-item ">
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-dropdown-link :href="route('logout')"  class="nav-link hover:bg-gray-600"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    <i class="text-red-600 nav-icon fas fa-power-off"></i>
+                    <p class="text-white ">Logout</p>
+                </x-dropdown-link>
+            </form>
+                {{-- <a href="{{ route('logout') }}" class="nav-link">
                     <i class="text-red-600 nav-icon fas fa-power-off"></i>
                     <p class="text-white">Logout</p>
-                </a>
+                </a> --}}
             </li>
     
         </ul>

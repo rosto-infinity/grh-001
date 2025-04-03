@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  {{-- public/plugins
-  http://127.0.0.1:8000/admin/dashboard
-  C:\xampp-cours-2024\htdocs\grh-001\public
- Comment aller ce lien : public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css ; dans le fichier :  resources/views/admin/dashboard.blade.php dans le projet laravel --}}
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
- {{-- <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}"> --}}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ config('app.name', 'Laravel') }}</title>
   <title>{{ !empty($header_title) ? $header_title : ''}} - GRH</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
