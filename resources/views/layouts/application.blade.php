@@ -50,7 +50,7 @@
   @yield('content')
 
   @include('layouts.footer')
-  <!-- Control Sidebar -->
+  <!-- 02-Control Sidebar -->
 
 
 
