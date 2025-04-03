@@ -70,7 +70,7 @@
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!--01- ChartJS -->
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
+<!-- 02-Sparkline -->
 <script src="{{asset('plugins/sparklines/sparkline.js')}}"></script>
 <!-- JQVMap -->
 <script src="{{asset('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
