@@ -238,7 +238,7 @@
                         <p>Admin</p>
                     </a>
                 </li>
-                {{-- Gestion des Student --}}
+                {{-- 02-Gestion des Student --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/student/list') }}" class="nav-link {{ Request::segment(2) === 'student' ? 'active' : '' }}">
                         <i class="nav-icon far fa-user"></i>
