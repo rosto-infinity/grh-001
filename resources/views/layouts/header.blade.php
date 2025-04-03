@@ -254,7 +254,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Spécialités --}}
+                {{-- 04-Gestion des Spécialités --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/specialite/list') }}" class="nav-link {{ Request::segment(2) === 'specialite' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
