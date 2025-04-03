@@ -286,7 +286,7 @@
                     </a>
                 </li>
     
-                {{-- Gestion des Niveaux --}}
+                {{-- 08-Gestion des Niveaux --}}
                 <li class="nav-item">
                     <a href="{{ url('admin/niveau/list') }}" class="nav-link {{ Request::segment(2) === 'niveau' ? 'active' : '' }}">
                         <i class="nav-icon far fa-folder"></i>
