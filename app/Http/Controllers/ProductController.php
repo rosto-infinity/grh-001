@@ -95,7 +95,7 @@ class ProductController extends Controller
         $products->title = $title;
         $products->category = $category;
         $products->price = $price;
-        // Enregistre les modifications
+        // 024-Enregistre les modifications
         $data = $products->save();
         
         // Vérifie si le produit a été mis à jour avec succès
