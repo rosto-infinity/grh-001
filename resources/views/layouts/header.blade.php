@@ -223,23 +223,23 @@
 
 
       @endif
-      @if(auth()->check() && auth()->user()->usertype === 'default')
+      @if(auth()->check() && auth()->user()->usertype === 'employees')
       <li class="nav-item">
         {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
             <i class="nav-icon fas fa-asterisk "></i>
-            <p>default 1</p>
+            <p>employees 1</p>
         </a>
       </li>
       <li class="nav-item">
         {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
             <i class="nav-icon fas fa-asterisk "></i>
-            <p>default 2</p>
+            <p>employees 2</p>
         </a>
      </li
       <li class="nav-item">
         {{-- <a href="{{ route('admin.dashboard')}}" class="nav-link"> --}}
             <i class="nav-icon fas fa-asterisk "></i>
-            <p>default 3</p>
+            <p>employees 3</p>
         </a>
      </li
       @endif
