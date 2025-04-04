@@ -71,7 +71,7 @@ class ProductController extends Controller
         // 19-Trouve le produit par son ID et le supprime
         $products = Product::findOrFail($id)->delete();
         
-        // Vérifie si le produit a été supprimé avec succès
+        // 20-Vérifie si le produit a été supprimé avec succès
         if ($products) {
             session()->flash('success', 'Product Deleted Successfully'); // Message de succès
             return redirect(route('admin/products')); // Redirige vers la liste des produits
