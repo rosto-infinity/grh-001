@@ -86,7 +86,7 @@ class ProductController extends Controller
     {
         // T23-rouve le produit par son ID
         $products = Product::findOrFail($id);
-        // Récupère les nouvelles données du formulaire
+        // 24-Récupère les nouvelles données du formulaire
         $title = $request->title;
         $category = $request->category;
         $price = $request->price;
