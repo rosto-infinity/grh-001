@@ -532,7 +532,7 @@
              </div>
              <!-- /.card -->
  
-             <!-- solid sales graph -->
+             <!-- 44-solid sales graph -->
              <div class="card bg-gradient-info">
                <div class="card-header border-0">
                  <h3 class="card-title">
