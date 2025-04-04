@@ -81,7 +81,7 @@ class ProductController extends Controller
         }
     }
 
-    // Met à jour les informations d'un produit
+    // 22-Met à jour les informations d'un produit
     public function update(Request $request, $id)
     {
         // Trouve le produit par son ID
