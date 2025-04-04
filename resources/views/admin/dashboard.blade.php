@@ -204,7 +204,7 @@
                    </div>
                    <!-- /.direct-chat-msg -->
  
-                   <!-- Message. Default to the left -->
+                   <!-- 34-Message. Default to the left -->
                    <div class="direct-chat-msg">
                      <div class="direct-chat-infos clearfix">
                        <span class="direct-chat-name float-left">Alexander Pierce</span>
