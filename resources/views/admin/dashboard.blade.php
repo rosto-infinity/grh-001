@@ -170,7 +170,7 @@
                </div>
                <!-- /.card-header -->
                <div class="card-body">
-                 <!-- Conversations are loaded here -->
+                 <!-- 31-Conversations are loaded here -->
                  <div class="direct-chat-messages">
                    <!-- Message. Default to the left -->
                    <div class="direct-chat-msg">
