@@ -46,7 +46,7 @@ class ProductController extends Controller
         // 11-Crée un nouveau produit avec les données validées
         $data = Product::create($validation);
         
-        // Vérifie si le produit a été créé avec succès
+        // 12-Vérifie si le produit a été créé avec succès
         if ($data) {
             session()->flash('success', 'Product Add Successfully'); // Message de succès
             return redirect(route('admin/products')); // Redirige vers la liste des produits
