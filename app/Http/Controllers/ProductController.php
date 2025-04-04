@@ -14,7 +14,7 @@ class ProductController extends Controller
         $products = Product::orderBy('id', 'desc')->get();
         // 04-Compte le nombre total de produits
         $total = Product::count();
-        // Retourne la vue avec les produits et le total
+        // 5-Retourne la vue avec les produits et le total
         return view('admin.product.home', compact(['products', 'total']));
     }
 
