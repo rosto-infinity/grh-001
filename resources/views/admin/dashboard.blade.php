@@ -374,7 +374,7 @@
                <div class="card-body">
                  <ul class="todo-list" data-widget="todo-list">
                    <li>
-                     <!-- drag handle -->
+                     <!-- 40-drag handle -->
                      <span class="handle">
                        <i class="fas fa-ellipsis-v"></i>
                        <i class="fas fa-ellipsis-v"></i>
