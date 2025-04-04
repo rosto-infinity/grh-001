@@ -10,9 +10,9 @@ class ProductController extends Controller
     // 02Affiche la liste des produits
     public function index()
     {
-        // Récupère tous les produits triés par ID en ordre décroissant
+        // 03Récupère tous les produits triés par ID en ordre décroissant
         $products = Product::orderBy('id', 'desc')->get();
-        // Compte le nombre total de produits
+        // 04Compte le nombre total de produits
         $total = Product::count();
         // Retourne la vue avec les produits et le total
         return view('admin.product.home', compact(['products', 'total']));
