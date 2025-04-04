@@ -98,7 +98,7 @@ class ProductController extends Controller
         // 024-Enregistre les modifications
         $data = $products->save();
         
-        // Vérifie si le produit a été mis à jour avec succès
+        // 00-24Vérifie si le produit a été mis à jour avec succès
         if ($data) {
             session()->flash('success', 'Product Update Successfully'); // Message de succès
             return redirect(route('admin/products')); // Redirige vers la liste des produits
