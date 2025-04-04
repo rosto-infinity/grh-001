@@ -188,7 +188,7 @@
                    </div>
                    <!-- /.direct-chat-msg -->
  
-                   <!-- Message to the right -->
+                   <!-- 33-Message to the right -->
                    <div class="direct-chat-msg right">
                      <div class="direct-chat-infos clearfix">
                        <span class="direct-chat-name float-right">Sarah Bullock</span>
