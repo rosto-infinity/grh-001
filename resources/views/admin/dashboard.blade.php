@@ -301,7 +301,7 @@
                          <!-- /.contacts-list-info -->
                        </a>
                      </li>
-                     <!-- End Contact Item -->
+                     <!-- 38-End Contact Item -->
                      <li>
                        <a href="#">
                          <img class="contacts-list-img" src="{{asset('dist/img/user6-128x128.jpg')}}" alt="User Avatar">
