@@ -68,7 +68,7 @@ class ProductController extends Controller
     // 17-Supprime un produit de la base de données
     public function delete($id)
     {
-        // Trouve le produit par son ID et le supprime
+        // 19-Trouve le produit par son ID et le supprime
         $products = Product::findOrFail($id)->delete();
         
         // Vérifie si le produit a été supprimé avec succès
