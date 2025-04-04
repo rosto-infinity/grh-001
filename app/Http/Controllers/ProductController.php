@@ -65,7 +65,7 @@ class ProductController extends Controller
         return view('admin.product.update', compact('products'));
     }
 
-    // Supprime un produit de la base de données
+    // 17-Supprime un produit de la base de données
     public function delete($id)
     {
         // Trouve le produit par son ID et le supprime
