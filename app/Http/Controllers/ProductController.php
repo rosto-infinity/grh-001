@@ -33,7 +33,7 @@ class ProductController extends Controller
         return view('admin.product.create');
     }
 
-    // Sauvegarde un nouveau produit dans la base de données
+    // 9-Sauvegarde un nouveau produit dans la base de données
     public function save(Request $request)
     {
         // Valide les données du formulaire
