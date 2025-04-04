@@ -172,7 +172,7 @@
                <div class="card-body">
                  <!-- 31-Conversations are loaded here -->
                  <div class="direct-chat-messages">
-                   <!-- Message. Default to the left -->
+                   <!-- 32-Message. Default to the left -->
                    <div class="direct-chat-msg">
                      <div class="direct-chat-infos clearfix">
                        <span class="direct-chat-name float-left">Alexander Pierce</span>
