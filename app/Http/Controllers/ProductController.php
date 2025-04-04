@@ -36,7 +36,7 @@ class ProductController extends Controller
     // 9-Sauvegarde un nouveau produit dans la base de données
     public function save(Request $request)
     {
-        // Valide les données du formulaire
+        // 10-Valide les données du formulaire
         $validation = $request->validate([
             'title' => 'required', // Titre requis
             'category' => 'required', // Catégorie requise
