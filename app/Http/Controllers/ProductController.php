@@ -56,7 +56,7 @@ class ProductController extends Controller
         }
     }
 
-    // Affiche le formulaire d'édition d'un produit
+    // 13-Affiche le formulaire d'édition d'un produit
     public function edit($id)
     {
         // Récupère le produit par son ID
