@@ -43,7 +43,7 @@ class ProductController extends Controller
             'price' => 'required', // Prix requis
         ]);
         
-        // Crée un nouveau produit avec les données validées
+        // 11-Crée un nouveau produit avec les données validées
         $data = Product::create($validation);
         
         // Vérifie si le produit a été créé avec succès
