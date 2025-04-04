@@ -27,7 +27,7 @@ class ProductController extends Controller
         return view('welcome', compact('products'));
     }
 
-    // Affiche le formulaire de création d'un produit
+    // 8-Affiche le formulaire de création d'un produit
     public function create()
     {
         return view('admin.product.create');
