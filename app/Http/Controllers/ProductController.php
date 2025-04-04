@@ -18,7 +18,7 @@ class ProductController extends Controller
         return view('admin.product.home', compact(['products', 'total']));
     }
 
-    // Affiche une page d'accueil avec tous les produits
+    // 5-Affiche une page d'accueil avec tous les produits
     public function home()
     {
         // Récupère tous les produits
