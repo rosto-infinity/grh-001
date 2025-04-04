@@ -388,7 +388,7 @@
                      <span class="text">Design a nice theme</span>
                      <!-- 40-Emphasis label -->
                      <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
-                     <!-- General tools such as edit or delete-->
+                     <!-- 41-General tools such as edit or delete-->
                      <div class="tools">
                        <i class="fas fa-edit"></i>
                        <i class="fas fa-trash-o"></i>
