@@ -61,7 +61,7 @@ class ProductController extends Controller
     {
         // 14-Récupère le produit par son ID
         $products = Product::findOrFail($id);
-        // Retourne la vue d'édition avec le produit
+        // 16-Retourne la vue d'édition avec le produit
         return view('admin.product.update', compact('products'));
     }
 
