@@ -84,7 +84,7 @@ class ProductController extends Controller
     // 22-Met à jour les informations d'un produit
     public function update(Request $request, $id)
     {
-        // Trouve le produit par son ID
+        // T23-rouve le produit par son ID
         $products = Product::findOrFail($id);
         // Récupère les nouvelles données du formulaire
         $title = $request->title;
