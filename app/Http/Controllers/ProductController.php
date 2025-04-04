@@ -21,7 +21,7 @@ class ProductController extends Controller
     // 5-Affiche une page d'accueil avec tous les produits
     public function home()
     {
-        // Récupère tous les produits
+        // 6-Récupère tous les produits
         $products = Product::all(); // Ou utilisez paginate() si nécessaire
         // Retourne la vue d'accueil avec les produits
         return view('welcome', compact('products'));
