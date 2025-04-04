@@ -91,7 +91,7 @@ class ProductController extends Controller
         $category = $request->category;
         $price = $request->price;
 
-        // Met à jour les informations du produit
+        // 024-Met à jour les informations du produit
         $products->title = $title;
         $products->category = $category;
         $products->price = $price;
