@@ -59,7 +59,7 @@ class ProductController extends Controller
     // 13-Affiche le formulaire d'édition d'un produit
     public function edit($id)
     {
-        // Récupère le produit par son ID
+        // 14-Récupère le produit par son ID
         $products = Product::findOrFail($id);
         // Retourne la vue d'édition avec le produit
         return view('admin.product.update', compact('products'));
