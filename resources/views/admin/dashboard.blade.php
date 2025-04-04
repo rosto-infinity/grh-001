@@ -150,7 +150,7 @@
              </div>
              <!-- /.card -->
  
-             <!-- DIRECT CHAT -->
+             <!-- 30-DIRECT CHAT -->
              <div class="card direct-chat direct-chat-primary">
                <div class="card-header">
                  <h3 class="card-title">Direct Chat</h3>
