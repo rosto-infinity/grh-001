@@ -386,7 +386,7 @@
                      </div>
                      <!-- todo text -->
                      <span class="text">Design a nice theme</span>
-                     <!-- Emphasis label -->
+                     <!-- 40-Emphasis label -->
                      <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
                      <!-- General tools such as edit or delete-->
                      <div class="tools">
