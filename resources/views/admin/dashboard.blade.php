@@ -117,7 +117,7 @@
          <div class="row">
            <!-- Left col -->
            <section class="col-lg-7 connectedSortable">
-             <!-- Custom tabs (Charts with tabs)-->
+             <!-- 29-Custom tabs (Charts with tabs)-->
              <div class="card">
                <div class="card-header">
                  <h3 class="card-title">
