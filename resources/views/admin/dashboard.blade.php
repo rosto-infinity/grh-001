@@ -337,7 +337,7 @@
                  </div>
                  <!-- /.direct-chat-pane -->
                </div>
-               <!-- /.card-body -->
+               <!-- 39-/.card-body -->
                <div class="card-footer">
                  <form action="#" method="post">
                    <div class="input-group">
