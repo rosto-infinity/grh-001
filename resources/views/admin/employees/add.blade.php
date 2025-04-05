@@ -117,7 +117,7 @@
                             @enderror
                         </div>
   
-                        {{-- Job Title --}}
+                        {{--9- Job Title --}}
                         <div class="form-group col-md-6">
                             <label for="est_actuelle">Statut</label>
                             <select class="form-control @error('est_actuelle') is-invalid @enderror" name="est_actuelle" id="est_actuelle">
