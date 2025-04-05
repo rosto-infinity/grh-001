@@ -152,7 +152,8 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                       {{--11- Commission PCT --}}
+                      
+                    {{--11- Commission PCT --}}
                        <div class="form-group col-md-6">
                         <label for="commission_pct">Commission PCT <span class="text-red-600">*</span> </label>
                         <input type="text" class="form-control @error('commission_pct') is-invalid @enderror" 
@@ -166,6 +167,26 @@
                         @enderror
                     </div>
 
+
+                     {{--13- Manager Name --}}
+                     <div class="form-group col-md-6">
+                        <label for="manager_name">Manager Name <span class="text-red-600">*</span> </label>
+                        <select class="form-control @error('manager_name') is-invalid @enderror" name="manager_name" id="manager_name">
+                        <option value="">Sélectionnez Manager Name</option>
+                            
+                          <option value="1" {{ old('manager_name') == '1' ? 'selected' : '' }}>Php</option>
+                          <option value="0" {{ old('manager_name') == '0' ? 'selected' : '' }}>Vue </option>
+                          <option value="0" {{ old('manager_name') == '0' ? 'selected' : '' }}>Laravel</option>
+                          <option value="0" {{ old('manager_name') == '0' ? 'selected' : '' }}>postgreSQL</option>
+                        </select>
+
+                
+
+                        <!-- Affichage de l'erreur pour manager_name -->
+                        @error('manager_name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
                     </div>
                 </div>
