@@ -50,7 +50,7 @@ class EmployeesController extends Controller
     }
     public function delete($id)
     {
-        // Delete the employee by ID
+        //6- Delete the employee by ID
         // Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee deleted successfully.');
     }
