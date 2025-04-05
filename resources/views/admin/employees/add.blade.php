@@ -139,7 +139,7 @@
 
 
 
-                       {{--10- Salary --}}
+                       {{--11- Salary --}}
                        <div class="form-group col-md-6">
                         <label for="salary">Salary <span class="text-red-600">*</span> </label>
                         <input type="text" class="form-control @error('salary') is-invalid @enderror" 
