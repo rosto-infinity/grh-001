@@ -32,7 +32,7 @@ class EmployeesController extends Controller
         // 4Create a new employee record
         User::create($userData);
 
-        // 2Redirect or return a response
+        // 2-Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee added successfully.');
     }
 
