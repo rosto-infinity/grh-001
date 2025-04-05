@@ -6,19 +6,23 @@
    <!-- 25-Content Wrapper. Contains page content -->
    <div class="content-wrapper">
      <!-- 26-Content Header (Page header) -->
-     <div class="content-header">
-       <div class="container-fluid">
+      <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h2>Listes des Employees(Total :
+            <h3>Listes des Employees(Total :
               <span class="bg-green-600 rounded-full text-white">
                 {{-- {{ $getRecord->total() }} --}}
-              </span>)</h2>
+              </span>)</h3>
           </div>
           <div class="text-right col-sm-6">
-            <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle Employees</a>
+            <a href="{{ route('admin.employees.add') }}"" class="btn btn-primary">Ajouter une nouvelle Employees</a>
           </div>
         </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    
    
                 <!-- /.container-fluid -->
                   <div class="container-fluid">
@@ -67,7 +71,7 @@
                                                           <button type="submit" class="mt-8 mr-2 btn btn-primary">
                                                               <i class="nav-icon fas fa-search"></i> Recherche
                                                           </button>
-                                                          <a href="" class='mt-8 btn btn-success'>
+                                                          <a href="{{ route('admin.employees') }}" class='mt-8 btn btn-success'>
                                                               <i class="fas fa-refresh" aria-hidden="true"></i> Réinitialiser
                                                           </a>
                                                       </div>

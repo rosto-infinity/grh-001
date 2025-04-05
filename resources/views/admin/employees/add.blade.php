@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h2>Ajouter une nouvelle  Employees</h2>
+            <h3>Ajouter une nouvelle  Employees</h3>
           </div>
           <div class="text-right col-sm-6">
             <a href="{{ route('admin.employees') }}" class="btn btn-secondary">Retour à la liste</a>
@@ -89,16 +89,16 @@
                             @enderror
                         </div>
                        
-                        {{-- 5-Phone--}}
+                        {{-- 5-phone_number--}}
                         <div class="form-group col-md-6">
-                            <label for="phone">Phone number <span class="text-red-600">*</span> </label>
-                            <input type="text" class="form-control @error('phone') is-invalid @enderror" 
-                            value="{{ old('phone')}}" 
-                            id="phone" name="phone"
+                            <label for="phone_number">Phone number <span class="text-red-600">*</span> </label>
+                            <input type="text" class="form-control @error('phone_number') is-invalid @enderror" 
+                            value="{{ old('phone_number')}}" 
+                            id="phone_number" name="phone_number"
                             placeholder="Phone number">
                             
-                            <!-- 7-Affichage de l'erreur pour phone -->
-                            @error('phone')
+                            <!-- 7-Affichage de l'erreur pour phone_number -->
+                            @error('phone_number')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -109,36 +109,34 @@
                             <input type="date" class="form-control @error('hire_date') is-invalid @enderror" 
                             value="{{ old('hire_date')}}" 
                             id="hire_date" name="hire_date"
-                            placeholder="Entrez Hire Date >
+                            placeholder="Entrez Hire Date" >
                             
                             <!-- Affichage de l'erreur pour hire_date -->
                             @error('hire_date')
-                                <div class="invalid-feedback">{{ $message }}</div>
+                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
+                    
                         {{--10- Job Title --}}
-                        <div class="form-group col-md-6">
-                            <label for="est_actuelle">Job Title <span class="text-red-600">*</span> </label>
-                            <select class="form-control @error('est_actuelle') is-invalid @enderror" name="est_actuelle" id="est_actuelle">
+                          <div class="form-group col-md-6">
+                            <label for="job_id">Job Title <span class="text-red-600">*</span> </label>
+                            <select class="form-control @error('job_id') is-invalid @enderror" name="job_id" id="job_id">
                             <option value="">Sélectionnez Job Title</option>
                                 
-                              <option value="1" {{ old('est_actuelle') == '1' ? 'selected' : '' }}>Php</option>
-                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>Vue </option>
-                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>Laravel</option>
-                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>postgreSQL</option>
+                              <option value="1" {{ old('job_id') == '1' ? 'selected' : '' }}>Php</option>
+                              <option value="0" {{ old('job_id') == '0' ? 'selected' : '' }}>Vue </option>
+                              <option value="0" {{ old('job_id') == '0' ? 'selected' : '' }}>Laravel</option>
+                              <option value="0" {{ old('job_id') == '0' ? 'selected' : '' }}>postgreSQL</option>
                             </select>
   
                     
   
-                            <!-- Affichage de l'erreur pour est_actuelle -->
-                            @error('est_actuelle')
+                            <!-- Affichage de l'erreur pour job_id -->
+                            @error('job_id')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                        </div>
-
-
-
+                         </div>
+                      
                        {{--11- Salary --}}
                        <div class="form-group col-md-6">
                         <label for="salary">Salary <span class="text-red-600">*</span> </label>
@@ -151,7 +149,7 @@
                         @error('salary')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                    </div>
+                      </div>
                       
                     {{--11- Commission PCT --}}
                        <div class="form-group col-md-6">
@@ -165,13 +163,13 @@
                         @error('commission_pct')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                    </div>
+                       </div>
 
 
                      {{--13- Manager Name --}}
                      <div class="form-group col-md-6">
                         <label for="manager_name">Manager Name <span class="text-red-600">*</span> </label>
-                        <select class="form-control @error('manager_name') is-invalid @enderror" name="manager_name" id="manager_name">
+                        <select class="form-control @error('manager_name') is-invalid @enderror" name="manager_id" id="manager_name">
                         <option value="">Sélectionnez Manager Name</option>
                             
                           <option value="1" {{ old('manager_name') == '1' ? 'selected' : '' }}>Php</option>
@@ -187,12 +185,34 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                     
+                    
+                    {{--14- Departement Name --}}
+                     <div class="form-group col-md-6">
+                        <label for="departement_name">Departement Name <span class="text-red-600">*</span> </label>
+                        <select class="form-control @error('departement_name') is-invalid @enderror" name="departement_id" id="departement_name">
+                        <option value="">Sélectionnez Departement Name</option>
+                            
+                          <option value="1" {{ old('departement_name') == '1' ? 'selected' : '' }}>Php</option>
+                          <option value="0" {{ old('departement_name') == '0' ? 'selected' : '' }}>Vue </option>
+                          <option value="0" {{ old('departement_name') == '0' ? 'selected' : '' }}>Laravel</option>
+                          <option value="0" {{ old('departement_name') == '0' ? 'selected' : '' }}>postgreSQL</option>
+                        </select>
 
+                
+
+                        <!-- Affichage de l'erreur pour departement_name -->
+                        @error('departement_name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                 </div>
                 </div>
   
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <a href="{{ route('admin.employees') }}" class="btn btn-secondary">Annuler</a>
+                    <button type="submit" class="btn btn-primary float-right">Ajouter</button>
                 </div>
               </form>
   
