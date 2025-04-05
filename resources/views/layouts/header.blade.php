@@ -150,20 +150,10 @@
           <a href="{{ route('profile.edit')}}" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
-      <nav class="mt-2">
-        @if(auth()->check() && auth()->user()->usertype === 'admin')
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-      <li class="nav-item">
-        <a href="{{ route('admin.dashboard')}}" class="nav-link {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>Dashboard</p>
-        </a>
-    </li>
-     </ul>
-     </nav>
+     
       <!-- Sidebar Menu -->
       <nav class="mt-2">
+        @if(auth()->check() && auth()->user()->usertype === 'admin')
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
@@ -173,7 +163,7 @@
         </li>
 
           <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+            <a href="{{ route('admin.employees')}}" class="nav-link {{ Request::segment(2) === 'employees' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>Employees</p>
             </a>
@@ -208,12 +198,7 @@
                 <p>Countries</p>
             </a>
         </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
-                <i class="nav-icon fas fa-map-marker-alt"></i>
-                <p>Locations</p>
-            </a>
-        </li>
+
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-asterisk "></i>
