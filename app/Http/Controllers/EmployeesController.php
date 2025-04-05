@@ -29,10 +29,10 @@ class EmployeesController extends Controller
             'department_id' => 'nullable',
         ]);
 
-        // Create a new employee record
+        // 4Create a new employee record
         User::create($userData);
 
-        // Redirect or return a response
+        // 2Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee added successfully.');
     }
 
