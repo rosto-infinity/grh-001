@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h2>Ajouter une nouvelle année scolaire</h2>
+            <h2>Ajouter une nouvelle  Employees</h2>
           </div>
           <div class="text-right col-sm-6">
             <a href="{{ route('admin.employees') }}" class="btn btn-secondary">Retour à la liste</a>
@@ -109,22 +109,24 @@
                             <input type="date" class="form-control @error('hire_date') is-invalid @enderror" 
                             value="{{ old('hire_date')}}" 
                             id="hire_date" name="hire_date"
-                            placeholder="Entrez Last Name">
+                            placeholder="Entrez Hire Date >
                             
                             <!-- Affichage de l'erreur pour hire_date -->
                             @error('hire_date')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-  
-                        {{--9- Job Title --}}
+
+                        {{--10- Job Title --}}
                         <div class="form-group col-md-6">
-                            <label for="est_actuelle">Statut</label>
+                            <label for="est_actuelle">Job Title <span class="text-red-600">*</span> </label>
                             <select class="form-control @error('est_actuelle') is-invalid @enderror" name="est_actuelle" id="est_actuelle">
-                            <option value="">Sélectionnez le Type UE</option>
+                            <option value="">Sélectionnez Job Title</option>
                                 
-                              <option value="1" {{ old('est_actuelle') == '1' ? 'selected' : '' }}>Activer</option>
-                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>Inactif </option>
+                              <option value="1" {{ old('est_actuelle') == '1' ? 'selected' : '' }}>Php</option>
+                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>Vue </option>
+                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>Laravel</option>
+                              <option value="0" {{ old('est_actuelle') == '0' ? 'selected' : '' }}>postgreSQL</option>
                             </select>
   
                     
@@ -134,6 +136,37 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
+
+
+                       {{--10- Salary --}}
+                       <div class="form-group col-md-6">
+                        <label for="salary">Salary <span class="text-red-600">*</span> </label>
+                        <input type="text" class="form-control @error('salary') is-invalid @enderror" 
+                        value="{{ old('salary')}}" 
+                        id="salary" name="salary"
+                        placeholder="Entrez Salary">
+                        
+                        <!-- Affichage de l'erreur pour salary -->
+                        @error('salary')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                       {{--9- Salary --}}
+                       <div class="form-group col-md-6">
+                        <label for="salary">Salary <span class="text-red-600">*</span> </label>
+                        <input type="text" class="form-control @error('salary') is-invalid @enderror" 
+                        value="{{ old('salary')}}" 
+                        id="salary" name="salary"
+                        placeholder="Entrez Salary">
+                        
+                        <!-- Affichage de l'erreur pour salary -->
+                        @error('salary')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+
                     </div>
                 </div>
   
