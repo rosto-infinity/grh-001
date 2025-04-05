@@ -45,7 +45,7 @@ class EmployeesController extends Controller
     {
         // 3Validate and update the employee data
 
-        // 5-Redirect or return a response
+        // 5--Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee updated successfully.');
     }
     public function delete($id)
