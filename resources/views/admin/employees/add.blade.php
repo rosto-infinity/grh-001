@@ -61,7 +61,7 @@
                             @enderror
                         </div>
                         
-                        {{-- Last Name --}}
+                        {{-- 4-Last Name --}}
                         <div class="form-group col-md-6">
                             <label for="last_name">Last Name <span class="text-red-600">*</span> </label>
                             <input type="text" class="form-control @error('last_name') is-invalid @enderror" 
@@ -75,7 +75,7 @@
                             @enderror
                         </div>
                         
-                        {{-- Email--}}
+                        {{-- 2-Email--}}
                         <div class="form-group col-md-6">
                             <label for="email">Last Name <span class="text-red-600">*</span> </label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" 
