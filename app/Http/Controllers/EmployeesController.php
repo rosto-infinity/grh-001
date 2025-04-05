@@ -10,4 +10,8 @@ class EmployeesController extends Controller
     {
         return view('admin.employees.list');
     }
+    public function add(Request $request)
+    {
+        return view('admin.employees.add');
+    }
 }
