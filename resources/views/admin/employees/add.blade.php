@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <div class="row">
                         
-                        {{-- First Name --}}
+                        {{-- 32 First Name --}}
                         <div class="form-group col-md-6">
                             <label for="first_mane">First Name<span class="text-red-600">*</span> </label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" 
