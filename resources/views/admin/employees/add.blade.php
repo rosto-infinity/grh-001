@@ -152,16 +152,16 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                       {{--9- Salary --}}
+                       {{--11- Commission PCT --}}
                        <div class="form-group col-md-6">
-                        <label for="salary">Salary <span class="text-red-600">*</span> </label>
-                        <input type="text" class="form-control @error('salary') is-invalid @enderror" 
-                        value="{{ old('salary')}}" 
-                        id="salary" name="salary"
-                        placeholder="Entrez Salary">
+                        <label for="commission_pct">Commission PCT <span class="text-red-600">*</span> </label>
+                        <input type="text" class="form-control @error('commission_pct') is-invalid @enderror" 
+                        value="{{ old('commission_pct')}}" 
+                        id="commission_pct" name="commission_pct"
+                        placeholder="Entrez Commission PCT">
                         
-                        <!-- Affichage de l'erreur pour salary -->
-                        @error('salary')
+                        <!-- Affichage de l'erreur pour commission_pct -->
+                        @error('commission_pct')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
