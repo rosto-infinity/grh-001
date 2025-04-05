@@ -103,7 +103,7 @@
                             @enderror
                         </div>
                         
-                        {{-- Hire Date--}}
+                        {{--8- Hire Date--}}
                         <div class="form-group col-md-6">
                             <label for="hire_date">Hire Date <span class="text-red-600">*</span> </label>
                             <input type="date" class="form-control @error('hire_date') is-invalid @enderror" 
