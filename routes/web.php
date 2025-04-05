@@ -25,6 +25,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
     Route::get('admin/employees', [EmployeesController::class, 'index'])->name('admin.employees');
     Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add');
+    Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store');
+    // Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit');
+    // Route::post('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update');
+    // Route::get('admin/employees/delete/{id}', [EmployeesController::class, 'delete'])->name('admin.employees.delete');
+   
  
     
 });

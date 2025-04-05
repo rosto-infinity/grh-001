@@ -17,7 +17,7 @@
               </span>)</h3>
           </div>
           <div class="text-right col-sm-6">
-            <a href="{{ route('admin.employees.add') }}"" class="btn btn-primary">Ajouter une nouvelle Employees</a>
+            <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle Employees</a>
           </div>
         </div>
       </div><!-- /.container-fluid -->
