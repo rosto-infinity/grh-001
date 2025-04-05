@@ -97,7 +97,7 @@
                             id="phone" name="phone"
                             placeholder="Phone number">
                             
-                            <!-- Affichage de l'erreur pour phone -->
+                            <!-- 7-Affichage de l'erreur pour phone -->
                             @error('phone')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
