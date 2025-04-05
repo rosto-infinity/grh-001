@@ -6,7 +6,7 @@
    <!-- 25-Content Wrapper. Contains page content -->
    <div class="content-wrapper">
      <!-- 26-Content Header (Page header) -->
-      <!-- Content Header (Page header) -->
+      <!--12 Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
