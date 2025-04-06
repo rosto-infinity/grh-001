@@ -8,7 +8,9 @@ class EmployeesController extends Controller
 {
     public function index(Request $request)
     {
-        return view('admin.employees.list');
+        $employees = User::paginate(4);
+
+        return view('admin.employees.list', compact('employees'));
     }
 
     public function add(Request $request)

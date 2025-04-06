@@ -97,18 +97,22 @@
                                                   <th>First Name</th>
                                                   <th>Last Name</th>
                                                   <th>Email</th>
+                                                  <th>Role</th>
                                                   <th>Date de création</th>
                                                   <th>Action</th>
                                               </tr>
                                           </thead>
                                           <tbody>
+                                            @foreach ( $employees as $employee)
+                                              
                                             
                                                   <tr>
-                                                      <td>gg</td>
-                                                      <td>444</td>
-                                                      <td>deee</td>
-                                                      <td>ggggggggggggg</td>
-                                                      {{-- <td>{{ $value->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td> --}}
+                                                      <td>{{ $employee->name}}</td>
+                                                      <td>{{ $employee->last_name}}</td>
+                                                      <td>{{ $employee->email}}</td>
+                                                      <td>{{ (!empty($employee->usertype ==='admin') ? 'Employees' : "HR" )}}</td>
+                                                      
+                                                      <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                       <td>
                                                           <a href="" class="btn btn-warning btn-sm">
                                                               <i class="nav-icon fas fa-pencil-alt"></i> Modifier
@@ -123,11 +127,11 @@
                                                           </form>
                                                       </td>
                                                   </tr>
-                                          
+                                                  @endforeach
                                           </tbody>
                                       </table>
-                                      <div class="pr-5 pt-5 flex float-right">
-                                          {{-- {!! $anneeScolaires->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!} --}}
+                                      <div class="pr-5 py-5 flex float-right">
+                                          {{ $employees->links() }}
                                       </div>
                                   </div>
                                   <!-- /.card-body -->
