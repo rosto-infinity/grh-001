@@ -109,7 +109,7 @@
                                                 <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR") }}</td>
                                                 <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td>
-                                                    <a href="" class="btn btn-info btn-sm">
+                                                    <a href="{{ route('admin.employees.view', $employee->id) }}" class="btn btn-info btn-sm">
                                                         <i class="nav-icon fas fa-eye mr-1"></i> View
                                                     </a>
                                                     <a href="" class="btn btn-warning btn-sm ">

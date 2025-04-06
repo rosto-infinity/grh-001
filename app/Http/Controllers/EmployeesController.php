@@ -42,7 +42,13 @@ class EmployeesController extends Controller
         // 3. Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee added successfully.');
     }
+    public function view($id)
+    {
+        // 2. Fetch the employee data by ID
+        $employee = User::findOrFail($id); // Find or fail
     
+        return view('admin.employees.view', compact('employee'));
+    }
 
     public function edit($id)
     {
