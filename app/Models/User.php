@@ -66,7 +66,7 @@ class User extends Authenticatable
             $query->where('last_name', 'like', '%' . $request->input('last_name') . '%');
         }
 
-        // Filtrage par email
+        // 06-Filtrage par email
         if ($request->filled('email')) {
             $query->where('email', 'like', '%' . $request->input('email') . '%');
         }
