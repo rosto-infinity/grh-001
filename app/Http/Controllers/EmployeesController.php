@@ -61,7 +61,7 @@ class EmployeesController extends Controller
 
 public function update(Request $request, $id)
 {
-    // Valider les données du formulaire
+    // 5-Valider les données du formulaire
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:employees,email,' . $id,
