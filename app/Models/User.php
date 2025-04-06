@@ -71,7 +71,7 @@ class User extends Authenticatable
             $query->where('email', 'like', '%' . $request->input('email') . '%');
         }
 
-        // Filtrage par date de création
+        // 07-Filtrage par date de création
         if ($request->filled('date')) {
             $query->whereDate('created_at', $request->input('date'));
         }
