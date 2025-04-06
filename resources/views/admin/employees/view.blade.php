@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Ajouter une nouvelle Employees</h3>
+                        <h3>Employee : {{ $employee->name }} {{ $employee->last_name }} </h3>
                     </div>
                     <div class="text-right col-sm-6">
                         <a href="{{ route('admin.employees') }}" class="btn btn-secondary">Retour à la liste</a>
