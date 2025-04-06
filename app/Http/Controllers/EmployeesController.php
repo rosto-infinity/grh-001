@@ -76,7 +76,7 @@ public function update(Request $request, $id)
     $employee->email = $request->input('email');
     // 9-Ajoutez d'autres champs à mettre à jour selon vos besoins
 
-    // Sauvegarder les changements
+    // 10-Sauvegarder les changements
     $employee->save();
 
     // Rediriger avec un message de succès
