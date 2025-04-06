@@ -55,7 +55,7 @@ class EmployeesController extends Controller
     // 3-Récupérer l'employé par ID
     $employee = User::findOrFail($id);
 
-    // Retourner la vue avec les données de l'employé
+    // 4-Retourner la vue avec les données de l'employé
     return view('admin.employees.edit', compact('employee'));
 }
 
