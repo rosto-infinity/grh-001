@@ -80,7 +80,7 @@ public function update(Request $request, $id)
     $employee->save();
 
     // 11-Rediriger avec un message de succès
-    return redirect()->route('admin.employees.index')->with('success', 'Employé mis à jour avec succès.');
+    return redirect()->route('admin.employees')->with('success', 'Employé mis à jour avec succès.');
 }
 
     public function destroy($id)
