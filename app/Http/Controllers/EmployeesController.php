@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\EmployeeRequest;
 
 class EmployeesController extends Controller
 {
@@ -17,28 +18,16 @@ class EmployeesController extends Controller
     {
         return view('admin.employees.add');
     }
-    public function store(Request $request)
+    
+    public function store(EmployeeRequest $request)
     {
-        // 2Validate the request data
-        $userData = $request->validate([
-            'name'          => 'required|string|max:255',
-            'last_name'     => 'required|string|max:255',
-            'email'         => 'required|email|max:255|unique:users',
-            'phone_number'  => 'required',
-            'hire_date'     => 'required|date',
-            'job_id'        => 'required',
-            'salary'        => 'required|numeric',
-            'commission_pct' => 'required|numeric',
-            'manager_id'    => 'required',
-            'departement_id' => 'required',
-        ]);
-    //  dd($userData);
-        // 4Create a new employee record
-        User::create($userData);
-
-        // 2-Redirect or return a response
+        // 1. Validate the request
+        User::create($request->validated());
+    
+        // 3. Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee added successfully.');
     }
+    
 
     public function edit($id)
     {
