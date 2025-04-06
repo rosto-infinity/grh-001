@@ -8,13 +8,38 @@ use App\Http\Requests\EmployeeRequest;
 
 class EmployeesController extends Controller
 {
+
     
     public function index(Request $request)
-    {
-        $employees = User::paginate(4);
+{
+    $query = User::query();
 
-        return view('admin.employees.list', compact('employees'));
+    // Filtrage par nom
+    if ($request->filled('name')) {
+        $query->where('name', 'like', '%' . $request->input('name') . '%');
     }
+
+    // Filtrage par nom de famille
+    if ($request->filled('last_name')) {
+        $query->where('last_name', 'like', '%' . $request->input('last_name') . '%');
+    }
+
+    // Filtrage par email
+    if ($request->filled('email')) {
+        $query->where('email', 'like', '%' . $request->input('email') . '%');
+    }
+
+    // Filtrage par date de création
+    if ($request->filled('date')) {
+        $query->whereDate('created_at', $request->input('date'));
+    }
+
+    // Pagination
+    $employees = $query->paginate(4);
+
+    return view('admin.employees.list', compact('employees'));
+}
+
     /**
      * Summary of add
      * @param \Illuminate\Http\Request $request

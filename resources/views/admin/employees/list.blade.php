@@ -2,23 +2,21 @@
 
 @section('content')
 
-    <!-- 25-Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- 26-Content Header (Page header) -->
-        <!--12 Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h3>Listes des Employees(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{-- {{ $getRecord->total() }} --}}
+                                {{ $employees->total() }}
                             </span>)
                         </h3>
                     </div>
                     <div class="text-right col-sm-6">
-                        <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle
-                            Employees</a>
+                        <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle Employees</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -37,37 +35,29 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="get" action="">
+                                <form method="get" action="{{ route('admin.employees') }}">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-3">
-                                                <label for="annee_id">Année Scolaire</label>
-                                                <select class="form-control" id="annee_id" name="annee_id">
-                                                    <option value="">Sélectionner une année scolaire</option>
-                                                    {{-- @foreach ($anneeScolaires as $annee) --}}
-                                                    <option {{-- value="{{ $annee->id }}" {{
-                                                        Request::get('annee_id')==$annee->id ? 'selected' : '' }} --}}
-                                                        >
-                                                        {{-- {{ $annee->nom_annee }} --}}
-                                                    </option>
-                                                    {{-- @endforeach --}}
-                                                </select>
+                                                <label for="last_name">Last name</label>
+                                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Entrez votre last_name" value="{{ Request::get('last_name') }}">
                                             </div>
-
+                                
                                             <div class="form-group col-md-3">
-                                                <label for="status">Statut</label>
-                                                <select class="form-control" id="status" name="status">
-                                                    <option value="">Sélectionner un statut</option>
-                                                    <option value="1">Année actuelle</option>
-                                                    <option value="0">Année inactif</option>
-                                                </select>
+                                                <label for="name">Nom</label>
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" value="{{ Request::get('name') }}">
                                             </div>
-
+                                
+                                            <div class="form-group col-md-3">
+                                                <label for="email">Email</label>
+                                                <input type="text" class="form-control" id="email" name="email" placeholder="rosto@gmail.com" value="{{ Request::get('email') }}">
+                                            </div>
+                                
                                             <div class="form-group col-md-3">
                                                 <label for="date">Date de création</label>
-                                                <input type="date" class="form-control" id="date" name="date" value="">
+                                                <input type="date" class="form-control" id="date" name="date" value="{{ Request::get('date') }}">
                                             </div>
-
+                                
                                             <div class="form-group col-md-3">
                                                 <button type="submit" class="mt-8 mr-2 btn btn-primary">
                                                     <i class="nav-icon fas fa-search"></i> Recherche
@@ -79,66 +69,68 @@
                                         </div>
                                     </div>
                                 </form>
+                                
 
                             </div>
                         </div>
                     </div>
 
-
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Listes des Années Scolaires</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body p-0">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                        <th>Date de création</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($employees as $employee)
-
-
+                    @if ($employees->isEmpty())
+                        <p>Aucun employé ne correspond à votre recherche.</p>
+                    @else
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Listes des Employees</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <table class="table table-striped">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $employee->name}}</td>
-                                            <td>{{ $employee->last_name}}</td>
-                                            <td>{{ $employee->email}}</td>
-                                            <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR")}}</td>
-
-                                            <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                                            <td>
-                                                <a href="" class="btn btn-warning btn-sm">
-                                                    <i class="nav-icon fas fa-pencil-alt"></i> Modifier
-                                                </a>
-                                                <!-- Formulaire pour la suppression -->
-                                                <form action="" method="POST" style="display:inline;">
-                                                    {{-- @csrf
-                                                    @method('DELETE') --}}
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette année scolaire ?');">
-                                                        <i class="nav-icon fas fa-trash-alt"></i> Supprimer
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Date de création</th>
+                                            <th>Action</th>
                                         </tr>
-                                    @endforeach
-                                    
-                                </tbody>
-                            </table>
-                            <div class="pr-5 py-5 flex float-right">
-                                {{ $employees->links() }}
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($employees as $employee)
+                                            <tr>
+                                                <td>{{ $employee->name }}</td>
+                                                <td>{{ $employee->last_name }}</td>
+                                                <td>{{ $employee->email }}</td>
+                                                <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR") }}</td>
+                                                <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                                                <td>
+                                                    <a href="" class="btn btn-info btn-sm">
+                                                        <i class="nav-icon fas fa-eye mr-1"></i> View
+                                                    </a>
+                                                    <a href="" class="btn btn-warning btn-sm ">
+                                                        <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
+                                                    </a>
+                                                    <!-- Formulaire pour la suppression -->
+                                                    <form action="" method="POST" style="display:inline;">
+                                                        {{-- @csrf
+                                                        @method('DELETE') --}}
+                                                        <button type="submit" class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employee ?');">
+                                                            <i class="nav-icon fas fa-trash-alt mr-1"></i> Supprimer
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <div class="pr-5 py-5 flex float-right">
+                                    {{ $employees->links() }}
+                                </div>
                             </div>
+                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card-body -->
-                    </div>
+                    @endif
                     <!-- /.card -->
                 </div>
             </div>
