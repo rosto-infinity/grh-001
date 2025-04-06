@@ -130,6 +130,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                    
                                 </tbody>
                             </table>
                             <div class="pr-5 py-5 flex float-right">
