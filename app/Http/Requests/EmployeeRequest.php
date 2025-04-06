@@ -14,6 +14,19 @@ class EmployeeRequest extends FormRequest
         return true;
     }
 
+//     //quelle difference entre 
+    
+//     if ($request->filled('email')) {
+//         $query->where('email', 'like', '%' . $request->input('email') . '%');
+//     } 
+
+//    //et 
+
+//  if (!empty(Request::get('email'))) {
+//         $query->where('email', 'like', '%' . Request::get('email') . '%');
+//     }
+
+
     /**
      * Get the validation rules that apply to the request.
      *

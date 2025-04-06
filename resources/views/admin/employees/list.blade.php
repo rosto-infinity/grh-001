@@ -75,9 +75,7 @@
                         </div>
                     </div>
 
-                    @if ($employees->isEmpty())
-                        <p>Aucun employé ne correspond à votre recherche.</p>
-                    @else
+                    
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Listes des Employees</h3>
@@ -95,7 +93,14 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody> 
+                                        @if ($employees->isEmpty())
+                                        <tr>
+                                            <td  colspan="6" class="text-center"> 
+                                                 Aucun employé ne correspond à votre recherche... 
+                                         </td>
+                                        </tr>
+                                        @else
                                         @foreach ($employees as $employee)
                                             <tr>
                                                 <td>{{ $employee->name }}</td>
@@ -121,7 +126,9 @@
                                                     </form>
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                            @endforeach
+                                           
+                                     @endif
                                     </tbody>
                                 </table>
                                 <div class="pr-5 py-5 flex float-right">
@@ -130,7 +137,6 @@
                             </div>
                             <!-- /.card-body -->
                         </div>
-                    @endif
                     <!-- /.card -->
                 </div>
             </div>

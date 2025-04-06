@@ -52,4 +52,30 @@ class User extends Authenticatable
             'password'          => 'hashed',
         ];
     }
+    public static function filter($request)
+    {
+        $query = self::query();
+
+        // Filtrage par nom
+        if ($request->filled('name')) {
+            $query->where('name', 'like', '%' . $request->input('name') . '%');
+        }
+
+        // Filtrage par nom de famille
+        if ($request->filled('last_name')) {
+            $query->where('last_name', 'like', '%' . $request->input('last_name') . '%');
+        }
+
+        // Filtrage par email
+        if ($request->filled('email')) {
+            $query->where('email', 'like', '%' . $request->input('email') . '%');
+        }
+
+        // Filtrage par date de création
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->input('date'));
+        }
+
+        return $query;
+    }
 }
