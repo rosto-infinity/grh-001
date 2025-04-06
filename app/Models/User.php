@@ -61,7 +61,7 @@ class User extends Authenticatable
             $query->where('name', 'like', '%' . $request->input('name') . '%');
         }
 
-        // 05-Filtrage par nom de famille
+        // 05--Filtrage par nom de famille
         if ($request->filled('last_name')) {
             $query->where('last_name', 'like', '%' . $request->input('last_name') . '%');
         }
