@@ -71,7 +71,7 @@ public function update(Request $request, $id)
     //7- Récupérer l'employé par ID
     $employee = User::findOrFail($id);
 
-    // Mettre à jour les informations de l'employé
+    // 8-Mettre à jour les informations de l'employé
     $employee->name = $request->input('name');
     $employee->email = $request->input('email');
     // Ajoutez d'autres champs à mettre à jour selon vos besoins
