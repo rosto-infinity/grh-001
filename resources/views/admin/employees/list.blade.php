@@ -112,9 +112,10 @@
                                                     <a href="{{ route('admin.employees.view', $employee->id) }}" class="btn btn-info btn-sm">
                                                         <i class="nav-icon fas fa-eye mr-1"></i> View
                                                     </a>
-                                                    <a href="" class="btn btn-warning btn-sm ">
+                                                    <a href="{{ route('admin.employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
                                                     </a>
+                                                    
                                                     <!-- Formulaire pour la suppression -->
                                                     <form action="{{ route('admin.employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
                                                         @csrf

@@ -51,17 +51,38 @@ class EmployeesController extends Controller
     }
 
     public function edit($id)
-    {
-        // Fetch the employee data by ID
-        return view('admin.employees.edit', compact('id'));
-    }
-    public function update(Request $request, $id)
-    {
-        // 3Validate and update the employee data
+{
+    // 3-Récupérer l'employé par ID
+    $employee = User::findOrFail($id);
 
-        // 5--Redirect or return a response
-        return redirect()->route('admin.employees')->with('success', 'Employee updated successfully.');
-    }
+    // Retourner la vue avec les données de l'employé
+    return view('admin.employees.edit', compact('employee'));
+}
+
+public function update(Request $request, $id)
+{
+    // Valider les données du formulaire
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:employees,email,' . $id,
+        // Ajoutez d'autres règles de validation selon vos besoins
+    ]);
+
+    // Récupérer l'employé par ID
+    $employee = User::findOrFail($id);
+
+    // Mettre à jour les informations de l'employé
+    $employee->name = $request->input('name');
+    $employee->email = $request->input('email');
+    // Ajoutez d'autres champs à mettre à jour selon vos besoins
+
+    // Sauvegarder les changements
+    $employee->save();
+
+    // Rediriger avec un message de succès
+    return redirect()->route('admin.employees.index')->with('success', 'Employé mis à jour avec succès.');
+}
+
     public function destroy($id)
 {
     // 6 - Supprimer l'employé par ID
