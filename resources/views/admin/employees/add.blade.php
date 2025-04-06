@@ -118,94 +118,83 @@
                             </div>
                         
                             {{--10- Job Title --}}
-                            <div class="form-group col-md-6">
-                                <label for="job_id">Job Title <span class="text-red-600">*</span> </label>
-                                <select class="form-control @error('job_id') is-invalid @enderror" name="job_id" id="job_id">
-                                <option value="">Sélectionnez Job Title</option>
-                                    
-                                <option value="1" {{ old('job_id') == '1' ? 'selected' : '' }}>Php</option>
-                                <option value="0" {{ old('job_id') == '2' ? 'selected' : '' }}>Vue </option>
-                                <option value="0" {{ old('job_id') == '3' ? 'selected' : '' }}>Laravel</option>
-                                <option value="0" {{ old('job_id') == '4' ? 'selected' : '' }}>postgreSQL</option>
-                                </select>
+<div class="form-group col-md-6">
+    <label for="job_id">Job Title <span class="text-red-600">*</span></label>
+    <select class="form-control @error('job_id') is-invalid @enderror" name="job_id" id="job_id">
+        <option value="">Sélectionnez Job Title</option>
+        <option value="Php" {{ old('job_id') == 'Php' ? 'selected' : '' }}>Php</option>
+        <option value="Vue" {{ old('job_id') == 'Vue' ? 'selected' : '' }}>Vue</option>
+        <option value="Laravel" {{ old('job_id') == 'Laravel' ? 'selected' : '' }}>Laravel</option>
+        <option value="postgreSQL" {{ old('job_id') == 'postgreSQL' ? 'selected' : '' }}>postgreSQL</option>
+    </select>
+
+    <!-- Affichage de l'erreur pour job_id -->
+    @error('job_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+{{--11- Salary --}}
+<div class="form-group col-md-6">
+    <label for="salary">Salary <span class="text-red-600">*</span></label>
+    <input type="text" class="form-control @error('salary') is-invalid @enderror" 
+           value="{{ old('salary') }}" 
+           id="salary" name="salary" 
+           placeholder="Entrez Salary">
     
-                        
+    <!-- Affichage de l'erreur pour salary -->
+    @error('salary')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+{{--12- Commission PCT --}}
+<div class="form-group col-md-6">
+    <label for="commission_pct">Commission PCT <span class="text-red-600">*</span></label>
+    <input type="text" class="form-control @error('commission_pct') is-invalid @enderror" 
+           value="{{ old('commission_pct') }}" 
+           id="commission_pct" name="commission_pct" 
+           placeholder="Entrez Commission PCT">
     
-                                <!-- Affichage de l'erreur pour job_id -->
-                                @error('job_id')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        
-                            {{--11- Salary --}}
-                            <div class="form-group col-md-6">
-                                <label for="salary">Salary <span class="text-red-600">*</span> </label>
-                                <input type="text" class="form-control @error('salary') is-invalid @enderror" 
-                                value="{{ old('salary')}}" 
-                                id="salary" name="salary"
-                                placeholder="Entrez Salary">
-                                
-                                <!-- Affichage de l'erreur pour salary -->
-                                @error('salary')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            
-                            {{--11- Commission PCT --}}
-                            <div class="form-group col-md-6">
-                                <label for="commission_pct">Commission PCT <span class="text-red-600">*</span> </label>
-                                <input type="text" class="form-control @error('commission_pct') is-invalid @enderror" 
-                                value="{{ old('commission_pct')}}" 
-                                id="commission_pct" name="commission_pct"
-                                placeholder="Entrez Commission PCT">
-                                
-                                <!-- Affichage de l'erreur pour commission_pct -->
-                                @error('commission_pct')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+    <!-- Affichage de l'erreur pour commission_pct -->
+    @error('commission_pct')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
+{{--13- Manager Name --}}
+<div class="form-group col-md-6">
+    <label for="manager_id">Manager Name <span class="text-red-600">*</span></label>
+    <select class="form-control @error('manager_id') is-invalid @enderror" name="manager_id" id="manager_id">
+        <option value="">Sélectionnez Manager Name</option>
+        <option value="Manager 1" {{ old('manager_id') == '1' ? 'selected' : '' }}>Manager 1</option>
+        <option value="Manager 2" {{ old('manager_id') == 'Manager 2' ? 'selected' : '' }}>Manager 2</option>
+        <option value="Manager 3" {{ old('manager_id') == 'Manager 3' ? 'selected' : '' }}>Manager 3</option>
+        <option value="Manager 4" {{ old('manager_id') == 'Manager 4' ? 'selected' : '' }}>Manager 4</option>
+    </select>
 
-                            {{--13- Manager Name --}}
-                            <div class="form-group col-md-6">
-                                <label for="manager_name">Manager Name <span class="text-red-600">*</span> </label>
-                                <select class="form-control @error('manager_name') is-invalid @enderror" name="manager_id" id="manager_name">
-                                <option value="">Sélectionnez Manager Name</option>
-                                    
-                                <option value="1" {{ old('manager_name') == '1' ? 'selected' : '' }}>Php</option>
-                                <option value="0" {{ old('manager_name') == '2' ? 'selected' : '' }}>Vue </option>
-                                <option value="0" {{ old('manager_name') == '3' ? 'selected' : '' }}>Laravel</option>
-                                <option value="0" {{ old('manager_name') == '4' ? 'selected' : '' }}>postgreSQL</option>
-                                </select>
+    <!-- Affichage de l'erreur pour manager_id -->
+    @error('manager_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-                        
+{{--14- Department Name --}}
+<div class="form-group col-md-6">
+    <label for="departement_id">Department Name <span class="text-red-600">*</span></label>
+    <select class="form-control @error('departement_id') is-invalid @enderror" name="departement_id" id="departement_id">
+        <option value="">Sélectionnez Department Name</option>
+        <option value="Département 1" {{ old('departement_id') == 'Département 1' ? 'selected' : '' }}>Département 1</option>
+        <option value="Département 2" {{ old('departement_id') == 'Département 2' ? 'selected' : '' }}>Département 2</option>
+        <option value="Département 3" {{ old('departement_id') == 'Département 3' ? 'selected' : '' }}>Département 3</option>
+        <option value="Département 4" {{ old('departement_id') == 'Département 4' ? 'selected' : '' }}>Département 4</option>
+    </select>
 
-                                <!-- Affichage de l'erreur pour manager_name -->
-                                @error('manager_name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            
-                            
-                            {{--14- Departement Name --}}
-                            <div class="form-group col-md-6">
-                                <label for="departement_name">Departement Name <span class="text-red-600">*</span> </label>
-                                <select class="form-control @error('departement_name') is-invalid @enderror" name="departement_id" id="departement_name">
-                                <option value="">Sélectionnez Departement Name</option>
-                                    
-                                <option value="1" {{ old('departement_name') == '1' ? 'selected' : '' }}>Php</option>
-                                <option value="0" {{ old('departement_name') == '2' ? 'selected' : '' }}>Vue </option>
-                                <option value="0" {{ old('departement_name') == '3' ? 'selected' : '' }}>Laravel</option>
-                                <option value="0" {{ old('departement_name') == '4' ? 'selected' : '' }}>postgreSQL</option>
-                                </select>
-
-                        
-
-                                <!-- Affichage de l'erreur pour departement_name -->
-                                @error('departement_name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+    <!-- Affichage de l'erreur pour departement_id -->
+    @error('departement_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
                         </div>
                     </div>

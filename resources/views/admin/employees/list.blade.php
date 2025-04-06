@@ -23,7 +23,7 @@
       </div><!-- /.container-fluid -->
     </section>
     
-   
+    @include('_message')
                 <!-- /.container-fluid -->
                   <div class="container-fluid">
                       <div class="row">

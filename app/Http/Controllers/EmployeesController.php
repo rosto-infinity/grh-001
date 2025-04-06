@@ -22,13 +22,15 @@ class EmployeesController extends Controller
             'name'          => 'required|string|max:255',
             'last_name'     => 'required|string|max:255',
             'email'         => 'required|email|max:255|unique:users',
+            'phone_number'  => 'required',
             'hire_date'     => 'required|date',
-            'jod_id'        => 'nullable',
-            'salary'        => 'required',
-            'manager_id'    => 'nullable',
-            'department_id' => 'nullable',
+            'job_id'        => 'required',
+            'salary'        => 'required|numeric',
+            'commission_pct' => 'required|numeric',
+            'manager_id'    => 'required',
+            'departement_id' => 'required',
         ]);
-
+    //  dd($userData);
         // 4Create a new employee record
         User::create($userData);
 
