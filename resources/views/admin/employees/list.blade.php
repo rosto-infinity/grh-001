@@ -116,14 +116,15 @@
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
                                                     </a>
                                                     <!-- Formulaire pour la suppression -->
-                                                    <form action="" method="POST" style="display:inline;">
-                                                        {{-- @csrf
-                                                        @method('DELETE') --}}
+                                                    <form action="{{ route('admin.employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employee ?');">
+                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');">
                                                             <i class="nav-icon fas fa-trash-alt mr-1"></i> Supprimer
                                                         </button>
                                                     </form>
+                                                    
                                                 </td>
                                             </tr>
                                             @endforeach

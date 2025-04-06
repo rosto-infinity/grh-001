@@ -33,7 +33,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store');
     // Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit');
     // Route::post('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update');
-    // Route::get('admin/employees/delete/{id}', [EmployeesController::class, 'delete'])->name('admin.employees.delete');
+    Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy');
+
    
  
     

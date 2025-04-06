@@ -56,10 +56,14 @@ class EmployeesController extends Controller
         // 5--Redirect or return a response
         return redirect()->route('admin.employees')->with('success', 'Employee updated successfully.');
     }
-    public function delete($id)
-    {
-        //6- Delete the employee by ID
-        // 7Redirect or return a response
-        return redirect()->route('admin.employees')->with('success', 'Employee deleted successfully.');
-    }
+    public function destroy($id)
+{
+    // 6 - Supprimer l'employé par ID
+    $employee = User::findOrFail($id); // Trouver l'employé ou échouer
+    $employee->delete(); // Supprimer l'employé
+
+    // 7 - Rediriger ou retourner une réponse
+    return redirect()->route('admin.employees')->with('success', 'Employee deleted successfully.');
+}
+
 }
