@@ -68,7 +68,7 @@ public function update(Request $request, $id)
         // 6-Ajoutez d'autres règles de validation selon vos besoins
     ]);
 
-    // Récupérer l'employé par ID
+    //7- Récupérer l'employé par ID
     $employee = User::findOrFail($id);
 
     // Mettre à jour les informations de l'employé
