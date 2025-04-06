@@ -1,152 +1,150 @@
+@extends('layouts.application')
 
- @extends('layouts.application')
+@section('content')
 
- @section('content')
- 
-   <!-- 25-Content Wrapper. Contains page content -->
-   <div class="content-wrapper">
-     <!-- 26-Content Header (Page header) -->
-      <!--12 Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h3>Listes des Employees(Total :
-              <span class="bg-green-600 rounded-full text-white">
-                {{-- {{ $getRecord->total() }} --}}
-              </span>)</h3>
-          </div>
-          <div class="text-right col-sm-6">
-            <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle Employees</a>
-          </div>
+    <!-- 25-Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- 26-Content Header (Page header) -->
+        <!--12 Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h3>Listes des Employees(Total :
+                            <span class="bg-green-600 rounded-full text-white">
+                                {{-- {{ $getRecord->total() }} --}}
+                            </span>)
+                        </h3>
+                    </div>
+                    <div class="text-right col-sm-6">
+                        <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle
+                            Employees</a>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        @include('_message')
+        <!-- /.container-fluid -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mr-2 card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Rechercher une Employees</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form method="get" action="">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="form-group col-md-3">
+                                                <label for="annee_id">Année Scolaire</label>
+                                                <select class="form-control" id="annee_id" name="annee_id">
+                                                    <option value="">Sélectionner une année scolaire</option>
+                                                    {{-- @foreach ($anneeScolaires as $annee) --}}
+                                                    <option {{-- value="{{ $annee->id }}" {{
+                                                        Request::get('annee_id')==$annee->id ? 'selected' : '' }} --}}
+                                                        >
+                                                        {{-- {{ $annee->nom_annee }} --}}
+                                                    </option>
+                                                    {{-- @endforeach --}}
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <label for="status">Statut</label>
+                                                <select class="form-control" id="status" name="status">
+                                                    <option value="">Sélectionner un statut</option>
+                                                    <option value="1">Année actuelle</option>
+                                                    <option value="0">Année inactif</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <label for="date">Date de création</label>
+                                                <input type="date" class="form-control" id="date" name="date" value="">
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <button type="submit" class="mt-8 mr-2 btn btn-primary">
+                                                    <i class="nav-icon fas fa-search"></i> Recherche
+                                                </button>
+                                                <a href="{{ route('admin.employees') }}" class='mt-8 btn btn-success'>
+                                                    <i class="fas fa-refresh" aria-hidden="true"></i> Réinitialiser
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Listes des Années Scolaires</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Date de création</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($employees as $employee)
+
+
+                                        <tr>
+                                            <td>{{ $employee->name}}</td>
+                                            <td>{{ $employee->last_name}}</td>
+                                            <td>{{ $employee->email}}</td>
+                                            <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR")}}</td>
+
+                                            <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                                            <td>
+                                                <a href="" class="btn btn-warning btn-sm">
+                                                    <i class="nav-icon fas fa-pencil-alt"></i> Modifier
+                                                </a>
+                                                <!-- Formulaire pour la suppression -->
+                                                <form action="" method="POST" style="display:inline;">
+                                                    {{-- @csrf
+                                                    @method('DELETE') --}}
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette année scolaire ?');">
+                                                        <i class="nav-icon fas fa-trash-alt"></i> Supprimer
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="pr-5 py-5 flex float-right">
+                                {{ $employees->links() }}
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-    
-    @include('_message')
-                <!-- /.container-fluid -->
-                  <div class="container-fluid">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="row">
-                                  <div class="col-md-12">
-                                      <div class="mr-2 card card-primary">
-                                          <div class="card-header">
-                                              <h3 class="card-title">Rechercher une Employees</h3>
-                                          </div>
-                                          <!-- /.card-header -->
-                                          <!-- form start -->
-                                          <form method="get" action="">
-                                              <div class="card-body">
-                                                  <div class="row">
-                                                      <div class="form-group col-md-3">
-                                                          <label for="annee_id">Année Scolaire</label>
-                                                          <select class="form-control" id="annee_id" name="annee_id">
-                                                              <option value="">Sélectionner une année scolaire</option>
-                                                              {{-- @foreach ($anneeScolaires as $annee) --}}
-                                                                  <option
-                                                                  {{-- value="{{ $annee->id }}" {{ Request::get('annee_id') == $annee->id ? 'selected' : '' }} --}}
-                                                                  >
-                                                                      {{-- {{ $annee->nom_annee }} --}}
-                                                                  </option>
-                                                              {{-- @endforeach --}}
-                                                          </select>
-                                                      </div>
-                                          
-                                                      <div class="form-group col-md-3">
-                                                          <label for="status">Statut</label>
-                                                          <select class="form-control" id="status" name="status">
-                                                              <option value="">Sélectionner un statut</option>
-                                                              <option value="1" >Année actuelle</option>
-                                                              <option value="0" >Année inactif</option>
-                                                          </select>
-                                                      </div>
-                                          
-                                                      <div class="form-group col-md-3">
-                                                          <label for="date">Date de création</label>
-                                                          <input type="date" class="form-control" id="date" name="date" value="">
-                                                      </div>
-                                          
-                                                      <div class="form-group col-md-3">
-                                                          <button type="submit" class="mt-8 mr-2 btn btn-primary">
-                                                              <i class="nav-icon fas fa-search"></i> Recherche
-                                                          </button>
-                                                          <a href="{{ route('admin.employees') }}" class='mt-8 btn btn-success'>
-                                                              <i class="fas fa-refresh" aria-hidden="true"></i> Réinitialiser
-                                                          </a>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </form>
-                                          
-                                      </div>
-                                  </div>
-                              </div>
 
-                            
-
-                              <div class="card">
-                                  <div class="card-header">
-                                      <h3 class="card-title">Listes des Années Scolaires</h3>
-                                  </div>
-                                  <!-- /.card-header -->
-                                  <div class="card-body p-0">
-                                      <table class="table table-striped">
-                                          <thead>
-                                              <tr>
-                                                  <th>First Name</th>
-                                                  <th>Last Name</th>
-                                                  <th>Email</th>
-                                                  <th>Role</th>
-                                                  <th>Date de création</th>
-                                                  <th>Action</th>
-                                              </tr>
-                                          </thead>
-                                          <tbody>
-                                            @foreach ( $employees as $employee)
-                                              
-                                            
-                                                  <tr>
-                                                      <td>{{ $employee->name}}</td>
-                                                      <td>{{ $employee->last_name}}</td>
-                                                      <td>{{ $employee->email}}</td>
-                                                      <td>{{ (!empty($employee->usertype ==='admin') ? 'Employees' : "HR" )}}</td>
-                                                      
-                                                      <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                                                      <td>
-                                                          <a href="" class="btn btn-warning btn-sm">
-                                                              <i class="nav-icon fas fa-pencil-alt"></i> Modifier
-                                                          </a>
-                                                          <!-- Formulaire pour la suppression -->
-                                                          <form action="" method="POST" style="display:inline;">
-                                                              {{-- @csrf
-                                                              @method('DELETE') --}}
-                                                              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette année scolaire ?');">
-                                                                  <i class="nav-icon fas fa-trash-alt"></i> Supprimer
-                                                              </button>
-                                                          </form>
-                                                      </td>
-                                                  </tr>
-                                                  @endforeach
-                                          </tbody>
-                                      </table>
-                                      <div class="pr-5 py-5 flex float-right">
-                                          {{ $employees->links() }}
-                                      </div>
-                                  </div>
-                                  <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                          </div>
-                      </div>
-                  </div>
-
-         <!-- /.row -->
-         </div><!-- /.container-fluid -->
-       </div>
-   </div>
-   @endsection
- 
- 
- 
- 
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </div>
+    </div>
+@endsection
