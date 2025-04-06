@@ -14,7 +14,7 @@ class EmployeesController extends Controller
         // 4-Utilisation de la méthode filter du modèle Employees
         $employeesQuery = User::filter($request);
     
-        // Pagination
+        // 5-Pagination
         $employees = $employeesQuery->paginate(4);
     
         return view('admin.employees.list', compact('employees'));
