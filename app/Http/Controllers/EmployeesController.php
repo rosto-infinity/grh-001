@@ -65,7 +65,7 @@ public function update(Request $request, $id)
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:employees,email,' . $id,
-        // Ajoutez d'autres règles de validation selon vos besoins
+        // 6-Ajoutez d'autres règles de validation selon vos besoins
     ]);
 
     // Récupérer l'employé par ID
