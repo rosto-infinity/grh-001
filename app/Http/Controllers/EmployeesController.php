@@ -11,7 +11,7 @@ class EmployeesController extends Controller
     
     public function index(Request $request)
     {
-        // Utilisation de la méthode filter du modèle Employees
+        // 4-Utilisation de la méthode filter du modèle Employees
         $employeesQuery = User::filter($request);
     
         // Pagination
