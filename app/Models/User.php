@@ -56,12 +56,12 @@ class User extends Authenticatable
     {
         $query = self::query();
 
-        // Filtrage par nom
+        // 04-Filtrage par nom
         if ($request->filled('name')) {
             $query->where('name', 'like', '%' . $request->input('name') . '%');
         }
 
-        // Filtrage par nom de famille
+        // 05-Filtrage par nom de famille
         if ($request->filled('last_name')) {
             $query->where('last_name', 'like', '%' . $request->input('last_name') . '%');
         }
