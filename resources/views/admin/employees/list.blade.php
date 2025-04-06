@@ -116,7 +116,7 @@
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
                                                     </a>
                                                     
-                                                    <!-- Formulaire pour la suppression -->
+                                                    <!-- 5-Formulaire pour la suppression -->
                                                     <form action="{{ route('admin.employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
