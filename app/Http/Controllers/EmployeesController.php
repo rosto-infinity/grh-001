@@ -79,7 +79,7 @@ public function update(Request $request, $id)
     // 10-Sauvegarder les changements
     $employee->save();
 
-    // Rediriger avec un message de succès
+    // 11-Rediriger avec un message de succès
     return redirect()->route('admin.employees.index')->with('success', 'Employé mis à jour avec succès.');
 }
 
