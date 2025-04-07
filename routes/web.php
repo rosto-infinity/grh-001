@@ -42,7 +42,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
  
     //Job Routes
     Route::get('admin/jobs', [JobsController::class, 'index'])->name('admin.jobs'); // 11-List all jobs
-    Route::get('admin/jobs/filter', [JobsController::class, 'filter'])->name('admin.jobs.filter'); // Filter jobs
+    Route::get('admin/jobs/filter', [JobsController::class, 'filter'])->name('admin.jobs.filter'); // 12-Filter jobs
     Route::get('admin/jobs/add', [JobsController::class, 'add'])->name('admin.jobs.add');// Add new job
     Route::post('admin/jobs/add', [JobsController::class, 'store'])->name('admin.jobs.store');// Store new job
     Route::get('admin/jobs/view/{id}', [JobsController::class, 'view'])->name('admin.jobs.view');// View job details
