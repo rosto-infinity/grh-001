@@ -50,7 +50,7 @@ class EmployeeRequest extends FormRequest
             'departement_id' => 'required',
             // 'job_id'         => 'required|exists:jobs,id', // 23-Vérifie que job_id existe dans la table jobs
             // 'manager_id'     => 'required|exists:users,id', // 24-Vérifie que manager_id existe dans la table users
-            // 'department_id'  => 'required|exists:departments,id', // Vérifie que department_id existe dans la table departments
+            // 'department_id'  => 'required|exists:departments,id', // 26-Vérifie que department_id existe dans la table departments
         ];
     }
 }
