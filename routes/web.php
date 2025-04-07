@@ -48,7 +48,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/jobs/view/{id}', [JobsController::class, 'view'])->name('admin.jobs.view');// 16-View job details
     Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit'])->name('admin.jobs.edit');// 15-Edit job
     Route::patch('admin/jobs/update/{id}', [JobsController::class, 'update'])->name('admin.jobs.update');// 17-Update job
-    Route::delete('admin/jobs/delete/{id}', [JobsController::class, 'destroy'])->name('admin.jobs.destroy');// 18-Delete job
+    Route::delete('admin/jobs/delete/{id}', [JobsController::class, 'destroy'])->name('admin.jobs.destroy');// 018-Delete job
 });
  
 require __DIR__.'/auth.php';
