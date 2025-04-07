@@ -37,7 +37,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store'); // 6-Store new employee
     Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view'); // 7-View employee details
     Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit'); // 8-Edit employee
-    Route::patch('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update'); // Update employee
+    Route::patch('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update'); //9- Update employee
     Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // Delete employee
  
     //Job Routes
