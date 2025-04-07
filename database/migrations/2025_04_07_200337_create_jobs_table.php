@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id(); // 00-Colonne id, auto-incrémentée
             $table->string('job_title')->nullable(); // 001-Colonne job_title, par défaut null
             $table->decimal('min_salary', 10, 2)->nullable(); // 03-Colonne min_salary, par défaut null
-            $table->decimal('max_salary', 10, 2)->nullable(); // Colonne max_salary, par défaut null
+            $table->decimal('max_salary', 10, 2)->nullable(); // 04-Colonne max_salary, par défaut null
             $table->timestamps(); // Colonne created_at et updated_at
         });
     }
