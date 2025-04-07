@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeesController;
 // use App\Http\Controllers\EmployeesController;
+// use App\Http\Controllers\EmployeesController;
 
 // Route::get('/', function () {
 //     return view('welcome');
