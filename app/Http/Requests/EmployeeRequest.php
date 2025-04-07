@@ -44,7 +44,7 @@ class EmployeeRequest extends FormRequest
             'phone_number' => 'required|string|max:20', // 20-Validation pour le numéro de téléphone
             'hire_date' => 'required|date',
             'job_id' => 'required',
-            'salary' => 'required|numeric|min:0', // Assurez-vous que le salaire est positif
+            'salary' => 'required|numeric|min:0', // 21-Assurez-vous que le salaire est positif
             'commission_pct' => 'required|numeric|min:0|max:100', // Pourcentage de commission entre 0 et 100
             'manager_id' => 'required',
             'departement_id' => 'required',
