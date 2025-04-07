@@ -21,5 +21,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-public/dist
+public/dist/css
+public/dist/img
+public/dist/js
 public/plugins
+
