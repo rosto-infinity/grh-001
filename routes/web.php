@@ -34,7 +34,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');// 03-Dashboard
     Route::get('admin/employees', [EmployeesController::class, 'index'])->name('admin.employees');// 4-List all employees
     Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add'); //5-Add new employee  
-    Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store'); // Store new employee
+    Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store'); // 6-Store new employee
     Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view'); // View employee details
     Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit'); // Edit employee
     Route::patch('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update'); // Update employee
