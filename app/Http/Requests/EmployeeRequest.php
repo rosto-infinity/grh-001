@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EmployeeRequest extends FormRequest
@@ -37,8 +39,9 @@ class EmployeeRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'phone_number' => 'required|string|max:15', // Validation pour le numéro de téléphone
+            'email' => 'required|string|lowercase|email|max:255|unique:users,email,' . $this->route('id'), // Exclure l'ID actuel de la vérification unique
+       
+            'phone_number' => 'required|string|max:20', // Validation pour le numéro de téléphone
             'hire_date' => 'required|date',
             'job_id' => 'required',
             'salary' => 'required|numeric|min:0', // Assurez-vous que le salaire est positif

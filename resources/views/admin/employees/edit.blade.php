@@ -30,8 +30,8 @@
                             <!-- form start -->
                             <form method="POST" action="{{ route('admin.employees.update', $employee->id) }}">
                                 @csrf <!-- Protection CSRF -->
-                                @method('PUT') <!-- Méthode PUT pour la mise à jour -->
-
+                                
+                                @method('patch')
                                 <!-- Affichage des erreurs globales -->
                                 @if ($errors->any())
                                     <div class="mx-10 mt-3 alert alert-danger">

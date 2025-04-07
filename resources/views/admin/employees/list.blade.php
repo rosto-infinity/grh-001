@@ -85,7 +85,7 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>First Name</th>
+                                            <th class="bg-green-400 ">First Name</th>
                                             <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Role</th>
@@ -94,7 +94,7 @@
                                         </tr>
                                     </thead>
                                     <tbody> 
-                                        @if ($employees->isEmpty())
+                                        @if ($employees->isEmpty()) 
                                         <tr>
                                             <td  colspan="6" class="text-center"> 
                                                  Aucun employé ne correspond à votre recherche... 
@@ -102,7 +102,7 @@
                                         </tr>
                                         @else
                                         @foreach ($employees as $employee)
-                                            <tr>
+                                            <tr> 
                                                 <td>{{ $employee->name }}</td>
                                                 <td>{{ $employee->last_name }}</td>
                                                 <td>{{ $employee->email }}</td>

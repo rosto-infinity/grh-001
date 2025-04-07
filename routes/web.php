@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\JobsController;
+
 // use App\Http\Controllers\EmployeesController;
 // use App\Http\Controllers\EmployeesController;
 
@@ -24,22 +26,29 @@ Route::middleware('auth')->group(function () {
 });
 
 /**
- * * Admin Routes
+ * * 1-Admin Routes
  */
 Route::middleware(['auth', 'admin'])->group(function () {
  
-    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
-    Route::get('admin/employees', [EmployeesController::class, 'index'])->name('admin.employees');
-    Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add');
-    Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store');
-    Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view');
-    Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit');
-    Route::put('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update');
-    Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy');
-
-   
+    // Employee Routes
+    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');// Dashboard
+    Route::get('admin/employees', [EmployeesController::class, 'index'])->name('admin.employees');// List all employees
+    Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add'); //Add new employee  
+    Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store'); // Store new employee
+    Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view'); // View employee details
+    Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit'); // Edit employee
+    Route::patch('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update'); // Update employee
+    Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // Delete employee
  
-    
+    //Job Routes
+    Route::get('admin/jobs', [JobsController::class, 'index'])->name('admin.jobs'); // List all jobs
+    Route::get('admin/jobs/filter', [JobsController::class, 'filter'])->name('admin.jobs.filter'); // Filter jobs
+    Route::get('admin/jobs/add', [JobsController::class, 'add'])->name('admin.jobs.add');// Add new job
+    Route::post('admin/jobs/add', [JobsController::class, 'store'])->name('admin.jobs.store');// Store new job
+    Route::get('admin/jobs/view/{id}', [JobsController::class, 'view'])->name('admin.jobs.view');// View job details
+    Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit'])->name('admin.jobs.edit');// Edit job
+    Route::patch('admin/jobs/update/{id}', [JobsController::class, 'update'])->name('admin.jobs.update');// Update job
+    Route::delete('admin/jobs/delete/{id}', [JobsController::class, 'destroy'])->name('admin.jobs.destroy');// Delete job
 });
  
 require __DIR__.'/auth.php';
