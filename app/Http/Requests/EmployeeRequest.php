@@ -48,7 +48,7 @@ class EmployeeRequest extends FormRequest
             'commission_pct' => 'required|numeric|min:0|max:100', // 22-Pourcentage de commission entre 0 et 100
             'manager_id' => 'required',
             'departement_id' => 'required',
-            // 'job_id'         => 'required|exists:jobs,id', // Vérifie que job_id existe dans la table jobs
+            // 'job_id'         => 'required|exists:jobs,id', // 23-Vérifie que job_id existe dans la table jobs
             // 'manager_id'     => 'required|exists:users,id', // Vérifie que manager_id existe dans la table users
             // 'department_id'  => 'required|exists:departments,id', // Vérifie que department_id existe dans la table departments
         ];
