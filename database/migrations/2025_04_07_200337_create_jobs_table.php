@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // 00-Colonne id, auto-incrémentée
+            $table->string('job_title')->nullable(); // 01-Colonne job_title, par défaut null
+            $table->decimal('min_salary', 10, 2)->nullable(); // Colonne min_salary, par défaut null
+            $table->decimal('max_salary', 10, 2)->nullable(); // Colonne max_salary, par défaut null
+            $table->timestamps(); // Colonne created_at et updated_at
         });
     }
 
