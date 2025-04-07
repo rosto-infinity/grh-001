@@ -41,7 +41,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // 10-Delete employee
  
     //Job Routes
-    Route::get('admin/jobs', [JobsController::class, 'index'])->name('admin.jobs'); // List all jobs
+    Route::get('admin/jobs', [JobsController::class, 'index'])->name('admin.jobs'); // 11-List all jobs
     Route::get('admin/jobs/filter', [JobsController::class, 'filter'])->name('admin.jobs.filter'); // Filter jobs
     Route::get('admin/jobs/add', [JobsController::class, 'add'])->name('admin.jobs.add');// Add new job
     Route::post('admin/jobs/add', [JobsController::class, 'store'])->name('admin.jobs.store');// Store new job
