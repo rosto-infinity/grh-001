@@ -38,7 +38,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view'); // 7-View employee details
     Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit'); // 8-Edit employee
     Route::patch('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update'); //9- Update employee
-    Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // Delete employee
+    Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // 10-Delete employee
  
     //Job Routes
     Route::get('admin/jobs', [JobsController::class, 'index'])->name('admin.jobs'); // List all jobs
