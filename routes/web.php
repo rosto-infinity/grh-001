@@ -45,7 +45,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/jobs/filter', [JobsController::class, 'filter'])->name('admin.jobs.filter'); // 12-Filter jobs
     Route::get('admin/jobs/add', [JobsController::class, 'add'])->name('admin.jobs.add');// 13-Add new job
     Route::post('admin/jobs/add', [JobsController::class, 'store'])->name('admin.jobs.store');// 14-Store new job
-    Route::get('admin/jobs/view/{id}', [JobsController::class, 'view'])->name('admin.jobs.view');// View job details
+    Route::get('admin/jobs/view/{id}', [JobsController::class, 'view'])->name('admin.jobs.view');// 16-View job details
     Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit'])->name('admin.jobs.edit');// Edit job
     Route::patch('admin/jobs/update/{id}', [JobsController::class, 'update'])->name('admin.jobs.update');// Update job
     Route::delete('admin/jobs/delete/{id}', [JobsController::class, 'destroy'])->name('admin.jobs.destroy');// Delete job
