@@ -45,7 +45,7 @@ class EmployeeRequest extends FormRequest
             'hire_date' => 'required|date',
             'job_id' => 'required',
             'salary' => 'required|numeric|min:0', // 21-Assurez-vous que le salaire est positif
-            'commission_pct' => 'required|numeric|min:0|max:100', // Pourcentage de commission entre 0 et 100
+            'commission_pct' => 'required|numeric|min:0|max:100', // 22-Pourcentage de commission entre 0 et 100
             'manager_id' => 'required',
             'departement_id' => 'required',
             // 'job_id'         => 'required|exists:jobs,id', // Vérifie que job_id existe dans la table jobs
