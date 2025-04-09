@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmploisController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -41,14 +42,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // 10-Delete employee
  
     //Job Routes
-    Route::get('admin/jobs', [JobsController::class, 'index'])->name('admin.jobs'); // 11-List all jobs
-    Route::get('admin/jobs/filter', [JobsController::class, 'filter'])->name('admin.jobs.filter'); // 12-Filter jobs
-    Route::get('admin/jobs/add', [JobsController::class, 'add'])->name('admin.jobs.add');// 13-Add new job
-    Route::post('admin/jobs/add', [JobsController::class, 'store'])->name('admin.jobs.store');// 14-Store new job
-    Route::get('admin/jobs/view/{id}', [JobsController::class, 'view'])->name('admin.jobs.view');// 16-View job details
-    Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit'])->name('admin.jobs.edit');// 15-Edit job
-    Route::patch('admin/jobs/update/{id}', [JobsController::class, 'update'])->name('admin.jobs.update');// 17-Update job
-    Route::delete('admin/jobs/delete/{id}', [JobsController::class, 'destroy'])->name('admin.jobs.destroy');// 018-Delete job
+    Route::get('admin/emplois', [EmploisController::class, 'index'])->name('admin.emplois'); // 12-List all emplois
+    Route::get('admin/emplois/filter', [EmploisController::class, 'filter'])->name('admin.emplois.filter'); // 12-Filter emplois
+    Route::get('admin/emplois/add', [EmploisController::class, 'add'])->name('admin.emplois.add');// 13-Add new job
+    Route::post('admin/emplois/add', [EmploisController::class, 'store'])->name('admin.emplois.store');// 14-Store new job
+    Route::get('admin/emplois/view/{id}', [EmploisController::class, 'view'])->name('admin.emplois.view');// 16-View job details
+    Route::get('admin/emplois/edit/{id}', [EmploisController::class, 'edit'])->name('admin.emplois.edit');// 15-Edit job
+    Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update');// 17-Update job
+    Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy');// 018-Delete job
 });
  
 require __DIR__.'/auth.php';
