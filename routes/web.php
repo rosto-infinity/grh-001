@@ -48,7 +48,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/emplois/add', [EmploisController::class, 'store'])->name('admin.emplois.store');// 15-Store new emploi
     Route::get('admin/emplois/view/{id}', [EmploisController::class, 'view'])->name('admin.emplois.view');// 16-View emploi details
     Route::get('admin/emplois/edit/{id}', [EmploisController::class, 'edit'])->name('admin.emplois.edit');// 17-Edit emploi
-    Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update');// 17-Update emploi
+    Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update');// 18-Update emploi
     Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy');// 018-Delete emploi
 });
  
