@@ -49,7 +49,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/emplois/view/{id}', [EmploisController::class, 'view'])->name('admin.emplois.view');// 16-View emploi details
     Route::get('admin/emplois/edit/{id}', [EmploisController::class, 'edit'])->name('admin.emplois.edit');// 17-Edit emploi
     Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update');// 18-Update emploi
-    Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy');// 018-Delete emploi
+    Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy');// 019-Delete emploi
 });
  
 require __DIR__.'/auth.php';
