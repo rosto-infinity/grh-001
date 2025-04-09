@@ -43,7 +43,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
  
     //Job Routes
     Route::get('admin/emplois', [EmploisController::class, 'index'])->name('admin.emplois'); // 12-List all emplois
-    Route::get('admin/emplois/filter', [EmploisController::class, 'filter'])->name('admin.emplois.filter'); // 12-Filter emplois
+    Route::get('admin/emplois/filter', [EmploisController::class, 'filter'])->name('admin.emplois.filter'); // 13-Filter emplois
     Route::get('admin/emplois/add', [EmploisController::class, 'add'])->name('admin.emplois.add');// 13-Add new job
     Route::post('admin/emplois/add', [EmploisController::class, 'store'])->name('admin.emplois.store');// 14-Store new job
     Route::get('admin/emplois/view/{id}', [EmploisController::class, 'view'])->name('admin.emplois.view');// 16-View job details
