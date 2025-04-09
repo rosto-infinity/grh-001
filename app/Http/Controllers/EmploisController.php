@@ -12,7 +12,7 @@ class EmploisController extends Controller
         // 1-Utilisation de la méthode filter du modèle Employees
         $emplois = Emplois::all();
     
-        // 2-Pagination
+        // 2--Pagination
         // $employees = $employeesQuery->paginate(4);
     
         return view('admin.emplois.list', compact('emplois'));
