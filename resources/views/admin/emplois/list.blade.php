@@ -9,14 +9,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Listes des Employees(Total :
+                        <h3>Listes des emplois(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{ $employees->total() }}
+                                {{ $emplois->count() }}
                             </span>)
                         </h3>
                     </div>
                     <div class="text-right col-sm-6">
-                        <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle Employees</a>
+                        <a href="{{ route('admin.emplois.add') }}" class="btn btn-primary">Ajouter une nouvelle emplois</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -31,11 +31,11 @@
                         <div class="col-md-12">
                             <div class="mr-2 card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Rechercher une Employees</h3>
+                                    <h3 class="card-title">Rechercher une emplois</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="get" action="{{ route('admin.employees') }}">
+                                <form method="get" action="{{ route('admin.emplois') }}">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-3">
@@ -62,7 +62,7 @@
                                                 <button type="submit" class="mt-8 mr-2 btn btn-primary">
                                                     <i class="nav-icon fas fa-search"></i> Recherche
                                                 </button>
-                                                <a href="{{ route('admin.employees') }}" class='mt-8 btn btn-success'>
+                                                <a href="{{ route('admin.emplois') }}" class='mt-8 btn btn-success'>
                                                     <i class="fas fa-refresh" aria-hidden="true"></i> Réinitialiser
                                                 </a>
                                             </div>
@@ -78,7 +78,7 @@
                     
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Listes des Employees</h3>
+                                <h3 class="card-title">Listes des emplois</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body p-0">
@@ -94,30 +94,30 @@
                                         </tr>
                                     </thead>
                                     <tbody> 
-                                        @if ($employees->isEmpty()) 
+                                        @if ($emplois->isEmpty()) 
                                         <tr>
                                             <td  colspan="6" class="text-center"> 
                                                  Aucun employé ne correspond à votre recherche... 
                                          </td>
                                         </tr>
                                         @else
-                                        @foreach ($employees as $employee)
+                                        @foreach ($emplois as $emploi)
                                             <tr> 
-                                                <td>{{ $employee->name }}</td>
-                                                <td>{{ $employee->last_name }}</td>
-                                                <td>{{ $employee->email }}</td>
-                                                <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR") }}</td>
-                                                <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                                                <td>{{ $emploi->name }}</td>
+                                                <td>{{ $emploi->last_name }}</td>
+                                                <td>{{ $emploi->email }}</td>
+                                                <td>{{ (!empty($emploi->usertype === 'admin') ? 'emplois' : "HR") }}</td>
+                                                <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.employees.view', $employee->id) }}" class="btn btn-info btn-sm">
+                                                    <a href="{{ route('admin.emplois.view', $emploi->id) }}" class="btn btn-info btn-sm">
                                                         <i class="nav-icon fas fa-eye mr-1"></i> View
                                                     </a>
-                                                    <a href="{{ route('admin.employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">
+                                                    <a href="{{ route('admin.emplois.edit', $emploi->id) }}" class="btn btn-warning btn-sm">
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
                                                     </a>
                                                     
                                                     <!-- 5-Formulaire pour la suppression -->
-                                                    <form action="{{ route('admin.employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
+                                                    <form action="{{ route('admin.emplois.destroy', $emploi->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
@@ -134,7 +134,7 @@
                                     </tbody>
                                 </table>
                                 <div class="pr-5 py-5 flex float-right">
-                                    {{ $employees->links() }}
+                                    {{-- {{ $emplois->links() }} --}}
                                 </div>
                             </div>
                             <!-- /.card-body -->

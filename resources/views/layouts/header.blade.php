@@ -169,7 +169,7 @@
             </a>
         </li>
           <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+            <a href="{{ route('admin.emplois')}}" class="nav-link">
                 <i class="nav-icon fas fa-briefcase"></i>
                 <p>Jobs</p>
             </a>
