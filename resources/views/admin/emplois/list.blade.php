@@ -39,18 +39,20 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-3">
-                                                <label for="last_name">Last name</label>
-                                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Entrez votre last_name" value="{{ Request::get('last_name') }}">
+                                                <label for="job_title">Job title
+
+                                                </label>
+                                                <input type="text" class="form-control" id="job_title" name="job_title" placeholder="Entrez votre job_title" value="{{ Request::get('job_title') }}">
                                             </div>
                                 
                                             <div class="form-group col-md-3">
-                                                <label for="name">Nom</label>
-                                                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" value="{{ Request::get('name') }}">
+                                                <label for="min_salary'">Min Salary</label>
+                                                <input type="number" class="form-control" id="min_salary" name="min_salary" placeholder="Entrez votre min_salary" value="{{ Request::get('min_salary') }}">
                                             </div>
                                 
                                             <div class="form-group col-md-3">
-                                                <label for="email">Email</label>
-                                                <input type="text" class="form-control" id="email" name="email" placeholder="rosto@gmail.com" value="{{ Request::get('email') }}">
+                                                <label for="max_salary">Max salary</label>
+                                                <input type="number" class="form-control" id="max_salary" name="max_salary" placeholder="max_salary" value="{{ Request::get('max_salary') }}">
                                             </div>
                                 
                                             <div class="form-group col-md-3">
@@ -85,10 +87,10 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="bg-green-400 ">First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
+                                            <th class="bg-green-400 ">Job title</th>
+                                            <th>Min Salary</th>
+                                            <th>Max Salary</th>
+                
                                             <th>Date de création</th>
                                             <th>Action</th>
                                         </tr>
@@ -103,10 +105,10 @@
                                         @else
                                         @foreach ($emplois as $emploi)
                                             <tr> 
-                                                <td>{{ $emploi->name }}</td>
-                                                <td>{{ $emploi->last_name }}</td>
-                                                <td>{{ $emploi->email }}</td>
-                                                <td>{{ (!empty($emploi->usertype === 'admin') ? 'emplois' : "HR") }}</td>
+                                                <td>{{ $emploi->job_title }}</td>
+                                                <td>{{ $emploi->min_salary }}</td>
+                                                <td>{{ $emploi->max_salary }}</td>
+                                               
                                                 <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.emplois.view', $emploi->id) }}" class="btn btn-info btn-sm">
@@ -121,7 +123,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');">
+                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet emplois ?');">
                                                             <i class="nav-icon fas fa-trash-alt mr-1"></i> Supprimer
                                                         </button>
                                                     </form>
@@ -134,7 +136,7 @@
                                     </tbody>
                                 </table>
                                 <div class="pr-5 py-5 flex float-right">
-                                    {{-- {{ $emplois->links() }} --}}
+                                    {{ $emplois->links() }}
                                 </div>
                             </div>
                             <!-- /.card-body -->

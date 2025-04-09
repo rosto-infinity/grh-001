@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Emplois;
 use Illuminate\Http\Request;
+use App\Http\Requests\EmploiRequest;
 
 class EmploisController extends Controller
 {
     public function index(Request $request)
     {
-        // 1-Utilisation de la méthode filter du modèle Employees
-        $emplois = Emplois::all();
+         // 4-Utilisation de la méthode filter du modèle emplois
+         $emploisQuery = Emplois::filter($request);
     
-        // 2--Pagination
-        // $employees = $employeesQuery->paginate(4);
-    
+         // 5-Pagination
+         $emplois = $emploisQuery->paginate(4);
+     
         return view('admin.emplois.list', compact('emplois'));
     }
 
@@ -24,13 +25,13 @@ class EmploisController extends Controller
     }
     /**
      * Summary of store
-     * @param \App\Http\Requests\EmployeeRequest $request
+     * @param \App\Http\Requests\EmploiRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(EmployeeRequest $request)
+    public function store(EmploiRequest $request)
     {
         // 1. Validate the request
-        User::create($request->validated());
+        Emplois::create($request->validated());
     
         // 3. Redirect or return a response
         return redirect()->route('admin.emplois')->with('success', 'emploi added successfully.');
@@ -38,7 +39,7 @@ class EmploisController extends Controller
     public function view($id)
     {
         // 2. Fetch the emploi data by ID
-        $emploi = User::findOrFail($id); // Find or fail
+        $emploi = Emplois::findOrFail($id); // Find or fail
     
         return view('admin.emplois.view', compact('emploi'));
     }
@@ -46,7 +47,7 @@ class EmploisController extends Controller
     public function edit($id)
 {
     // 3-Récupérer l'employé par ID
-    $emploi = User::findOrFail($id);
+    $emploi = Emplois::findOrFail($id);
 
     // 4-Retourner la vue avec les données de l'employé
     return view('admin.emplois.edit', compact('emploi'));
