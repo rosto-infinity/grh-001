@@ -26,11 +26,11 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <!-- Titre de la carte d'informations -->
+                            <!-- 11-Titre de la carte d'informations -->
                             <h3 class="card-title">Informations sur l'emplois</h3>
                         </div>
                         <!-- Fin de l'en-tête de carte -->
-                        <!-- Début du formulaire -->
+                        <!-- 12-Début du formulaire -->
                         <form method="POST" action="{{ route('admin.emplois.update', $emploi->id) }}"
                             enctype="multipart/form-data">  
                             @csrf <!-- Protection CSRF -->
