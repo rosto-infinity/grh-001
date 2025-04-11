@@ -13,7 +13,7 @@
                     <h3>Emploi : {{ $emploi->job_title }}</h3>
                 </div>
                 <div class="text-right col-sm-6">
-                    <!-- Bouton pour revenir à la liste des emplois -->
+                    <!-- 4-Bouton pour revenir à la liste des emplois -->
                     <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
                 </div>
             </div>
