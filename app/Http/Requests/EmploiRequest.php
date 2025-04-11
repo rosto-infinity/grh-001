@@ -24,10 +24,24 @@ class EmploiRequest extends FormRequest
         return [
             //Emplois
             'job_title' => 'required|string|max:255',
-            'min_salary' => 'required|numeric|min:0|max:200000', //
-            'max_salary' => 'required|numeric|min:0|max:500000', // 
-            
-           
+            'min_salary' => 'required|numeric|min:0|max:200000',
+            'max_salary' => 'required|numeric|min:0|max:500000|gte:min_salary', // Vérifie que max_salary >= min_salary
+        ];
+    }
+
+    /**
+     * Get the custom messages for validation errors.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'job_title.required' => 'Le titre du poste est obligatoire.',
+            'min_salary.required' => 'Le salaire minimum est obligatoire.',
+            'max_salary.required' => 'Le salaire maximum est obligatoire.',
+            'max_salary.gte' => 'Le salaire maximum doit être supérieur ou égal au salaire minimum.',
         ];
     }
 }
+

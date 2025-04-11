@@ -46,10 +46,8 @@ class EmployeesController extends Controller
     {
         // 2. Fetch the employee data by ID
         $employee = User::findOrFail($id); // Find or fail
-    
         return view('admin.employees.view', compact('employee'));
     }
-
     public function edit($id)
 {
     // 3-Récupérer l'employé par ID
