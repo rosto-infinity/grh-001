@@ -93,7 +93,7 @@
                             </div>
   
                             <div class="card-footer">
-                                <!-- Bouton pour annuler la modification -->
+                                <!-- 20--Bouton pour annuler la modification -->
                                 <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Annuler</a>
                                 <!-- Bouton pour soumettre le formulaire -->
                                 <button type="submit" class="btn btn-primary float-right">Modifier</button>
