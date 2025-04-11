@@ -29,7 +29,7 @@
                             <!-- 5-Titre de la carte d'informations -->
                             <h3 class="card-title">Informations sur l'emploi</h3>
                         </div>
-                        <!-- Fin de l'en-tête de carte -->
+                        <!-- 6-Fin de l'en-tête de carte -->
                         <h1>Détails de l'emploi</h1>
 
                         <!-- Tableau affichant les détails de l'emploi -->
