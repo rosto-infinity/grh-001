@@ -56,7 +56,7 @@
                             </tr>
                         </table>
 
-                        <!-- Bouton pour retourner à la liste des emplois -->
+                        <!--8-Bouton pour retourner à la liste des emplois -->
                         <a href="{{ route('admin.emplois') }}" class="btn btn-primary">Retour à la liste des emplois</a>
                     </div>
                     <!-- Fin de la carte -->
