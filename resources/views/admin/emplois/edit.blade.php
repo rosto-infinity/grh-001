@@ -50,7 +50,7 @@
                             <div class="card-body">
                                 <div class="row">
   
-                                    {{-- Champ pour le titre du poste --}}
+                                    {{-- 14-Champ pour le titre du poste --}}
                                     <div class="form-group col-md-6">
                                         <label for="job_title">Job<span class="text-red-600">*</span> </label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
