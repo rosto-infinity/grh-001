@@ -65,7 +65,11 @@ public function update(EmployeeRequest $request, $id)
  
     return redirect()->route('admin.employees')->with('success', 'Employé mis à jour avec succès.');
 }
-
+/**
+ * 6-Summary of destroy
+ * @param mixed $id
+ * @return \Illuminate\Http\RedirectResponse
+ */
     public function destroy($id)
 {
     // 6 - Supprimer l'employé par ID
