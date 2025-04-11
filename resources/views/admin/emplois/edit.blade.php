@@ -30,7 +30,7 @@
                             <h3 class="card-title">Informations sur l'emplois</h3>
                         </div>
                         <!-- Fin de l'en-tête de carte -->
-                        <!-- 12-Début du formulaire -->
+                        <!-- 12--Début du formulaire -->
                         <form method="POST" action="{{ route('admin.emplois.update', $emploi->id) }}"
                             enctype="multipart/form-data">  
                             @csrf <!-- Protection CSRF -->
