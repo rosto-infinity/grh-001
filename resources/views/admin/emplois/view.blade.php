@@ -32,7 +32,7 @@
                         <!-- 6-Fin de l'en-tête de carte -->
                         <h1>Détails de l'emploi</h1>
 
-                        <!-- Tableau affichant les détails de l'emploi -->
+                        <!-- 7-Tableau affichant les détails de l'emploi -->
                         <table class="table table-bordered">
                             <tr>
                                 <th>Titre du poste</th>
