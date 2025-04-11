@@ -76,7 +76,7 @@
                                         @enderror
                                     </div>
   
-                                    {{-- Champ pour le salaire maximum --}}
+                                    {{-- 18-Champ pour le salaire maximum --}}
                                     <div class="form-group col-md-6">
                                         <label for="max_salary">Max Salary <span class="text-red-600">*</span> </label>
                                         <input type="number" class="form-control @error('max_salary') is-invalid @enderror"
