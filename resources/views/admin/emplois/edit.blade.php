@@ -63,7 +63,7 @@
                                         @enderror
                                     </div>
   
-                                    {{-- Champ pour le salaire minimum --}}
+                                    {{-- 16-Champ pour le salaire minimum --}}
                                     <div class="form-group col-md-6">
                                         <label for="min_salary">Min Salary <span class="text-red-600">*</span> </label>
                                         <input type="number" class="form-control @error('min_salary') is-invalid @enderror"
