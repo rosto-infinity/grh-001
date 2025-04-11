@@ -83,7 +83,7 @@
                                             value="{{ old('max_salary',$emploi->max_salary)}}" id="max_salary" name="max_salary"
                                             placeholder="Entrez max_salary">
   
-                                        <!-- Affichage de l'erreur pour max_salary -->
+                                        <!-- 19-Affichage de l'erreur pour max_salary -->
                                         @error('max_salary')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
