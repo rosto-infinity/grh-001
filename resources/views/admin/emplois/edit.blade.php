@@ -36,7 +36,7 @@
                             @csrf <!-- Protection CSRF -->
                             @method('PATCH') <!-- Méthode PATCH pour la mise à jour -->
   
-                            <!-- Affichage des erreurs globales -->
+                            <!-- 13-Affichage des erreurs globales -->
                             @if ($errors->any())
                                 <div class="mx-10 mt-3 alert alert-danger">
                                     <ul>
