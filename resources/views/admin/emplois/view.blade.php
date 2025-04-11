@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <!-- Titre de l'emploi affiché -->
+                    <!-- 3-Titre de l'emploi affiché -->
                     <h3>Emploi : {{ $emploi->job_title }}</h3>
                 </div>
                 <div class="text-right col-sm-6">
