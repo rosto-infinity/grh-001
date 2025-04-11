@@ -70,7 +70,7 @@
                                             value="{{ old('min_salary', $emploi->min_salary)}}" id="min_salary" name="min_salary"
                                             placeholder="Entrez min_salary">
   
-                                        <!-- Affichage de l'erreur pour min_salary -->
+                                        <!-- 17-Affichage de l'erreur pour min_salary -->
                                         @error('min_salary')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
