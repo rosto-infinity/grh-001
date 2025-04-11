@@ -2,95 +2,69 @@
 
 @section('content')
 
-
-    <!-- 4Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- 5-Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h3>Employee : {{ $employee->name }} {{ $employee->last_name }} </h3>
-                    </div>
-                    <div class="text-right col-sm-6">
-                        <a href="{{ route('admin.employees') }}" class="btn btn-secondary">Retour à la liste</a>
-                    </div>
+<!-- 01-Wrapper de contenu principal -->
+<div class="content-wrapper">
+    <!-- En-tête de contenu (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- Titre de l'emploi affiché -->
+                    <h3>Emploi : {{ $emploi->job_title }}</h3>
                 </div>
-            </div><!-- /.container-fluid -->
-        </section>
-
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">Informations sur l'Employees</h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <!-- form start -->
-                            <h1>Détails de l'employé</h1>
-
-                            <table class="table table-bordered">
-                                <tr>
-                                    <th>Nom</th>
-                                    <td>{{ $employee->name }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Prénom</th>
-                                    <td>{{ $employee->last_name }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Email</th>
-                                    <td>{{ $employee->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Téléphone</th>
-                                    <td>{{ $employee->phone_number }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Date d'embauche</th>
-                                    <td>{{ $employee->hire_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>ID du poste</th>
-                                    <td>{{ $employee->job_id }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Salaire</th>
-                                    <td>{{ $employee->salary }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Pourcentage de commission</th>
-                                    <td>{{ $employee->commission_pct }}</td>
-                                </tr>
-                                <tr>
-                                    <th>ID du manager</th>
-                                    <td>{{ $employee->manager_id }}</td>
-                                </tr>
-                                <tr>
-                                    <th>ID du département</th>
-                                    <td>{{ $employee->departement_id }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Date de creation</th>
-                                    <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Date de mise à jours</th>
-                                    <td>{{ $employee->updated_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                                </tr>
-                            </table>
-                        
-                            <a href="{{ route('admin.employees') }}" class="btn btn-primary">Retour à la liste des employés</a>
-                        </div>
-                        <!-- /.card -->
-                    </div>
+                <div class="text-right col-sm-6">
+                    <!-- Bouton pour revenir à la liste des emplois -->
+                    <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
                 </div>
             </div>
-        </section>
-    </div>
-    <!-- /.content-wrapper -->
+        </div><!-- /.container-fluid -->
+    </section>
 
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <!-- Titre de la carte d'informations -->
+                            <h3 class="card-title">Informations sur l'emploi</h3>
+                        </div>
+                        <!-- Fin de l'en-tête de carte -->
+                        <h1>Détails de l'emploi</h1>
+
+                        <!-- Tableau affichant les détails de l'emploi -->
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Titre du poste</th>
+                                <td>{{ $emploi->job_title }}</td>
+                            </tr>
+                            <tr>
+                                <th>Salaire Minimum</th>
+                                <td>{{ $emploi->min_salary }} FCFA</td>
+                            </tr>
+                            <tr>
+                                <th>Salaire Maximum</th>
+                                <td>{{ $emploi->max_salary }} FCFA</td>
+                            </tr>
+                            <tr>
+                                <th>Date de création</th>
+                                <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date de mise à jour</th>
+                                <td>{{ $emploi->updated_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                            </tr>
+                        </table>
+
+                        <!-- Bouton pour retourner à la liste des emplois -->
+                        <a href="{{ route('admin.emplois') }}" class="btn btn-primary">Retour à la liste des emplois</a>
+                    </div>
+                    <!-- Fin de la carte -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Fin du wrapper de contenu principal -->
 
 @endsection
