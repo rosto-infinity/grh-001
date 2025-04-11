@@ -57,7 +57,7 @@
                                             value="{{ old('job_title', $emploi->job_title)}}" id="job_title" name="job_title"
                                             placeholder="job_title">
   
-                                        <!-- Affichage de l'erreur pour job_title -->
+                                        <!-- 14-Affichage de l'erreur pour job_title -->
                                         @error('job_title')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
