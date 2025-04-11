@@ -106,5 +106,5 @@
         </div>
     </section>
 </div>
-<!-- Fin du wrapper de contenu principal -->
+<!-- 22-Fin du wrapper de contenu principal -->
 @endsection
