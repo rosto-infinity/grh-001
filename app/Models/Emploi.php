@@ -40,7 +40,7 @@ class Emploi extends Model
 
         return $query;
     }
-
+ // 8-Relation avec le modèle User
     public function users()
 {
     return $this->hasMany(User::class);
