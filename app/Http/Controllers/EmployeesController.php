@@ -57,7 +57,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * Affiche le formulaire d'édition d'un employé.
+     * 6-Affiche le formulaire d'édition d'un employé.
      */
     public function edit($id)
     {
