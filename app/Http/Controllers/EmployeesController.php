@@ -39,7 +39,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * Enregistre un nouvel employé.
+     * 4-Enregistre un nouvel employé.
      */
     public function store(EmployeeRequest $request)
     {
