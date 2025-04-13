@@ -132,7 +132,7 @@
   <!-- /.navbar -->
 
 <!-- 02-Main Sidebar Container -->
-   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+   <aside class="main-sidebar sidebar-dark-primary elevation-4 ">
     <!-- 01-Brand Logo -->
     <a href="/" class=" brand-link">
       <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="Evinsto Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -140,7 +140,7 @@
     </a>
 
     <!-- 02Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar ">
       <!-- 03-Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
@@ -161,19 +161,19 @@
                 <p>Dashboard</p>
             </a>
         </li>
- <li class="nav-item">
-            <a href="{{ route('admin.emplois')}}" class="nav-link {{ Request::segment(2) === 'emplois' ? 'active' : '' }}"">
-                <i class="nav-icon fas fa-briefcase"></i>
-                <p>Jobs</p>
-            </a>
-        </li>
+
           <li class="nav-item">
             <a href="{{ route('admin.employees')}}" class="nav-link {{ Request::segment(2) === 'employees' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>Employees</p>
             </a>
         </li>
-         
+          <li class="nav-item">
+            <a href="{{ route('admin.emplois')}}" class="nav-link {{ Request::segment(2) === 'emplois' ? 'active' : '' }}"">
+                <i class="nav-icon fas fa-briefcase"></i>
+                <p>Jobs</p>
+            </a>
+        </li>
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-history"></i>

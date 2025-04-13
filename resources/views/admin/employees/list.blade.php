@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <h3>Listes des Employees(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{ $employees->total() }}
+                                {{-- {{ $employees->count() }} --}}
                             </span>)
                         </h3>
                     </div>
@@ -47,7 +47,30 @@
                                                 <label for="name">Nom</label>
                                                 <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" value="{{ Request::get('name') }}">
                                             </div>
-                                
+                                            <div class="form-group col-md-6">
+                                                <label for="emploi_id">Job Title <span class="text-red-600">*</span></label>
+                                                <select class="form-control @error('emploi_id') is-invalid @enderror" name="emploi_id"
+                                                    id="emploi_id">
+                                                      <option value="">Sélectionnez un poste</option>
+                                                      @foreach ($commonData['emplois'] as $emploi)
+                                                      <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
+                                                          {{-- <option value="{{ $emploi->id }}" {{ old('job_title ') == $emploi->job_title ? 'selected' : '' }}> --}}
+                                                              {{ $emploi->job_title }}   
+                                                          </option>
+                                                      @endforeach
+                                                      {{-- @foreach ($emplois as $emploi)
+                                                      <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
+                                                          {{ $emploi->job_title }}   
+                                                      </option>
+                                                     @endforeach --}}
+                                                  </select>
+          
+                                                <!-- Affichage de l'erreur pour job_id -->
+                                                @error('emploi_id')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+          
                                             <div class="form-group col-md-3">
                                                 <label for="email">Email</label>
                                                 <input type="text" class="form-control" id="email" name="email" placeholder="rosto@gmail.com" value="{{ Request::get('email') }}">
@@ -89,6 +112,7 @@
                                             <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Role</th>
+                                            <th>Poste</th>
                                             <th>Date de création</th>
                                             <th>Action</th>
                                         </tr>
@@ -100,15 +124,16 @@
                                                  Aucun employé ne correspond à votre recherche... 
                                          </td>
                                         </tr>
-                                        @else
+                                    @else
                                         @foreach ($employees as $employee)
                                             <tr> 
                                                 <td>{{ $employee->name }}</td>
                                                 <td>{{ $employee->last_name }}</td>
                                                 <td>{{ $employee->email }}</td>
                                                 <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR") }}</td>
+                                                <td>{{ $employee->emploi ? $employee->emploi->job_title : 'N/A' }}</td> <!-- Vérification si emploi existe -->
                                                 <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                                                <td>
+                                                <td class="e">
                                                     <a href="{{ route('admin.employees.view', $employee->id) }}" class="btn btn-info btn-sm">
                                                         <i class="nav-icon fas fa-eye mr-1"></i> View
                                                     </a>
@@ -125,10 +150,9 @@
                                                             <i class="nav-icon fas fa-trash-alt mr-1"></i> Supprimer
                                                         </button>
                                                     </form>
-                                                    
-                                                </td>
+                                                 </td>
                                             </tr>
-                                            @endforeach
+                                         @endforeach
                                            
                                      @endif
                                     </tbody>

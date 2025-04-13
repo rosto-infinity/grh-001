@@ -36,11 +36,13 @@ class EmployeesController extends Controller
      */
     public function index(Request $request)
     {
-        $employees = User::filter($request)->paginate(4);
         $commonData = $this->getCommonData();
-
+        // $employees = User::with('emploi')->filter($request)->paginate(4); // Charger la relation emploi
+        $employees = User::filter($request)->paginate(4); // Charger la relation emploi
+        // $employees = array_merge($employees->toArray(), $commonData);
         return view('admin.employees.list', compact('employees', 'commonData'));
     }
+    
 
     /**
      * 3-Affiche le formulaire d'ajout d'un employé.

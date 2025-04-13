@@ -114,21 +114,25 @@
 
                                         {{-- Job Title --}}
                                         <div class="form-group col-md-6">
-                                            <label for="job_id">Job Title <span class="text-red-600">*</span></label>
-                                            <select class="form-control @error('job_id') is-invalid @enderror" name="job_id"
-                                                id="job_id">
-                                                <option value="">Sélectionnez Job Title</option>
-                                                <option value="Php" {{ old('job_id', $employee->job_id) == 'Php' ? 'selected' : '' }}>Php
-                                                </option>
-                                                <option value="Vue" {{ old('job_id', $employee->job_id) == 'Vue' ? 'selected' : '' }}>Vue
-                                                </option>
-                                                <option value="Laravel" {{ old('job_id', $employee->job_id) == 'Laravel' ? 'selected' : '' }}>
-                                                    Laravel</option>
-                                                <option value="postgreSQL" {{ old('job_id', $employee->job_id) == 'postgreSQL' ? 'selected' : '' }}>postgreSQL</option>
-                                            </select>
-
+                                            <label for="emploi_id">Job Title <span class="text-red-600">*</span></label>
+                                            <select class="form-control @error('emploi_id') is-invalid @enderror" name="emploi_id"
+                                                id="emploi_id">
+                                                  <option value="">Sélectionnez un poste</option>
+                                                  @foreach ($commonData['emplois'] as $emploi)
+                                                  <option value="{{ $emploi->id }}" @selected(old('emploi_id', $emploi->job_title) == $emploi->id)>
+                                                      {{-- <option value="{{ $emploi->id }}" {{ old('job_title ') == $emploi->job_title ? 'selected' : '' }}> --}}
+                                                          {{ $emploi->job_title }}   
+                                                      </option>
+                                                  @endforeach
+                                                  {{-- @foreach ($emplois as $emploi)
+                                                  <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
+                                                      {{ $emploi->job_title }}   
+                                                  </option>
+                                                 @endforeach --}}
+                                              </select>
+      
                                             <!-- Affichage de l'erreur pour job_id -->
-                                            @error('job_id')
+                                            @error('emploi_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -162,7 +166,7 @@
                                         </div>
 
                                         {{-- Manager Name --}}
-                                        <div class="form-group col-md-6">
+                                        {{-- <div class="form-group col-md-6">
                                             <label for="manager_id">Manager Name <span class="text-red-600">*</span></label>
                                             <select class="form-control @error('manager_id') is-invalid @enderror"
                                                 name="manager_id" id="manager_id">
@@ -178,10 +182,10 @@
                                             @error('manager_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                        </div>
+                                        </div> --}}
 
                                         {{-- Department Name --}}
-                                        <div class="form-group col-md-6">
+                                        {{-- <div class="form-group col-md-6">
                                             <label for="departement_id">Department Name <span
                                                     class="text-red-600">*</span></label>
                                             <select class="form-control @error('departement_id') is-invalid @enderror"
@@ -197,7 +201,7 @@
                                             @error('departement_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                        </div>
+                                        </div> --}}
 
                                     </div>
                                 </div>
