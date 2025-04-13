@@ -67,7 +67,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * Met à jour les informations d'un employé.
+     * 6-Met à jour les informations d'un employé.
      */
     public function update(EmployeeRequest $request, $id)
     {
