@@ -115,11 +115,16 @@
                                       <select class="form-control @error('emploi_id') is-invalid @enderror" name="emploi_id"
                                           id="emploi_id">
                                             <option value="">Sélectionnez un poste</option>
-                                            @foreach ($commonData['emplois'] as $emploi)
+                                            {{-- @foreach ($commonData['emplois'] as $emploi)
                                                 <option value="{{ $emploi->id }}" {{ old('job_title ') == $emploi->job_title ? 'selected' : '' }}>
                                                     {{ $emploi->job_title }}   
                                                 </option>
-                                            @endforeach
+                                            @endforeach --}}
+                                            @foreach ($emplois as $emploi)
+                                            <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
+                                                {{ $emploi->job_title }}   
+                                            </option>
+                                        @endforeach
                                         </select>
 
                                       <!-- Affichage de l'erreur pour job_id -->

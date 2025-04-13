@@ -19,6 +19,8 @@ class EmployeesController extends Controller
     {
         $this->employeeService = $employeeService;
     }
+
+
     /**
      * 1-Récupère les données communes pour les vues.
      */
@@ -45,7 +47,8 @@ class EmployeesController extends Controller
      */
     public function add()
     {
-        $commonData = $this->getCommonData();
+        $commonData = $this->employeeService->getCommonData();
+        // $commonData = $this->getCommonData();
         return view('admin.employees.add', compact('commonData'));
     }
 

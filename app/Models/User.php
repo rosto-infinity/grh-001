@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'phone_number',
         'hire_date',
-        'job_id', 
+        'emploi_id', 
         'salary', 
         'commission_pct',
           'manager_id',

@@ -29,7 +29,7 @@ class EmployeeRequest extends FormRequest
             'email' => 'required|string|lowercase|email|max:255|unique:users,email,' . $this->route('id'), // 0019-Exclure l'ID actuel de la vérification unique
             'phone_number' => 'required|string|max:20', // 20-Validation pour le numéro de téléphone
             'hire_date' => 'required|date',
-            'job_id' => 'required',
+            'emploi_id' => 'required|exists:emplois,id', // 21-Vérifie que emploi_id existe dans la table emplois
             'salary' => 'required|numeric|min:0|max:500000', // 21-Assurez-vous que le salaire est positif
             'commission_pct' => 'required|numeric|min:0|max:100', // 22-Pourcentage de commission entre 0 et 100
             'manager_id' => 'required',
