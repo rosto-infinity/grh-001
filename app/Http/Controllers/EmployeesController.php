@@ -78,7 +78,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * Supprime un employé.
+     * 7-Supprime un employé.
      */
     public function destroy($id)
     {
