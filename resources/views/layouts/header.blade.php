@@ -161,19 +161,19 @@
                 <p>Dashboard</p>
             </a>
         </li>
-
+ <li class="nav-item">
+            <a href="{{ route('admin.emplois')}}" class="nav-link {{ Request::segment(2) === 'emplois' ? 'active' : '' }}"">
+                <i class="nav-icon fas fa-briefcase"></i>
+                <p>Jobs</p>
+            </a>
+        </li>
           <li class="nav-item">
             <a href="{{ route('admin.employees')}}" class="nav-link {{ Request::segment(2) === 'employees' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>Employees</p>
             </a>
         </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.emplois')}}" class="nav-link {{ Request::segment(2) === 'emplois' ? 'active' : '' }}"">
-                <i class="nav-icon fas fa-briefcase"></i>
-                <p>Jobs</p>
-            </a>
-        </li>
+         
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-history"></i>

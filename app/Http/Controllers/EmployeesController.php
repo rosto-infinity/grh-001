@@ -13,12 +13,12 @@ class EmployeesController extends Controller
     /**
      * 0-Constructeur pour initialiser le service d'employé.
      */
-    protected $employeeService;
+    // protected $employeeService;
 
-    public function __construct(EmployeeService $employeeService)
-    {
-        $this->employeeService = $employeeService;
-    }
+    // public function __construct(EmployeeService $employeeService)
+    // {
+    //     $this->employeeService = $employeeService;
+    // }
 
 
     /**
@@ -47,8 +47,8 @@ class EmployeesController extends Controller
      */
     public function add()
     {
-        $commonData = $this->employeeService->getCommonData();
-        // $commonData = $this->getCommonData();
+        // $commonData = $this->employeeService->getCommonData();
+        $commonData = $this->getCommonData();
         return view('admin.employees.add', compact('commonData'));
     }
 

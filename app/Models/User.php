@@ -25,8 +25,8 @@ class User extends Authenticatable
         'emploi_id', 
         'salary', 
         'commission_pct',
-          'manager_id',
-           'departement_id',
+        // 'manager_id',
+        // 'departement_id',
         'password',
     ];
 

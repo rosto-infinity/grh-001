@@ -19,6 +19,7 @@ return new class extends Migration
                   ->onDelete('cascade')
                   ->after('hire_date');
             $table->decimal('salary', 10, 2)->nullable()->after('emploi_id');
+            $table->decimal('commission_pct', 10, 2)->nullable()->after('salary');
         });
     }
 
@@ -29,7 +30,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['emploi_id']);
-            $table->dropColumn(['last_name', 'phone_number', 'hire_date', 'emploi_id', 'salary']);
+            $table->dropColumn(['last_name', 'phone_number', 'hire_date', 'emploi_id', 'salary','commission_pct']);
         });
     }
 };
