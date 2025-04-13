@@ -30,7 +30,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * Affiche le formulaire d'ajout d'un employé.
+     * 3-Affiche le formulaire d'ajout d'un employé.
      */
     public function add()
     {
