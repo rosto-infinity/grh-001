@@ -79,7 +79,7 @@ class User extends Authenticatable
         return $query;
     }
 
-
+// 10-Reletion avec le modèle Emploi
     public function emploi()
     {
         return $this->belongsTo(Emploi::class);
