@@ -11,7 +11,7 @@ class EmployeeService
     public function getCommonData(): array
     {
       // 2-Récupère les données communes pour les vues.
-        $emplois = Emploi::all();
+        $emplois = Emploi::all(); 
         return compact('emplois');
     }
 }

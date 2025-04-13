@@ -6,9 +6,19 @@ use App\Models\User;
 use App\Models\Emploi;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmployeeRequest;
+use App\Services\EmployeeService;
 
 class EmployeesController extends Controller
 {
+    /**
+     * 0-Constructeur pour initialiser le service d'employé.
+     */
+    protected $employeeService;
+
+    public function __construct(EmployeeService $employeeService)
+    {
+        $this->employeeService = $employeeService;
+    }
     /**
      * 1-Récupère les données communes pour les vues.
      */
@@ -18,6 +28,7 @@ class EmployeesController extends Controller
         return compact('emplois');
     }
 
+   
     /**
      * 2-Affiche la liste des employés avec pagination.
      */
