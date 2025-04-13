@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Emplois extends Model
+class Emploi extends Model
 {
     /*
 
@@ -40,4 +40,9 @@ class Emplois extends Model
 
         return $query;
     }
+
+    public function users()
+{
+    return $this->hasMany(User::class);
+}
 }

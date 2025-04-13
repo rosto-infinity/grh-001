@@ -1,83 +1,90 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Emploi;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmployeeRequest;
 
 class EmployeesController extends Controller
 {
+    /**
+     * 1-Récupère les données communes pour les vues.
+     */
+    private function getCommonData(): array
+    {
+        $emplois = Emploi::all();
+        return compact('emplois');
+    }
 
-    
+    /**
+     * Affiche la liste des employés avec pagination.
+     */
     public function index(Request $request)
     {
-        // 4-Utilisation de la méthode filter du modèle Employees
-        $employeesQuery = User::filter($request);
-    
-        // 5-Pagination
-        $employees = $employeesQuery->paginate(4);
-    
-        return view('admin.employees.list', compact('employees'));
+        $employees = User::filter($request)->paginate(4);
+        $commonData = $this->getCommonData();
+
+        return view('admin.employees.list', compact('employees', 'commonData'));
     }
-    
+
     /**
-     * Summary of add
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Contracts\View\View
+     * Affiche le formulaire d'ajout d'un employé.
      */
-    public function add(Request $request)
+    public function add()
     {
-        return view('admin.employees.add');
+        $commonData = $this->getCommonData();
+        return view('admin.employees.add', compact('commonData'));
     }
+
     /**
-     * Summary of store
-     * @param \App\Http\Requests\EmployeeRequest $request
-     * @return \Illuminate\Http\RedirectResponse
+     * Enregistre un nouvel employé.
      */
     public function store(EmployeeRequest $request)
     {
-        // 1. Validate the request
         User::create($request->validated());
-    
-        // 3. Redirect or return a response
-        return redirect()->route('admin.employees')->with('success', 'Employee added successfully.');
+        return redirect()->route('admin.employees')->with('success', 'Employé ajouté avec succès.');
     }
+
+    /**
+     * Affiche les détails d'un employé.
+     */
     public function view($id)
     {
-        // 2. Fetch the employee data by ID
-        $employee = User::findOrFail($id); // Find or fail
+        $employee = User::findOrFail($id);
         return view('admin.employees.view', compact('employee'));
     }
+
+    /**
+     * Affiche le formulaire d'édition d'un employé.
+     */
     public function edit($id)
-{
-    // 3-Récupérer l'employé par ID
-    $employee = User::findOrFail($id);
+    {
+        $employee = User::findOrFail($id);
+        $commonData = $this->getCommonData();
+        return view('admin.employees.edit', compact('employee', 'commonData'));
+    }
 
-    // 4-Retourner la vue avec les données de l'employé
-    return view('admin.employees.edit', compact('employee'));
-}
+    /**
+     * Met à jour les informations d'un employé.
+     */
+    public function update(EmployeeRequest $request, $id)
+    {
+        $employee = User::findOrFail($id);
+        $employee->update($request->validated());
 
-public function update(EmployeeRequest $request, $id)
-{
-    $employee = User::findOrFail($id); // Trouver l'employé ou échouer
-    // 5 - Mettre à jour l'employé avec les données validées
-    $employee->update($request->validated());
- 
-    return redirect()->route('admin.employees')->with('success', 'Employé mis à jour avec succès.');
-}
-/**
- * 6-Summary of destroy
- * @param mixed $id
- * @return \Illuminate\Http\RedirectResponse
- */
+        return redirect()->route('admin.employees')->with('success', 'Employé mis à jour avec succès.');
+    }
+
+    /**
+     * Supprime un employé.
+     */
     public function destroy($id)
-{
-    // 6 - Supprimer l'employé par ID
-    $employee = User::findOrFail($id); // Trouver l'employé ou échouer
-    $employee->delete(); // Supprimer l'employé
+    {
+        $employee = User::findOrFail($id);
+        $employee->delete();
 
-    // 7 - Rediriger ou retourner une réponse
-    return redirect()->route('admin.employees')->with('success', 'Employee deleted successfully.');
-}
-
+        return redirect()->route('admin.employees')->with('success', 'Employé supprimé avec succès.');
+    }
 }

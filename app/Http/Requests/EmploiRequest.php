@@ -24,7 +24,7 @@ class EmploiRequest extends FormRequest
         return [
             //Emplois
             'job_title' => 'required|string|max:255',
-            'min_salary' => 'required|numeric|min:0|max:200000',
+            'min_salary' => 'required|numeric|min:0|max:250000',
             'max_salary' => 'required|numeric|min:0|max:500000|gte:min_salary', // 3-Vérifie que max_salary >= min_salary
         ];
     }

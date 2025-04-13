@@ -78,4 +78,10 @@ class User extends Authenticatable
 
         return $query;
     }
+
+
+    public function emploi()
+    {
+        return $this->belongsTo(Emploi::class);
+    }
 }

@@ -1,6 +1,3 @@
-@extends('layouts.application')
-@section('title')
-@section('content')
 
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -114,21 +111,19 @@
 
                                   {{--10- Job Title --}}
                                   <div class="form-group col-md-6">
-                                      <label for="job_id">Job Title <span class="text-red-600">*</span></label>
-                                      <select class="form-control @error('job_id') is-invalid @enderror" name="job_id"
-                                          id="job_id">
-                                          <option value="">Sélectionnez Job Title</option>
-                                          <option value="Php" {{ old('job_id') == 'Php' ? 'selected' : '' }}>Php
-                                          </option>
-                                          <option value="Vue" {{ old('job_id') == 'Vue' ? 'selected' : '' }}>Vue
-                                          </option>
-                                          <option value="Laravel" {{ old('job_id') == 'Laravel' ? 'selected' : '' }}>
-                                              Laravel</option>
-                                          <option value="postgreSQL" {{ old('job_id') == 'postgreSQL' ? 'selected' : '' }}>postgreSQL</option>
-                                      </select>
+                                      <label for="emploi_id">Job Title <span class="text-red-600">*</span></label>
+                                      <select class="form-control @error('emploi_id') is-invalid @enderror" name="emploi_id"
+                                          id="emploi_id">
+                                            <option value="">Sélectionnez un poste</option>
+                                            @foreach ($commonData['emplois'] as $emploi)
+                                                <option value="{{ $emploi->id }}" {{ old('job_title ') == $emploi->job_title ? 'selected' : '' }}>
+                                                    {{ $emploi->job_title }}   
+                                                </option>
+                                            @endforeach
+                                        </select>
 
                                       <!-- Affichage de l'erreur pour job_id -->
-                                      @error('job_id')
+                                      @error('emploi_id')
                                           <div class="invalid-feedback">{{ $message }}</div>
                                       @enderror
                                   </div>
@@ -215,4 +210,3 @@
   </section>
 </div>
 <!-- /.content-wrapper -->
-@endsection

@@ -99,7 +99,7 @@
                                         @if ($emplois->isEmpty()) 
                                         <tr>
                                             <td  colspan="6" class="text-center"> 
-                                                 Aucun employé ne correspond à votre recherche... 
+                                                 Aucun emplois... 
                                          </td>
                                         </tr>
                                         @else
