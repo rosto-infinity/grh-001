@@ -19,7 +19,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * Affiche la liste des employés avec pagination.
+     * 2-Affiche la liste des employés avec pagination.
      */
     public function index(Request $request)
     {
