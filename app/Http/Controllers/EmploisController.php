@@ -64,7 +64,7 @@ public function update(EmploiRequest $request, $id)
 
     public function destroy($id)
 {
-    // 6 - Supprimer l'employé par ID
+    // 6 - -Supprimer l'employé par ID
     $emploi = Emploi::findOrFail($id); // Trouver l'employé ou échouer
     $emploi->delete(); // Supprimer l'employé
 
