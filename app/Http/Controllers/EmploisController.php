@@ -49,7 +49,7 @@ class EmploisController extends Controller
     // 3-0Récupérer l'employé par ID
     $emploi = Emploi::findOrFail($id);
 
-    // 4-Retourner la vue avec les données de l'employé
+    // 4-0Retourner la vue avec les données de l'employé
     return view('admin.emplois.edit', compact('emploi'));
 }
 
