@@ -55,7 +55,7 @@ class EmploisController extends Controller
 
 public function update(EmploiRequest $request, $id)
 {
-    $emploi = Emploi::findOrFail($id); // Trouver l'employé ou échouer
+    $emploi = Emploi::findOrFail($id); // -Trouver l'employé ou échouer
     // 5 - Mettre à jour l'employé avec les données validées
     $emploi->update($request->validated());
  
