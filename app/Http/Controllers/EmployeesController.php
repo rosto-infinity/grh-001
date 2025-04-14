@@ -57,7 +57,7 @@ class EmployeesController extends Controller
     }
 
     /**
-     * 5-Affiche les détails d'un employé.
+     * 5--Affiche les détails d'un employé.
      */
     public function view($id)
     {
