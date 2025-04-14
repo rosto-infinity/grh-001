@@ -33,7 +33,7 @@ class EmploisController extends Controller
         // 01. Validate the request
         Emploi::create($request->validated());
     
-        // 3. Redirect or return a response
+        // 03. Redirect or return a response
         return redirect()->route('admin.emplois')->with('success', 'emploi added successfully.');
     }
     public function view($id)
