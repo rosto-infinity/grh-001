@@ -54,7 +54,7 @@
                                 </tr>
                                 <tr>
                                     <th>ID du poste</th>
-                                    <td>{{ $employee->job_id }}</td>
+                                    <td>{{ $employee->emploi_id }}</td>
                                 </tr>
                                 <tr>
                                     <th>Salaire</th>

@@ -47,13 +47,13 @@
 
                                   {{-- 32 First Name --}}
                                   <div class="form-group col-md-6">
-                                      <label for="job_title">Job<span class="text-red-600">*</span> </label>
+                                      <label for="emploi_title">Job<span class="text-red-600">*</span> </label>
                                       <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                          value="{{ old('job_title')}}" id="job_title" name="job_title"
-                                          placeholder="job_title">
+                                          value="{{ old('emploi_title')}}" id="emploi_title" name="emploi_title"
+                                          placeholder="emploi_title">
 
                                       <!-- Affichage de l'erreur pour name -->
-                                      @error('job_title')
+                                      @error('emploi_title')
                                           <div class="invalid-feedback">{{ $message }}</div>
                                       @enderror
                                   </div>

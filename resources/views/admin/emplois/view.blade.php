@@ -10,7 +10,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <!-- 3-Titre de l'emploi affiché -->
-                    <h3>Emploi : {{ $emploi->job_title }}</h3>
+                    <h3>Emploi : {{ $emploi->emploi_title }}</h3>
                 </div>
                 <div class="text-right col-sm-6">
                     <!-- 4-Bouton pour revenir à la liste des emplois -->
@@ -36,7 +36,7 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th>Titre du poste</th>
-                                <td>{{ $emploi->job_title }}</td>
+                                <td>{{ $emploi->emploi_title }}</td>
                             </tr>
                             <tr>
                                 <th>Salaire Minimum</th>

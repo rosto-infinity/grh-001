@@ -30,7 +30,7 @@ class EmploisController extends Controller
      */
     public function store(EmploiRequest $request)
     {
-        // 1. Validate the request
+        // 01. Validate the request
         Emploi::create($request->validated());
     
         // 3. Redirect or return a response

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('phone_number')->nullable()->after('email');
             $table->date('hire_date')->nullable()->after('phone_number');
             $table->foreignId('emploi_id')
-            ->nullable()->constrained('emplois')
+                  ->nullable()->constrained('emplois')
                   ->onDelete('cascade')
                   ->after('hire_date');
             $table->decimal('salary', 10, 2)->nullable()->after('emploi_id');

@@ -39,10 +39,10 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-3">
-                                                <label for="job_title">Job title
+                                                <label for="emploi_title">Job title
 
                                                 </label>
-                                                <input type="text" class="form-control" id="job_title" name="job_title" placeholder="Entrez votre job_title" value="{{ Request::get('job_title') }}">
+                                                <input type="text" class="form-control" id="emploi_title" name="emploi_title" placeholder="Entrez votre emploi_title" value="{{ Request::get('emploi_title') }}">
                                             </div>
                                 
                                             <div class="form-group col-md-3">
@@ -105,7 +105,7 @@
                                         @else
                                         @foreach ($emplois as $emploi)
                                             <tr> 
-                                                <td>{{ $emploi->job_title }}</td>
+                                                <td>{{ $emploi->emploi_title }}</td>
                                                 <td>{{ $emploi->min_salary }}</td>
                                                 <td>{{ $emploi->max_salary }}</td>
                                                

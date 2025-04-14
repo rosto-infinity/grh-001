@@ -119,14 +119,14 @@
                                                 id="emploi_id">
                                                   <option value="">Sélectionnez un poste</option>
                                                   @foreach ($commonData['emplois'] as $emploi)
-                                                  <option value="{{ $emploi->id }}" @selected(old('emploi_id', $emploi->job_title) == $emploi->id)>
-                                                      {{-- <option value="{{ $emploi->id }}" {{ old('job_title ') == $emploi->job_title ? 'selected' : '' }}> --}}
-                                                          {{ $emploi->job_title }}   
+                                                  <option value="{{ $emploi->id }}" @selected(old('emploi_id', $emploi->emploi_title) == $emploi->id)>
+                                                      {{-- <option value="{{ $emploi->id }}" {{ old('emploi_title ') == $emploi->emploi_title ? 'selected' : '' }}> --}}
+                                                          {{ $emploi->emploi_title }}   
                                                       </option>
                                                   @endforeach
                                                   {{-- @foreach ($emplois as $emploi)
                                                   <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
-                                                      {{ $emploi->job_title }}   
+                                                      {{ $emploi->emploi_title }}   
                                                   </option>
                                                  @endforeach --}}
                                               </select>

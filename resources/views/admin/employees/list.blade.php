@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <h3>Listes des Employees(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{-- {{ $employees->count() }} --}}
+                                {{ $employees->count() }}
                             </span>)
                         </h3>
                     </div>
@@ -40,6 +40,7 @@
                                         <div class="row">
                                             <div class="form-group col-md-3">
                                                 <label for="last_name">Last name</label>
+                                
                                                 <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Entrez votre last_name" value="{{ Request::get('last_name') }}">
                                             </div>
                                 
@@ -54,13 +55,13 @@
                                                       <option value="">Sélectionnez un poste</option>
                                                       @foreach ($commonData['emplois'] as $emploi)
                                                       <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
-                                                          {{-- <option value="{{ $emploi->id }}" {{ old('job_title ') == $emploi->job_title ? 'selected' : '' }}> --}}
-                                                              {{ $emploi->job_title }}   
+                                                          {{-- <option value="{{ $emploi->id }}" {{ old('emploi_title ') == $emploi->emploi_title ? 'selected' : '' }}> --}}
+                                                              {{ $emploi->emploi_title }}   
                                                           </option>
                                                       @endforeach
                                                       {{-- @foreach ($emplois as $emploi)
                                                       <option value="{{ $emploi->id }}" @selected(old('emploi_id') == $emploi->id)>
-                                                          {{ $emploi->job_title }}   
+                                                          {{ $emploi->emploi_title }}   
                                                       </option>
                                                      @endforeach --}}
                                                   </select>
@@ -131,7 +132,7 @@
                                                 <td>{{ $employee->last_name }}</td>
                                                 <td>{{ $employee->email }}</td>
                                                 <td>{{ (!empty($employee->usertype === 'admin') ? 'Employees' : "HR") }}</td>
-                                                <td>{{ $employee->emploi ? $employee->emploi->job_title : 'N/A' }}</td> <!-- Vérification si emploi existe -->
+                                                <td>{{ $employee->emploi ? $employee->emploi->emploi_title : 'N/A' }}</td> <!-- Vérification si emploi existe -->
                                                 <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td class="e">
                                                     <a href="{{ route('admin.employees.view', $employee->id) }}" class="btn btn-info btn-sm">

@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Emploi extends Model
 {
+    
+
+    
     /*
 
     */
     protected $fillable =[
-        'job_title',
+        'emploi_title',
         'min_salary',
         'max_salary'
     ];
@@ -19,8 +22,8 @@ class Emploi extends Model
         $query = self::query();
 
         // 04-Filtrage par nom
-        if ($request->filled('job_title')) {
-            $query->where('job_title', 'like', '%' . $request->input('job_title') . '%');
+        if ($request->filled('emploi_title')) {
+            $query->where('emploi_title', 'like', '%' . $request->input('emploi_title') . '%');
         }
 
         // 05--Filtrage par nom de famille

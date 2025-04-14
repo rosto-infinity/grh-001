@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('emplois', function (Blueprint $table) {
             $table->id(); // 00-Colonne id, auto-incrémentée
-            $table->string('job_title')->nullable(); // 001-Colonne job_title, par défaut null
+            $table->string('emploi_title')->nullable(); // 001-Colonne job_title, par défaut null
             $table->string('min_salary')->nullable(); // 03-Colonne min_salary, par défaut null
             $table->string('max_salary')->nullable(); // 04-Colonne max_salary, par défaut null
             $table->timestamps(); 

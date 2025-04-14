@@ -29,17 +29,10 @@ class EmployeesController extends Controller
         $emplois = Emploi::all();
         return compact('emplois');
     }
-
-   
-    /**
-     * 2-Affiche la liste des employés avec pagination.
-     */
     public function index(Request $request)
     {
         $commonData = $this->getCommonData();
-        // $employees = User::with('emploi')->filter($request)->paginate(4); // Charger la relation emploi
-        $employees = User::filter($request)->paginate(4); // Charger la relation emploi
-        // $employees = array_merge($employees->toArray(), $commonData);
+        $employees = User::filter($request)->paginate(4); 
         return view('admin.employees.list', compact('employees', 'commonData'));
     }
     

@@ -52,13 +52,13 @@
   
                                     {{-- 14-Champ pour le titre du poste --}}
                                     <div class="form-group col-md-6">
-                                        <label for="job_title">Job<span class="text-red-600">*</span> </label>
+                                        <label for="emploi_title">Job<span class="text-red-600">*</span> </label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                            value="{{ old('job_title', $emploi->job_title)}}" id="job_title" name="job_title"
-                                            placeholder="job_title">
+                                            value="{{ old('emploi_title', $emploi->emploi_title)}}" id="emploi_title" name="emploi_title"
+                                            placeholder="emploi_title">
   
-                                        <!-- 14-Affichage de l'erreur pour job_title -->
-                                        @error('job_title')
+                                        <!-- 14-Affichage de l'erreur pour emploi_title -->
+                                        @error('emploi_title')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
