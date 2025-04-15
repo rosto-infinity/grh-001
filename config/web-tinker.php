@@ -8,7 +8,7 @@ return [
     'path' => '/tinker',
 
     /*
-     * Possible values are 'auto', 'light' and 'dark'.
+     * 2-Possible values are 'auto', 'light' and 'dark'.
      */
     'theme' => 'auto',
 
