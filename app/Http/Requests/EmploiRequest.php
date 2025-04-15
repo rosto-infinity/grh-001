@@ -23,7 +23,7 @@ class EmploiRequest extends FormRequest
     {
         return [
             //Emplois
-            'emploi_title' => 'required|string|max:255',
+            'emploi_title' => 'required|string|max:100|unique:emplois,emploi_title,' . $this->route('id'),
             'min_salary' => 'required|numeric|min:0|max:250000',
             'max_salary' => 'required|numeric|min:0|max:500000|gte:min_salary', // 3-Vérifie que max_salary >= min_salary
         ];
@@ -38,6 +38,7 @@ class EmploiRequest extends FormRequest
     {
         return [
             'emploi_title.required' => 'Le titre du poste est obligatoire.',
+            'emploi_title.unique' => 'Le titre du poste  est déjà utilisée.',
             'min_salary.required' => 'Le salaire minimum est obligatoire.',
             'max_salary.required' => 'Le salaire maximum est obligatoire.',
             'max_salary.gte' => 'Le salaire maximum doit être supérieur ou égal au salaire minimum.',
