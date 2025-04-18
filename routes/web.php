@@ -61,7 +61,7 @@ Route::post('admin/emploi_histories', [EmploiHistoryController::class, 'store'])
 Route::get('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'show'])->name('admin.emploi_histories.show'); // 23--Show emploi_history details
 Route::get('admin/emploi_histories/{id}/edit', [EmploiHistoryController::class, 'edit'])->name('admin.emploi_histories.edit'); // 24--Edit emploi_history
 Route::patch('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'update'])->name('admin.emploi_histories.update'); // 25--Update emploi_history
-Route::delete('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'destroy'])->name('admin.emploi_histories.destroy'); // 26-Delete emploi_history
+Route::delete('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'destroy'])->name('admin.emploi_histories.destroy'); // 26--Delete emploi_history
 
 
  
