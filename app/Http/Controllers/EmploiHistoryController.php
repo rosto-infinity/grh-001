@@ -107,7 +107,7 @@ class EmploiHistoryController extends Controller
     }
 
     /**
-     * Supprime un historique.
+     * --Supprime un historique.
      */
     public function destroy(int $id): RedirectResponse
     {
