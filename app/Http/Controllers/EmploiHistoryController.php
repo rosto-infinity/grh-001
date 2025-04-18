@@ -22,7 +22,7 @@ class EmploiHistoryController extends Controller
     
         // 3-. Pagination (conserve ?user_id=..&emploi_id=..)
         $emploisHistories = $query->paginate(10)
-                                  ->withQueryString();    // pagination SQL-optimisée :contentReference[oaicite:4]{index=4}
+                                  ->withQueryString();    // -pagination SQL-optimisée :contentReference[oaicite:4]{index=4}
     
         return view('admin.emplois_histories.list', compact('emploisHistories', 'users', 'emplois'));
     }
