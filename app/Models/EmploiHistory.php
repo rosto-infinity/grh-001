@@ -31,7 +31,7 @@ class EmploiHistory extends Model
      */
     public function scopeFilter(Builder $query, Request $request)
     {
-        // Filtrage par utilisateur
+        // 2-Filtrage par utilisateur
         if ($request->filled('user_id')) {
             $query->where('user_id', $request->input('user_id'));
         }
