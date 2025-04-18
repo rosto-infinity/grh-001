@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('emploi_histories', function (Blueprint $table) {
             $table->id();
 
-            // Relation avec les utilisateurs
+            // 2-Relation avec les utilisateurs
             $table->foreignId('user_id')
                   ->nullable()
                   ->constrained()
