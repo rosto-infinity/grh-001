@@ -26,7 +26,7 @@ return new class extends Migration
                   ->constrained()
                   ->onDelete('cascade');
 
-            // Dates de début et de fin (de type date ou datetime, pas integer)
+            // 5-Dates de début et de fin (de type date ou datetime, pas integer)
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
 
