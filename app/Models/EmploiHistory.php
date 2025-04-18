@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EmploiHistory extends Model
 {
     /**
-     * Les attributs pouvant être assignés en masse.
+     * 3-Les attributs pouvant être assignés en masse.
      *
      * @var array<int, string>
      */
