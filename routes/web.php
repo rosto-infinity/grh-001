@@ -54,7 +54,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy');// 019-Delete emploi
 });
 
-// EmploiHistory Routes
+// -EmploiHistory Routes
 Route::get('admin/emploi_histories', [EmploiHistoryController::class, 'index'])->name('admin.emploi_histories'); // 20-List all emploi_histories
 Route::get('admin/emploi_histories/create', [EmploiHistoryController::class, 'create'])->name('admin.emploi_histories.create'); // 21-Create emploi_history form
 Route::post('admin/emploi_histories', [EmploiHistoryController::class, 'store'])->name('admin.emploi_histories.store'); // 22-Store emploi_history
