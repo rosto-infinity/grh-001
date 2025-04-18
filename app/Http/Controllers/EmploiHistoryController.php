@@ -50,7 +50,7 @@ class EmploiHistoryController extends Controller
     }
 
     /**
-     * Stocke un nouvel historique validé par EmploiHistoryRequest.
+     * -Stocke un nouvel historique validé par EmploiHistoryRequest.
      */
     public function store(EmploiHistoryRequest $request): RedirectResponse
     {
