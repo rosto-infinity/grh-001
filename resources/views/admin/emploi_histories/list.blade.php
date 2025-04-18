@@ -50,9 +50,9 @@
                                 <td>{{ $history->id }}</td>
                                 <td>{{ $history->user ? $history->user->name : '—' }}</td>
                                 <td>{{ $history->emploi ? $history->emploi->emploi_title : '—' }}</td>
-                                <td>{{ optional($history->start_date)->format('d/m/Y') ?? '—' }}</td>
-                                <td>{{ optional($history->end_date)->format('d/m/Y') ?? '—' }}</td>
-                                <td>{{ $history->created_at->translatedFormat('d/m/Y H\hi') }}</td>
+                                <td>{{ $history->start_date}}</td>
+                                <td>{{ $history->end_date }}</td>
+                                <td>{{ $history->created_at }}</td>
                                 <td>
                                     <a href="{{ route('admin.emploi_histories.show', $history->id) }}" class="btn btn-info btn-sm">
                                         <i class="fas fa-eye"></i>
