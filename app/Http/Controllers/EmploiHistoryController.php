@@ -78,7 +78,7 @@ class EmploiHistoryController extends Controller
     }
 
     /**
-     * Affiche le formulaire d’édition pré-rempli.
+     * --Affiche le formulaire d’édition pré-rempli.
      */
     public function edit(int $id): View
     {
