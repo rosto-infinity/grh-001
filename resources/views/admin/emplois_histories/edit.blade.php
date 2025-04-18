@@ -47,7 +47,7 @@
 
                             <div class="card-body">
                                 <div class="row">
-                                    {{-- Utilisateur --}}
+                                    {{-- -Utilisateur --}}
                                     <div class="form-group col-md-6">
                                         <label for="user_id">Utilisateur <span class="text-red-600">*</span></label>
                                         <select name="user_id" id="user_id"
