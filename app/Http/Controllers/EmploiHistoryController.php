@@ -55,7 +55,7 @@ class EmploiHistoryController extends Controller
     public function store(EmploiHistoryRequest $request): RedirectResponse
     {
         EmploiHistory::create(
-            $request->validated()                      // validated() renvoie seulement les champs valides :contentReference[oaicite:7]{index=7}
+            $request->validated()                      // -validated() renvoie seulement les champs valides :contentReference[oaicite:7]{index=7}
         );
 
         return redirect()
