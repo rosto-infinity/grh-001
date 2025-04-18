@@ -1,70 +1,97 @@
 @extends('layouts.application')
 
-@section('content')
+@section('title', 'Détail de l\'historique d\'emploi')
 
-<!-- 01-Wrapper de contenu principal -->
+@section('content')
 <div class="content-wrapper">
-    <!-- 2-En-tête de contenu (Page header) -->
+    <!-- -En-tête de page -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <!-- 3-Titre de l'emploi affiché -->
-                    <h3>Emploi : {{ $emploi->emploi_title }}</h3>
+                    <h3>Historique #{{ $emploiHistory->id }}</h3>
                 </div>
-                <div class="text-right col-sm-6">
-                    <!-- 4-Bouton pour revenir à la liste des emplois -->
-                    <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
+                <div class="col-sm-6 text-right">
+                    <a href="{{ route('admin.emplois_histories') }}" class="btn btn-secondary">
+                        Retour à la liste
+                    </a>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
 
+    <!-- Contenu principal -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <!-- 5-Titre de la carte d'informations -->
-                            <h3 class="card-title">Informations sur l'emploi</h3>
-                        </div>
-                        <!-- 6-Fin de l'en-tête de carte -->
-                        <h1>Détails de l'emploi</h1>
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Détails de l'historique</h3>
+                </div>
 
-                        <!-- 7-Tableau affichant les détails de l'emploi -->
-                        <table class="table table-bordered">
-                            <tr>
-                                <th>Titre du poste</th>
-                                <td>{{ $emploi->emploi_title }}</td>
-                            </tr>
-                            <tr>
-                                <th>Salaire Minimum</th>
-                                <td>{{ $emploi->min_salary }} FCFA</td>
-                            </tr>
-                            <tr>
-                                <th>Salaire Maximum</th>
-                                <td>{{ $emploi->max_salary }} FCFA</td>
-                            </tr>
-                            <tr>
-                                <th>Date de création</th>
-                                <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                            </tr>
-                            <tr>
-                                <th>Date de mise à jour</th>
-                                <td>{{ $emploi->updated_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
-                            </tr>
-                        </table>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>ID</th>
+                            <td>{{ $emploiHistory->id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Utilisateur</th>
+                            <td>
+                                {{ optional($emploiHistory->user)->name ?? '—' }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Emploi</th>
+                            <td>
+                                {{ optional($emploiHistory->emploi)->emploi_title ?? '—' }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Date de début</th>
+                            <td>
+                                {{ $emploiHistory->start_date 
+                                    ? \Carbon\Carbon::parse($emploiHistory->start_date)
+                                        ->translatedFormat('l d/m/Y') 
+                                    : '—' 
+                                }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Date de fin</th>
+                            <td>
+                                {{ $emploiHistory->end_date 
+                                    ? \Carbon\Carbon::parse($emploiHistory->end_date)
+                                        ->translatedFormat('l d/m/Y') 
+                                    : '—' 
+                                }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Créé le</th>
+                            <td>
+                                {{ $emploiHistory->created_at
+                                    ->translatedFormat('l d/m/Y \à H\hi') 
+                                }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Mis à jour le</th>
+                            <td>
+                                {{ $emploiHistory->updated_at
+                                    ->translatedFormat('l d/m/Y \à H\hi') 
+                                }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-                        <!--8-Bouton pour retourner à la liste des emplois -->
-                        <a href="{{ route('admin.emplois') }}" class="btn btn-primary">Retour à la liste des emplois</a>
-                    </div>
-                    <!-- Fin de la carte -->
+                <div class="card-footer">
+                    <a href="{{ route('admin.emplois_histories') }}" class="btn btn-primary">
+                        Retour à la liste
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 </div>
-<!-- Fin du wrapper de contenu principal -->
-
 @endsection
