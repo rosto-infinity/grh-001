@@ -23,7 +23,7 @@ class EmploiHistoryController extends Controller
 
         // 2-. Application du scope filter et chargement des relations pour éviter le N+1
         $query = EmploiHistory::with(['user', 'emploi'])
-                              ->filter($request);       // scope local défini sur le modèle :contentReference[oaicite:5]{index=5}
+                              ->filter($request);       // -scope local défini sur le modèle :contentReference[oaicite:5]{index=5}
 
         // 3. Pagination optimisée et conservation des query string
         $emploisHistories = $query->paginate(10)
