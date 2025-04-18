@@ -10,14 +10,21 @@ use Illuminate\Http\Request;
 
 class EmploiHistoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Re
-        $emploiHistories = EmploiHistory::with(['user','emploi'])
-                                         ->latest()
-                                         ->paginate(2);
+        // 1-. Listes pour les selects
+        $users   = User::pluck('name', 'id');               // ne charge que id et name :contentReference[oaicite:3]{index=3}
+        $emplois = Emploi::pluck('emploi_title', 'id');
     
-        return view('admin.emplois_histories.list', compact('emploiHistories'));
+        // 2. Requête principale avec relations + filtres
+        $query = EmploiHistory::with(['user', 'emploi'])
+                              ->filter($request);
+    
+        // 3. Pagination (conserve ?user_id=..&emploi_id=..)
+        $emploisHistories = $query->paginate(10)
+                                  ->withQueryString();    // pagination SQL-optimisée :contentReference[oaicite:4]{index=4}
+    
+        return view('admin.emplois_histories.list', compact('emploisHistories', 'users', 'emplois'));
     }
     public function create()
 {
@@ -34,5 +41,10 @@ public function store(EmploiHistoryRequest $request)
     return redirect()->route('admin.emplois_histories')->with('success', 'emplois_histories ajouté avec succès.');
 }
 
-    
+    public function destroy($id)
+    {
+        $emploisHistories =EmploiHistory::findOrFail($id);
+        $emploisHistories->delete();
+        return redirect()->route('admin.emplois_histories')->with('success', 'emploisHistory deleted successfully.');
+    }
 }

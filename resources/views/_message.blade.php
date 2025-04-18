@@ -1,7 +1,9 @@
 @if (!empty(session('success')))
+ <div class="px-7">
     <div class="alert alert-success " role="alert">
       {{ session('success') }}
     </div>
+  </div>
 @endif
 
 @if (!empty(session('error')))

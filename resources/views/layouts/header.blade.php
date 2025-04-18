@@ -174,7 +174,6 @@
                 <p>Jobs</p>
             </a>
         </li>
-        
         {{-- Jobs  History --}}
           <li class="nav-item">
             <a href="{{ route('admin.emplois_histories')}}" class="nav-link {{ Request::segment(2) === 'emplois_histories' ? 'active' : '' }}">
@@ -188,6 +187,24 @@
                 <p>Jobs  Grades</p>
             </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.dashboard')}}" class="nav-link">
+              <i class="nav-icon fas fa-asterisk "></i>
+              <p>Regions</p>
+          </a>
+       </li>
+       <li class="nav-item">
+        <a href="{{ route('admin.dashboard')}}" class="nav-link">
+            <i class="nav-icon fas fa-flag"></i>
+            <p>Countries</p>
+        </a>
+    </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-building"></i>
+                <p>Locations</p>
+            </a>
+        </li>
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-building"></i>
@@ -196,17 +213,19 @@
         </li>
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
-                <i class="nav-icon fas fa-flag"></i>
-                <p>Countries</p>
+                <i class="nav-icon fas fa-building"></i>
+                <p>Manager</p>
             </a>
         </li>
-
           <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
-                <i class="nav-icon fas fa-asterisk "></i>
-                <p>Regions</p>
+                <i class="nav-icon fas fa-building"></i>
+                <p>Pay Roll</p>
             </a>
-         </li>
+        </li>
+        
+
+         
 
 
       @endif
