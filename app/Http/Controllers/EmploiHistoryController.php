@@ -18,7 +18,7 @@ class EmploiHistoryController extends Controller
     public function index(Request $request): View
     {
         // 1-. Préparation des listes pour les selects
-        $users   = User::pluck('name', 'id');               // charge uniquement id et name :contentReference[oaicite:4]{index=4}
+        $users   = User::pluck('name', 'id');               // -charge uniquement id et name :contentReference[oaicite:4]{index=4}
         $emplois = Emploi::pluck('emploi_title', 'id');
 
         // 2. Application du scope filter et chargement des relations pour éviter le N+1
