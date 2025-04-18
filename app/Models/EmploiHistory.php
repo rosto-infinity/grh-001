@@ -33,7 +33,7 @@ class EmploiHistory extends Model
             $query->where('emploi_id', $request->input('emploi_id'));
         }
     
-        // Filtrage par dates (>= start_date, <= end_date)
+        // 3-Filtrage par dates (>= start_date, <= end_date)
         if ($request->filled('start_date')) {
             $query->whereDate('start_date', '>=', $request->input('start_date'));
         }
