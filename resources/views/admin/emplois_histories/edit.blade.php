@@ -33,7 +33,7 @@
                         <form method="POST" 
                               action="{{ route('admin.emplois_histories.update', $emploiHistory->id) }}">
                             @csrf
-                            @method('PATCH') {{-- Spoof HTTP PATCH pour update :contentReference[oaicite:3]{index=3} --}}
+                            @method('PATCH') {{-- -Spoof HTTP PATCH pour update :contentReference[oaicite:3]{index=3} --}}
 
                             @if ($errors->any())
                                 <div class="alert alert-danger mx-3 mt-3">
