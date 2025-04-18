@@ -174,6 +174,7 @@
                 <p>Jobs</p>
             </a>
         </li>
+        {{-- Jobs  History --}}
           <li class="nav-item">
             <a href="{{ route('admin.emplois_histories')}}" class="nav-link {{ Request::segment(2) === 'emplois_histories' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-history"></i>
