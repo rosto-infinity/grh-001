@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <h3>Ajouter un historique d'emploi</h3>
                 </div>
-                <!-- Bouton retour -->
+                <!-- 6--Bouton retour -->
                 <div class="col-sm-6 text-right">
                     <a href="{{ route('admin.emplois_histories') }}" class="btn btn-secondary">
                         Retour à la liste
