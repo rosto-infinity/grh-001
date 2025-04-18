@@ -27,7 +27,7 @@ class EmploiHistoryController extends Controller
 
         // 3-. Pagination optimisée et conservation des query string
         $emploisHistories = $query->paginate(10)
-                                  ->withQueryString();    // conserve ?user_id=…&emploi_id=… :contentReference[oaicite:6]{index=6}
+                                  ->withQueryString();    // -conserve ?user_id=…&emploi_id=… :contentReference[oaicite:6]{index=6}
 
         return view(
             'admin.emplois_histories.list',
