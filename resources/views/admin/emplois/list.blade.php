@@ -119,7 +119,7 @@
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
                                                     </a>
                                                     
-                                                    <!-- 5-Formulaire pour la suppression -->
+                                                    <!-- 5---Formulaire pour la suppression -->
                                                     <form action="{{ route('admin.emplois.destroy', $emploi->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
