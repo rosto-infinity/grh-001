@@ -16,7 +16,7 @@ class EmploiHistoryController extends Controller
         $users   = User::pluck('name', 'id');               // -ne charge que id et name :contentReference[oaicite:3]{index=3}
         $emplois = Emploi::pluck('emploi_title', 'id');
     
-        // 2. Requête principale avec relations + filtres
+        // 2-. Requête principale avec relations + filtres
         $query = EmploiHistory::with(['user', 'emploi'])
                               ->filter($request);
     
