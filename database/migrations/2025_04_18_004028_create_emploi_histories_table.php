@@ -20,7 +20,7 @@ return new class extends Migration
                   ->constrained()
                   ->onDelete('cascade');
 
-            // Relation avec un emploi
+            // 3-Relation avec un emploi
             $table->foreignId('emploi_id')
                   ->nullable()
                   ->constrained()
