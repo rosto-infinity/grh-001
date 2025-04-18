@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <!-- Content Wrapper. Contains page content -->
+    <!-- --Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <h3>Listes des emplois(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{ $emplois->count() }}
+                                {{ $emplois->total() }}
                             </span>)
                         </h3>
                     </div>

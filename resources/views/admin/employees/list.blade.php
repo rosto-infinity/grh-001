@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <h3>Listes des Employees(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{ $employees->count() }}
+                                {{ $employees->total() }}
                             </span>)
                         </h3>
                     </div>

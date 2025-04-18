@@ -10,7 +10,7 @@
                     <h3>
                         Historique des emplois 
                         <span class="bg-green-600 text-white rounded-full px-2">
-                            {{ $emploisHistories->count() }}
+                            {{ $emploisHistories->total()}}
                         </span>
                     </h3>
                 </div>
