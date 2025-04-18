@@ -25,7 +25,7 @@ class EmploiHistoryController extends Controller
         $query = EmploiHistory::with(['user', 'emploi'])
                               ->filter($request);       // -scope local défini sur le modèle :contentReference[oaicite:5]{index=5}
 
-        // 3. Pagination optimisée et conservation des query string
+        // 3-. Pagination optimisée et conservation des query string
         $emploisHistories = $query->paginate(10)
                                   ->withQueryString();    // conserve ?user_id=…&emploi_id=… :contentReference[oaicite:6]{index=6}
 
