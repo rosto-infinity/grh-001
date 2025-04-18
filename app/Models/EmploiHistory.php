@@ -52,7 +52,7 @@ class EmploiHistory extends Model
     }
 
     /**
-     * 2-Relation : un historique d'emploi appartient à un emploi.
+     * 2--Relation : un historique d'emploi appartient à un emploi.
      */
     public function emploi(): BelongsTo
     {
