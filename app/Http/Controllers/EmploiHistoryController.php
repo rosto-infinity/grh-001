@@ -28,7 +28,7 @@ class EmploiHistoryController extends Controller
     }
     public function create()
 {
-    //  3-$users   = User::all();
+    //  3--$users   = User::all();
 
     $users   = User::pluck('name', 'id');
     $emplois = Emploi::pluck('emploi_title', 'id');
