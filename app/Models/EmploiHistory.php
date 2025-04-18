@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
 
 class EmploiHistory extends Model
 {
@@ -20,20 +22,26 @@ class EmploiHistory extends Model
         'end_date',
     ];
 
-
-    public function scopeFilter( $query, $request)
+/**
+     * Scope de filtrage.
+     *
+     * @param  Builder  $query
+     * @param  Request  $request
+     * @return Builder
+     */
+    public function scopeFilter(Builder $query, Request $request)
     {
-        //1- Filtrage par utilisateur
+        // Filtrage par utilisateur
         if ($request->filled('user_id')) {
             $query->where('user_id', $request->input('user_id'));
         }
     
-        // 2-Filtrage par emploi
+        // Filtrage par emploi
         if ($request->filled('emploi_id')) {
             $query->where('emploi_id', $request->input('emploi_id'));
         }
     
-        // 3-Filtrage par dates (>= start_date, <= end_date)
+        // Filtrage par dates (>= start_date, <= end_date)
         if ($request->filled('start_date')) {
             $query->whereDate('start_date', '>=', $request->input('start_date'));
         }
@@ -44,7 +52,7 @@ class EmploiHistory extends Model
         return $query;
     }
     /**
-     * 11-Relation : un historique d'emploi appartient à un utilisateur.
+     * Relation : un historique d'emploi appartient à un utilisateur.
      */
     public function user(): BelongsTo
     {
@@ -52,7 +60,7 @@ class EmploiHistory extends Model
     }
 
     /**
-     * 2--Relation : un historique d'emploi appartient à un emploi.
+     * 2-Relation : un historique d'emploi appartient à un emploi.
      */
     public function emploi(): BelongsTo
     {
