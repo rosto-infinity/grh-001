@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="content-wrapper">
-    <!-- En-tête de la page -->
+    <!-- 4-En-tête de la page -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
