@@ -1,104 +1,126 @@
 @extends('layouts.application')
-@section('title')
+
+@section('title', 'Ajouter un historique d\'emploi')
+
 @section('content')
+<div class="content-wrapper">
+    <!-- En-tête de la page -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <!-- Titre -->
+                <div class="col-sm-6">
+                    <h3>Ajouter un historique d'emploi</h3>
+                </div>
+                <!-- Bouton retour -->
+                <div class="col-sm-6 text-right">
+                    <a href="{{ route('admin.emploi_histories') }}" class="btn btn-secondary">
+                        Retour à la liste
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
- <!-- 2Content Wrapper. Contains page content -->
- <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-      <div class="container-fluid">
-          <div class="row mb-2">
-              <div class="col-sm-6">
-                  <h3>Ajouter une nouvelle emplois</h3>
-              </div>
-              <div class="text-right col-sm-6">
-                  <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
-              </div>
-          </div>
-      </div><!-- /.container-fluid -->
-  </section>
+    <!-- Formulaire -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Détails de l'historique</h3>
+                        </div>
+                        <form method="POST" action="{{ route('admin.emploi_histories.store') }}">
+                            @csrf  {{-- Protection CSRF — Laravel fournit ce token automatiquement :contentReference[oaicite:5]{index=5} --}}
+                            
+                            {{-- Affichage des erreurs globales --}}
+                            @if ($errors->any())
+                                <div class="mx-10 mt-3 alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
-  <section class="content">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="card card-primary">
-                      <div class="card-header">
-                          <h3 class="card-title">Informations sur l'emplois</h3>
-                      </div>
-                      <!-- /.card-header -->
-                      <!-- form start -->
-                      <form method="POST" action="">
-                          @csrf <!-- Protection CSRF -->
+                            <div class="card-body">
+                                <div class="row">
+                                    {{-- Utilisateur --}}
+                                    <div class="form-group col-md-6">
+                                        <label for="user_id">Utilisateur <span class="text-red-600">*</span></label>
+                                        <select id="user_id" name="user_id"
+                                                class="form-control @error('user_id') is-invalid @enderror">
+                                            <option value="">-- Sélectionnez un utilisateur --</option>
+                                            {{-- @foreach($users as $user)
+                                                <option value="{{ $user->id }}"
+                                                    {{ old('user_id') == $user->id ? 'selected' : '' }}>
+                                                    {{ $user->name }}
+                                                </option>
+                                            @endforeach --}}
+                                        </select>
+                                        @error('user_id')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
 
-                          <!--2-Affichage des erreurs globales -->
-                          @if ($errors->any())
-                              <div class="mx-10 mt-3 alert alert-danger">
-                                  <ul>
-                                      @foreach ($errors->all() as $error)
-                                          <li>{{ $error }}</li>
-                                      @endforeach
-                                  </ul>
-                              </div>
-                          @endif
+                                    {{-- Emploi --}}
+                                    <div class="form-group col-md-6">
+                                        <label for="emploi_id">Emploi <span class="text-red-600">*</span></label>
+                                        <select id="emploi_id" name="emploi_id"
+                                                class="form-control @error('emploi_id') is-invalid @enderror">
+                                            <option value="">-- Sélectionnez un emploi --</option>
+                                            @foreach($emplois as $emploi)
+                                                {{-- <option value="{{ $emploi->id }}"
+                                                    {{ old('emploi_id') == $emploi->id ? 'selected' : '' }}>
+                                                    {{ $emploi->emploi_title }}
+                                                </option> --}}
+                                            @endforeach
+                                        </select>
+                                        @error('emploi_id')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
 
-                          <div class="card-body">
-                              <div class="row">
+                                    {{-- Date de début --}}
+                                    <div class="form-group col-md-6">
+                                        <label for="start_date">Date de début</label>
+                                        <input type="date" id="start_date" name="start_date"
+                                               value="{{ old('start_date') }}"
+                                               class="form-control @error('start_date') is-invalid @enderror">
+                                        @error('start_date')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
 
-                                  {{-- 32 First Name --}}
-                                  <div class="form-group col-md-6">
-                                      <label for="emploi_title">Job<span class="text-red-600">*</span> </label>
-                                      <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                          value="{{ old('emploi_title')}}" id="emploi_title" name="emploi_title"
-                                          placeholder="emploi_title">
+                                    {{-- Date de fin --}}
+                                    <div class="form-group col-md-6">
+                                        <label for="end_date">Date de fin</label>
+                                        <input type="date" id="end_date" name="end_date"
+                                               value="{{ old('end_date') }}"
+                                               class="form-control @error('end_date') is-invalid @enderror">
+                                        @error('end_date')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
 
-                                      <!-- Affichage de l'erreur pour name -->
-                                      @error('emploi_title')
-                                          <div class="invalid-feedback">{{ $message }}</div>
-                                      @enderror
-                                  </div>
-
-                                  {{-- 4-Last Name --}}
-                                  <div class="form-group col-md-6">
-                                      <label for="min_salary">Min Salary <span class="text-red-600">*</span> </label>
-                                      <input type="number" class="form-control @error('min_salary') is-invalid @enderror"
-                                          value="{{ old('min_salary')}}" id="min_salary" name="min_salary"
-                                          placeholder="Entrez min_salary">
-
-                                      <!-- Affichage de l'erreur pour min_salary -->
-                                      @error('min_salary')
-                                          <div class="invalid-feedback">{{ $message }}</div>
-                                      @enderror
-                                  </div>
-
-                                  {{-- 2--Email--}}
-                                  <div class="form-group col-md-6">
-                                      <label for="max_salary">Max Salary <span class="text-red-600">*</span> </label>
-                                      <input type="number" class="form-control @error('max_salary') is-invalid @enderror"
-                                          value="{{ old('max_salary')}}" id="max_salary" name="max_salary"
-                                          placeholder="Entrez max_salary">
-
-                                      <!-- Affichage de l'erreur pour max_salary -->
-                                      @error('max_salary')
-                                          <div class="invalid-feedback">{{ $message }}</div>
-                                      @enderror
-                                  </div>
-
-                              
-                              </div>
-                          </div>
-
-                          <div class="card-footer">
-                              <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Annuler</a>
-                              <button type="submit" class="btn btn-primary float-right">Ajouter</button>
-                          </div>
-                      </form>
-                  </div>
-                  <!-- /.card -->
-              </div>
-          </div>
-      </div>
-  </section>
+                            {{-- Footer du formulaire --}}
+                            <div class="card-footer">
+                                <a href="{{ route('admin.emploi_histories') }}" class="btn btn-secondary">
+                                    Annuler
+                                </a>
+                                <button type="submit" class="btn btn-primary float-right">
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-<!-- /.content-wrapper -->
 @endsection

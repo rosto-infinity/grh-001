@@ -86,4 +86,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Emploi::class);
     }
+
+    public function emploi_histories()
+{
+    return $this->hasMany(EmploiHistory::class);
+}
 }

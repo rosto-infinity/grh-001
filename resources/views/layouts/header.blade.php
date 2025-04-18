@@ -169,13 +169,13 @@
             </a>
         </li>
           <li class="nav-item">
-            <a href="{{ route('admin.emplois')}}" class="nav-link {{ Request::segment(2) === 'emplois' ? 'active' : '' }}"">
+            <a href="{{ route('admin.emplois')}}" class="nav-link {{ Request::segment(2) === 'emplois' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-briefcase"></i>
                 <p>Jobs</p>
             </a>
         </li>
           <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+            <a href="{{ route('admin.emploi_histories')}}" class="nav-link {{ Request::segment(2) === 'emploi_histories' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-history"></i>
                 <p>Jobs  History</p>
             </a>

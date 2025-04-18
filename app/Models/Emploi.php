@@ -48,4 +48,9 @@ class Emploi extends Model
 {
     return $this->hasMany(User::class);
 }
+
+public function emploi_histories()
+{
+    return $this->hasMany(EmploiHistory::class);
+}
 }
