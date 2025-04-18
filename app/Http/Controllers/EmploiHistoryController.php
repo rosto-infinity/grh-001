@@ -116,6 +116,6 @@ class EmploiHistoryController extends Controller
 
         return redirect()
             ->route('admin.emplois_histories')
-            ->with('success', 'Historique supprimé avec succès.'); // flash message :contentReference[oaicite:10]{index=10}
+            ->with('success', 'Historique supprimé avec succès.'); // --flash message :contentReference[oaicite:10]{index=10}
     }
 }
