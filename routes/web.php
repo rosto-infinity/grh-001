@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmploiHistoryController;
 use App\Http\Controllers\EmploisController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\JobsController;
+use App\Models\EmploiHistory;
 
 // use App\Http\Controllers\EmployeesController;
 // use App\Http\Controllers\EmployeesController;
@@ -51,6 +53,17 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update');// 18-Update emploi
     Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy');// 019-Delete emploi
 });
+
+// EmploiHistory Routes
+Route::get('admin/emploi_histories', [EmploiHistoryController::class, 'index'])->name('admin.emploi_histories'); // 20-List all emploi_histories
+Route::get('admin/emploi_histories/create', [EmploiHistoryController::class, 'create'])->name('admin.emploi_histories.create'); // 21-Create emploi_history form
+Route::post('admin/emploi_histories', [EmploiHistoryController::class, 'store'])->name('admin.emploi_histories.store'); // 22-Store emploi_history
+Route::get('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'show'])->name('admin.emploi_histories.show'); // 23-Show emploi_history details
+Route::get('admin/emploi_histories/{id}/edit', [EmploiHistoryController::class, 'edit'])->name('admin.emploi_histories.edit'); // 24-Edit emploi_history
+Route::patch('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'update'])->name('admin.emploi_histories.update'); // 25-Update emploi_history
+Route::delete('admin/emploi_histories/{id}', [EmploiHistoryController::class, 'destroy'])->name('admin.emploi_histories.destroy'); // 26-Delete emploi_history
+
+
  
 require __DIR__.'/auth.php';
  
