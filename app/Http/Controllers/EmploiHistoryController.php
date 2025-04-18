@@ -93,7 +93,7 @@ class EmploiHistoryController extends Controller
     }
 
     /**
-     * Met à jour un historique existant.
+     * --Met à jour un historique existant.
      */
     public function update( EmploiHistoryRequest $request,int $id ): RedirectResponse 
     {
