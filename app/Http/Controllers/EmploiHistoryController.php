@@ -20,7 +20,7 @@ class EmploiHistoryController extends Controller
         $query = EmploiHistory::with(['user', 'emploi'])
                               ->filter($request);
     
-        // 3. Pagination (conserve ?user_id=..&emploi_id=..)
+        // 3-. Pagination (conserve ?user_id=..&emploi_id=..)
         $emploisHistories = $query->paginate(10)
                                   ->withQueryString();    // pagination SQL-optimisée :contentReference[oaicite:4]{index=4}
     
