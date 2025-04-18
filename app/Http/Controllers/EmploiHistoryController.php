@@ -13,7 +13,7 @@ class EmploiHistoryController extends Controller
     public function index(Request $request)
     {
         // 1-. Listes pour les selects
-        $users   = User::pluck('name', 'id');               // ne charge que id et name :contentReference[oaicite:3]{index=3}
+        $users   = User::pluck('name', 'id');               // -ne charge que id et name :contentReference[oaicite:3]{index=3}
         $emplois = Emploi::pluck('emploi_title', 'id');
     
         // 2. Requête principale avec relations + filtres
