@@ -35,7 +35,7 @@
                                     <h3 class="card-title">Rechercher une emplois</h3>
                                 </div>
                                 <!-- /.card-header -->
-                                <!-- form start -->
+                                <!-- --form start -->
                                 <form method="get" action="{{ route('admin.emplois') }}">
                                     <div class="card-body">
                                         <div class="row">
