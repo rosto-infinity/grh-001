@@ -15,7 +15,7 @@
                     </h3>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="{{ route('admin.emploi_histories.create') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.emplois_histories.create') }}" class="btn btn-primary">
                         Ajouter un historique
                     </a>
                 </div>
@@ -54,13 +54,13 @@
                                 <td>{{ $history->end_date }}</td>
                                 <td>{{ $history->created_at }}</td>
                                 <td>
-                                    <a href="{{ route('admin.emploi_histories.show', $history->id) }}" class="btn btn-info btn-sm">
+                                    <a href="{{ route('admin.emplois_histories.show', $history->id) }}" class="btn btn-info btn-sm">
                                         <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="{{ route('admin.emploi_histories.edit', $history->id) }}" class="btn btn-warning btn-sm">
+                                    <a href="{{ route('admin.emplois_histories.edit', $history->id) }}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
-                                    <form action="{{ route('admin.emploi_histories.destroy', $history->id) }}"
+                                    <form action="{{ route('admin.emplois_histories.destroy', $history->id) }}"
                                           method="POST" class="d-inline"
                                           onsubmit="return confirm('Confirmer la suppression ?')">
                                         @csrf

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EmploiHistory extends Model
 {
+    // protected $with =['user'];
     /**
      * 3-Les attributs pouvant être assignés en masse.
      *

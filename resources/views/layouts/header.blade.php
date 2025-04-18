@@ -175,7 +175,7 @@
             </a>
         </li>
           <li class="nav-item">
-            <a href="{{ route('admin.emploi_histories')}}" class="nav-link {{ Request::segment(2) === 'emploi_histories' ? 'active' : '' }}">
+            <a href="{{ route('admin.emplois_histories')}}" class="nav-link {{ Request::segment(2) === 'emplois_histories' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-history"></i>
                 <p>Jobs  History</p>
             </a>

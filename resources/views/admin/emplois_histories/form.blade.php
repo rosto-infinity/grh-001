@@ -14,7 +14,7 @@
                 </div>
                 <!-- Bouton retour -->
                 <div class="col-sm-6 text-right">
-                    <a href="{{ route('admin.emploi_histories') }}" class="btn btn-secondary">
+                    <a href="{{ route('admin.emplois_histories') }}" class="btn btn-secondary">
                         Retour à la liste
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Détails de l'historique</h3>
                         </div>
-                        <form method="POST" action="{{ route('admin.emploi_histories.store') }}">
+                        <form method="POST" action="{{ route('admin.emplois_histories.store') }}">
                             @csrf  {{-- Protection CSRF — Laravel fournit ce token automatiquement :contentReference[oaicite:5]{index=5} --}}
                             
                             {{-- Affichage des erreurs globales --}}
@@ -50,16 +50,23 @@
                                     {{-- Utilisateur --}}
                                     <div class="form-group col-md-6">
                                         <label for="user_id">Utilisateur <span class="text-red-600">*</span></label>
-                                        <select id="user_id" name="user_id"
-                                                class="form-control @error('user_id') is-invalid @enderror">
+                                        <select name="user_id" id="user_id" class="form-control @error('user_id') is-invalid @enderror">
                                             <option value="">-- Sélectionnez un utilisateur --</option>
+                                             
+                                            {{-- $users   = User::all(); --}}
+
                                             {{-- @foreach($users as $user)
-                                                <option value="{{ $user->id }}"
-                                                    {{ old('user_id') == $user->id ? 'selected' : '' }}>
-                                                    {{ $user->name }}
+                                                <option value="{{ $user->id }}" {{ old('user_id') == $user->id ? 'selected' : '' }}>
+                                                    {{ $user->email }}
                                                 </option>
                                             @endforeach --}}
+                                            @foreach($users as $id => $name)
+                                                <option value="{{ $id }}" {{ old('user_id') == $id ? 'selected' : '' }}>
+                                                    {{ $name }}
+                                                </option>
+                                            @endforeach
                                         </select>
+                                        
                                         @error('user_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -71,11 +78,11 @@
                                         <select id="emploi_id" name="emploi_id"
                                                 class="form-control @error('emploi_id') is-invalid @enderror">
                                             <option value="">-- Sélectionnez un emploi --</option>
-                                            @foreach($emplois as $emploi)
-                                                {{-- <option value="{{ $emploi->id }}"
-                                                    {{ old('emploi_id') == $emploi->id ? 'selected' : '' }}>
-                                                    {{ $emploi->emploi_title }}
-                                                </option> --}}
+                                            @foreach($emplois as $id =>$emploi_title)
+                                                <option value="{{ $id }}"
+                                                    {{ old('emploi_id') == $id ? 'selected' : '' }}>
+                                                    {{ $emploi_title }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         @error('emploi_id')
@@ -109,7 +116,7 @@
 
                             {{-- Footer du formulaire --}}
                             <div class="card-footer">
-                                <a href="{{ route('admin.emploi_histories') }}" class="btn btn-secondary">
+                                <a href="{{ route('admin.emplois_histories') }}" class="btn btn-secondary">
                                     Annuler
                                 </a>
                                 <button type="submit" class="btn btn-primary float-right">
