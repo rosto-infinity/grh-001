@@ -12,7 +12,7 @@ class UpdateUsersTable extends Migration
             // -Ajoute une colonne pour le nom de famille, nullable après 'name'
             $table->string('last_name')->nullable()->after('name');
 
-            // Ajoute une colonne pour le numéro de téléphone, nullable après 'email'
+            // -Ajoute une colonne pour le numéro de téléphone, nullable après 'email'
             $table->string('phone_number')->nullable()->after('email');
 
             // Ajoute une colonne pour la date d'embauche, nullable après 'phone_number'
