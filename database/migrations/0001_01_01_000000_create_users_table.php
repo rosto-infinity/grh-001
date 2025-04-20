@@ -21,7 +21,7 @@ return new class extends Migration
             // -Crée une colonne 'usertype' avec une valeur par défaut 'user'
             $table->string('usertype')->default('user');
 
-            // Crée une colonne 'email' qui doit être unique dans la table
+            // --Crée une colonne 'email' qui doit être unique dans la table
             $table->string('email')->unique();
 
             // Crée une colonne 'email_verified_at' pour stocker la date de vérification de l'email, peut être nulle
