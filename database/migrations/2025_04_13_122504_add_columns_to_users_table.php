@@ -40,7 +40,7 @@ class UpdateUsersTable extends Migration
             // --Supprime la contrainte de clé étrangère pour 'emploi_id'
             $table->dropForeign(['emploi_id']);
 
-            // Supprime les colonnes ajoutées
+            // --Supprime les colonnes ajoutées
             $table->dropColumn(['last_name', 'phone_number', 'hire_date', 'emploi_id', 'salary', 'commission_pct']);
         });
     }
