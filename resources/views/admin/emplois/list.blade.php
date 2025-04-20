@@ -41,11 +41,22 @@
                                         <div class="row">
                                             <div class="form-group col-md-3">
                                                 <label for="emploi_title">Job title
-
                                                 </label>
                                                 <input type="text" class="form-control" id="emploi_title" name="emploi_title" placeholder="Entrez votre emploi_title" value="{{ Request::get('emploi_title') }}">
                                             </div>
-                                
+                                 {{-- Filtrer par emploi --}}
+                          <div class="form-group col-md-3">
+                            <label for="emploi_title">Emploi</label>
+                            <select name="emploi_title" id="emploi_title"
+                                    class="form-control">
+                              <option value="">-- Tous les emplois --</option>
+                              @foreach($emplois as $emploi)
+                                <option value="{{ $emploi->emploi_title }}" @selected(request('emploi_title') )>
+                                  {{ $emploi->emploi_title }}
+                                </option>
+                              @endforeach
+                            </select>
+                          </div>
                                             <div class="form-group col-md-3">
                                                 <label for="min_salary'">Min Salary</label>
                                                 <input type="number" class="form-control" id="min_salary" name="min_salary" placeholder="Entrez votre min_salary" value="{{ Request::get('min_salary') }}">
