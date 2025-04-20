@@ -18,7 +18,7 @@ return new class extends Migration
             // -Crée une colonne 'name' pour stocker le nom de l'utilisateur
             $table->string('name');
 
-            // Crée une colonne 'usertype' avec une valeur par défaut 'user'
+            // -Crée une colonne 'usertype' avec une valeur par défaut 'user'
             $table->string('usertype')->default('user');
 
             // Crée une colonne 'email' qui doit être unique dans la table
