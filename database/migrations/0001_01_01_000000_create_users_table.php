@@ -15,7 +15,7 @@ return new class extends Migration
             // -Crée une colonne 'id' auto-incrémentée comme clé primaire
             $table->id();
 
-            // Crée une colonne 'name' pour stocker le nom de l'utilisateur
+            // -Crée une colonne 'name' pour stocker le nom de l'utilisateur
             $table->string('name');
 
             // Crée une colonne 'usertype' avec une valeur par défaut 'user'
