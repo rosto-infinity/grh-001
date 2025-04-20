@@ -83,7 +83,7 @@
                                         @enderror
                                     </div>
 
-                                    {{--- -Date de début --}}
+                                    {{-- - Date de début --}}
                                     <div class="form-group col-md-6">
                                         <label for="start_date">Date de début</label>
                                         <input type="date" name="start_date" id="start_date"
