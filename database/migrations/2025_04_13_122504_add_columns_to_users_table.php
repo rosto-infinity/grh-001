@@ -9,7 +9,7 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            // Ajoute une colonne pour le nom de famille, nullable après 'name'
+            // -Ajoute une colonne pour le nom de famille, nullable après 'name'
             $table->string('last_name')->nullable()->after('name');
 
             // Ajoute une colonne pour le numéro de téléphone, nullable après 'email'
