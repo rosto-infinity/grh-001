@@ -33,7 +33,7 @@ class UpdateUsersTable extends Migration
         });
     }
 
-    // Méthode pour annuler les changements
+    // ---Méthode pour annuler les changements
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
