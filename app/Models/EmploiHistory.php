@@ -23,7 +23,7 @@ class EmploiHistory extends Model
     ];
 
 /**
-     * Scope de filtrage.
+     * -Scope de filtrage.
      *
      * @param  Builder  $query
      * @param  Request  $request
