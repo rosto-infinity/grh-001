@@ -12,13 +12,28 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
+            // -Crée une colonne 'id' auto-incrémentée comme clé primaire
             $table->id();
+
+            // Crée une colonne 'name' pour stocker le nom de l'utilisateur
             $table->string('name');
+
+            // Crée une colonne 'usertype' avec une valeur par défaut 'user'
             $table->string('usertype')->default('user');
+
+            // Crée une colonne 'email' qui doit être unique dans la table
             $table->string('email')->unique();
+
+            // Crée une colonne 'email_verified_at' pour stocker la date de vérification de l'email, peut être nulle
             $table->timestamp('email_verified_at')->nullable();
+
+            // Crée une colonne 'password' pour stocker le mot de passe de l'utilisateur
             $table->string('password');
+
+            // Crée une colonne pour stocker le token de "remember me"
             $table->rememberToken();
+
+            // Crée les colonnes 'created_at' et 'updated_at' pour suivre les timestamps
             $table->timestamps();
         });
 
