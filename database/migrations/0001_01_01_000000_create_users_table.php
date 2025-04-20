@@ -27,7 +27,7 @@ return new class extends Migration
             // ---Crée une colonne 'email_verified_at' pour stocker la date de vérification de l'email, peut être nulle
             $table->timestamp('email_verified_at')->nullable();
 
-            // Crée une colonne 'password' pour stocker le mot de passe de l'utilisateur
+            // --Crée une colonne 'password' pour stocker le mot de passe de l'utilisateur
             $table->string('password');
 
             // Crée une colonne pour stocker le token de "remember me"
