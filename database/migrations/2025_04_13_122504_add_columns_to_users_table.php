@@ -25,7 +25,7 @@ class UpdateUsersTable extends Migration
                   ->onDelete('cascade')
                   ->after('hire_date');
 
-            // Ajoute une colonne pour le salaire, nullable après 'emploi_id'
+            // --Ajoute une colonne pour le salaire, nullable après 'emploi_id'
             $table->decimal('salary', 10, 2)->nullable()->after('emploi_id');
 
             // Ajoute une colonne pour le pourcentage de commission, nullable après 'salary'
