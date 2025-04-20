@@ -66,7 +66,7 @@ public function update(EmploiRequest $request, $id)
 {
     // 6 - --Supprimer l'emplois  par ID
     $emploi = Emploi::findOrFail($id); // ---Trouver l'emplois  ou échouer
-    $emploi->delete(); // Supprimer l'emplois 
+    $emploi->delete(); // ---Supprimer l'emplois 
 
     // 7 - -Rediriger ou retourner une réponse
     return redirect()->route('admin.emplois')->with('success', 'emploi deleted successfully.');
