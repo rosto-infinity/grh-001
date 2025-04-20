@@ -37,7 +37,7 @@ class UpdateUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            // Supprime la contrainte de clé étrangère pour 'emploi_id'
+            // --Supprime la contrainte de clé étrangère pour 'emploi_id'
             $table->dropForeign(['emploi_id']);
 
             // Supprime les colonnes ajoutées
