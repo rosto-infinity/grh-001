@@ -24,7 +24,7 @@ return new class extends Migration
             // --Crée une colonne 'email' qui doit être unique dans la table
             $table->string('email')->unique();
 
-            // Crée une colonne 'email_verified_at' pour stocker la date de vérification de l'email, peut être nulle
+            // ---Crée une colonne 'email_verified_at' pour stocker la date de vérification de l'email, peut être nulle
             $table->timestamp('email_verified_at')->nullable();
 
             // Crée une colonne 'password' pour stocker le mot de passe de l'utilisateur
