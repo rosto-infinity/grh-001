@@ -33,7 +33,7 @@ return new class extends Migration
             // --Crée une colonne pour stocker le token de "remember me"
             $table->rememberToken();
 
-            // Crée les colonnes 'created_at' et 'updated_at' pour suivre les timestamps
+            // ---Crée les colonnes 'created_at' et 'updated_at' pour suivre les timestamps
             $table->timestamps();
         });
 
