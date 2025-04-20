@@ -36,7 +36,7 @@ class Emploi extends Model
             $query->where('max_salary', 'like', '%' . $request->input('max_salary') . '%');
         }
 
-        // 07-Filtrage par date de création
+        // 07---Filtrage par date de création
         if ($request->filled('date')) {
             $query->whereDate('created_at', $request->input('date'));
         }
