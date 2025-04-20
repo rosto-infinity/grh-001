@@ -30,7 +30,7 @@ return new class extends Migration
             // --Crée une colonne 'password' pour stocker le mot de passe de l'utilisateur
             $table->string('password');
 
-            // Crée une colonne pour stocker le token de "remember me"
+            // --Crée une colonne pour stocker le token de "remember me"
             $table->rememberToken();
 
             // Crée les colonnes 'created_at' et 'updated_at' pour suivre les timestamps
