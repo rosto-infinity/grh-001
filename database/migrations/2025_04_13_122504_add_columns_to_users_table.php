@@ -15,7 +15,7 @@ class UpdateUsersTable extends Migration
             // -Ajoute une colonne pour le numéro de téléphone, nullable après 'email'
             $table->string('phone_number')->nullable()->after('email');
 
-            // Ajoute une colonne pour la date d'embauche, nullable après 'phone_number'
+            // -Ajoute une colonne pour la date d'embauche, nullable après 'phone_number'
             $table->date('hire_date')->nullable()->after('phone_number');
 
             // Ajoute une colonne pour l'ID de l'emploi, nullable, avec contrainte de clé étrangère
