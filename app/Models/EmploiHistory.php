@@ -52,7 +52,7 @@ class EmploiHistory extends Model
         return $query;
     }
     /**
-     * Relation : un historique d'emploi appartient à un utilisateur.
+     * -Relation : un historique d'emploi appartient à un utilisateur.
      */
     public function user(): BelongsTo
     {
