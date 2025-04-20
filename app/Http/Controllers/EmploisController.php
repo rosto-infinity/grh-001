@@ -46,17 +46,17 @@ class EmploisController extends Controller
 
     public function edit($id)
 {
-    // 3-0Récupérer l'emplos par ID
+    // 3-0Récupérer l'emplois par ID
     $emploi = Emploi::findOrFail($id);
 
-    // 4-0Retourner la vue avec les données de l'employé
+    // 4-0Retourner la vue avec les données de l'emplois 
     return view('admin.emplois.edit', compact('emploi'));
 }
 
 public function update(EmploiRequest $request, $id)
 {
-    $emploi = Emploi::findOrFail($id); // -Trouver l'employé ou échouer
-    // 5 - -Mettre à jour l'employé avec les données validées
+    $emploi = Emploi::findOrFail($id); // --Trouver l'emplois  ou échouer
+    // 5 - -Mettre à jour l'emplois  avec les données validées
     $emploi->update($request->validated());
  
     return redirect()->route('admin.emplois')->with('success', 'Employé mis à jour avec succès.');
@@ -64,9 +64,9 @@ public function update(EmploiRequest $request, $id)
 
     public function destroy($id)
 {
-    // 6 - -Supprimer l'employé par ID
-    $emploi = Emploi::findOrFail($id); // Trouver l'employé ou échouer
-    $emploi->delete(); // Supprimer l'employé
+    // 6 - -Supprimer l'emplois  par ID
+    $emploi = Emploi::findOrFail($id); // Trouver l'emplois  ou échouer
+    $emploi->delete(); // Supprimer l'emplois 
 
     // 7 - -Rediriger ou retourner une réponse
     return redirect()->route('admin.emplois')->with('success', 'emploi deleted successfully.');
