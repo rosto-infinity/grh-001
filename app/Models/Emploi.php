@@ -26,7 +26,7 @@ class Emploi extends Model
             $query->where('emploi_title', 'like', '%' . $request->input('emploi_title') . '%');
         }
 
-        // 05--Filtrage par nom de min_salary
+        // 05---Filtrage par nom de min_salary
         if ($request->filled('min_salary')) {
             $query->where('min_salary', 'like', '%' . $request->input('min_salary') . '%');
         }
