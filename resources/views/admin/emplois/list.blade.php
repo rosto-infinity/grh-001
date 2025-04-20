@@ -51,7 +51,7 @@
                                     class="form-control">
                               <option value="">-- Tous les emplois --</option>
                               @foreach($emplois as $emploi)
-                                <option value="{{ $emploi->emploi_title }}" @selected(request('emploi_title') )>
+                                <option value="{{ $emploi->emploi_title }}" @selected(request('emploi_title'))>
                                   {{ $emploi->emploi_title }}
                                 </option>
                               @endforeach

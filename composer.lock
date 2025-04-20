@@ -2007,8 +2007,7 @@
             "time": "2024-12-08T08:18:47+00:00"
         },
         {
-            "name": "maatwebsite/excel",
-            "version": "v1.1.5",
+           
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
@@ -2035,7 +2034,7 @@
                     "Maatwebsite\\Excel\\": "src/"
                 },
                 "classmap": [
-                    "src/Maatwebsite/Excel",
+                    
                     "tests/TestCase.php"
                 ]
             },
