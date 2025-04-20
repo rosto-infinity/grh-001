@@ -65,7 +65,7 @@ public function update(EmploiRequest $request, $id)
     public function destroy($id)
 {
     // 6 - --Supprimer l'emplois  par ID
-    $emploi = Emploi::findOrFail($id); // Trouver l'emplois  ou échouer
+    $emploi = Emploi::findOrFail($id); // ---Trouver l'emplois  ou échouer
     $emploi->delete(); // Supprimer l'emplois 
 
     // 7 - -Rediriger ou retourner une réponse
