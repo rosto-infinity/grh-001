@@ -31,7 +31,7 @@ class Emploi extends Model
             $query->where('min_salary', 'like', '%' . $request->input('min_salary') . '%');
         }
 
-        // 06-Filtrage par max_salary
+        // 06--Filtrage par max_salary
         if ($request->filled('max_salary')) {
             $query->where('max_salary', 'like', '%' . $request->input('max_salary') . '%');
         }
