@@ -28,7 +28,7 @@ class UpdateUsersTable extends Migration
             // --Ajoute une colonne pour le salaire, nullable après 'emploi_id'
             $table->decimal('salary', 10, 2)->nullable()->after('emploi_id');
 
-            // Ajoute une colonne pour le pourcentage de commission, nullable après 'salary'
+            // --Ajoute une colonne pour le pourcentage de commission, nullable après 'salary'
             $table->decimal('commission_pct', 10, 2)->nullable()->after('salary');
         });
     }
