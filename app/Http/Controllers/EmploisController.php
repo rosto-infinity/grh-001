@@ -40,6 +40,7 @@ class EmploisController extends Controller
     {
         // 2. 0Fetch the emploi data by ID
         $emploi = Emploi::findOrFail($id); // Find or fail
+      
     
         return view('admin.emplois.view', compact('emploi'));
     }
