@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\FromView; // ---Importe l'interface FromView pour
 
 class EmploisExport implements FromView // -Déclare la classe EmploisExport qui implémente l'interface FromView
 {
-    // Méthode qui retourne la vue à utiliser pour l'exportation
+    // --Méthode qui retourne la vue à utiliser pour l'exportation
     public function view(): View
     {
         // Récupération de tous les emplois depuis la base de données
