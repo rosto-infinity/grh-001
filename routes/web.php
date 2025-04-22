@@ -53,7 +53,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy'); // 19 - Supprimer un emploi
 });
 
-// Routes pour l'historique des emplois
+// --Routes pour l'historique des emplois
 Route::get('admin/emplois_histories', [EmploiHistoryController::class, 'index'])->name('admin.emplois_histories'); // 21 - Lister tous les historiques d'emploi
 Route::get('admin/emplois_histories/excel', [EmploiHistoryController::class, 'excel'])->name('admin.emplois_histories.excel'); // 22 - Exporter les historiques d'emploi au format Excel
 Route::get('admin/emplois_histories/create', [EmploiHistoryController::class, 'create'])->name('admin.emplois_histories.create'); // 23 - Formulaire de création d'historique d'emploi
