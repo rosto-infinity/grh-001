@@ -30,8 +30,8 @@ Route::middleware('auth')->group(function () {
  */
 Route::middleware(['auth', 'admin'])->group(function () {
   
-    // 2 - Routes pour les Employés
-    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard'); // 03 - Tableau de bord administrateur
+    // 2 - -Routes pour les Employés
+    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard'); // 03 - -Tableau de bord administrateur
     Route::get('admin/employees', [EmployeesController::class, 'index'])->name('admin.employees'); // 04 - Lister tous les employés
     Route::get('admin/employees/excel', [EmployeesController::class, 'excel'])->name('admin.employees.excel'); // 05 - Exporter les employés au format Excel
     Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add'); // 06 - Ajouter un nouvel employé  
