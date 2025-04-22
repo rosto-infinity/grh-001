@@ -15,7 +15,7 @@ class EmploisExport implements FromView // -Déclare la classe EmploisExport qui
         return view(
             'admin.emplois.excel', // --Chemin de la vue à utiliser pour l'exportation
             [
-                'emplois' => Emploi::all() // Passe les emplois récupérés à la vue
+                'emplois' => Emploi::all() // --Passe les emplois récupérés à la vue
             ]
         );
     }
