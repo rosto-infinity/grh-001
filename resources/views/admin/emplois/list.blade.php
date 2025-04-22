@@ -80,7 +80,7 @@
                                                     <i class="nav-icon fas fa-search"></i> Recherche
                                                 </button>
                                                 <a href="{{ route('admin.emplois') }}" class='mt-8 btn btn-success'>
-                                                    <i class="fas fa-refresh"></i> Réinitialiser
+                                                    <i class="fas fa-sync-alt"></i> Réinitialiser
                                                 </a>  
                                             </div>
                                         </div>

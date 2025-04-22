@@ -22,7 +22,7 @@ class EmploiHistoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|exists:users,id', // Vérifie que l'utilisateur existe
+            'user_id' => 'required|exists:users,id|unique:users,name', // Vérifie que l'utilisateur existe
             'emploi_id' => 'required|exists:emplois,id', // Vérifie que l'emploi existe
             'start_date' => 'required|date|before:end_date', // Doit être une date avant end_date
             'end_date' => 'required|date|after:start_date', // Doit être une date après start_date

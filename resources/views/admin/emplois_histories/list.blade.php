@@ -15,6 +15,9 @@
                     </h3>
                 </div>
                 <div class="col-sm-6 text-right">
+                    <a href="{{ route('admin.emplois_histories.excel') }}" class='btn btn-success'>
+                        <i class="fas fa-file-excel"></i> Export Exel
+                    </a>
                     <a href="{{ route('admin.emplois_histories.create') }}" class="btn btn-primary">
                         Ajouter un historique
                     </a>
@@ -83,7 +86,7 @@
                           </div>
                       
                           {{-- Boutons --}}
-                          <div class="form-group col-md-3 mt-4">
+                          <div class="form-group col-md-4 mt-4">
                             <button type="submit" class="btn btn-primary">
                               <i class="fas fa-search"></i> Rechercher
                             </button>

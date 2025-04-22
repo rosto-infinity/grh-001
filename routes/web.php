@@ -57,6 +57,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 // -EmploiHistory Routes
 Route::get('admin/emplois_histories', [EmploiHistoryController::class, 'index'])->name('admin.emplois_histories'); // 20--List all emploi_histories
+Route::get('admin/emplois_histories/excel', [EmploiHistoryController::class, 'excel'])->name('admin.emplois_histories.excel'); // 26--Delete emploi_history
 Route::get('admin/emplois_histories/create', [EmploiHistoryController::class, 'create'])->name('admin.emplois_histories.create'); // 21-Create emploi_history form
 Route::post('admin/emplois_histories', [EmploiHistoryController::class, 'store'])->name('admin.emplois_histories.store'); // 22--Store emploi_history
 Route::get('admin/emplois_histories/{id}', [EmploiHistoryController::class, 'show'])->name('admin.emplois_histories.show'); // 23--Show emploi_history details

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EmploiHistoryExport;
 use App\Http\Requests\EmploiHistoryRequest;
 use App\Models\EmploiHistory;
 use App\Models\User;
@@ -9,6 +10,7 @@ use App\Models\Emploi;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmploiHistoryController extends Controller
 {
@@ -26,7 +28,7 @@ class EmploiHistoryController extends Controller
                               ->filter($request);       // -scope local défini sur le modèle :contentReference[oaicite:5]{index=5}
 
         // 3-. Pagination optimisée et conservation des query string
-        $emploisHistories = $query->paginate(10)
+        $emploisHistories = $query->paginate(4)
                                   ->withQueryString();    // -conserve ?user_id=…&emploi_id=… :contentReference[oaicite:6]{index=6}
 
         return view(
@@ -66,7 +68,7 @@ class EmploiHistoryController extends Controller
     /**
      * --Affiche un historique précis.
      */
-    public function show(int $id): View
+    public function show(int $id)
     {
         $emploiHistory = EmploiHistory::with(['user','emploi'])
                                 ->findOrFail($id);
@@ -82,9 +84,9 @@ class EmploiHistoryController extends Controller
      */
     public function edit(int $id): View
     {
-        $emploiHistory= EmploiHistory::findOrFail($id);
         $users   = User::pluck('name', 'id');
         $emplois = Emploi::pluck('emploi_title', 'id');
+        $emploiHistory= EmploiHistory::findOrFail($id);
 
         return view(
             'admin.emplois_histories.edit',
@@ -117,5 +119,11 @@ class EmploiHistoryController extends Controller
         return redirect()
             ->route('admin.emplois_histories')
             ->with('success', 'Historique supprimé avec succès.'); // --flash message :contentReference[oaicite:10]{index=10}
+    }
+
+    public function excel()
+    {
+        $fileName = now()->format('d-m-Y H.i.s');
+        return Excel::download(new EmploiHistoryExport, 'EmploisHistories_' .$fileName  .'.xlsx');
     }
 }
