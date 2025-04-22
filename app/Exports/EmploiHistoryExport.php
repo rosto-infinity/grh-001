@@ -19,7 +19,7 @@ class EmploiHistoryExport implements FromView
         $users = User::all();
         $emplois = Emploi::all();
 
-        // Chargement des historiques d'emploi avec les relations
+        // --Chargement des historiques d'emploi avec les relations
         $emploisHistories = EmploiHistory::with(['user', 'emploi'])->get();
 
         return view('admin.emplois_histories.excel', [
