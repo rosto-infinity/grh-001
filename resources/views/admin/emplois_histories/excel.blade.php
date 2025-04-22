@@ -10,7 +10,7 @@
       </tr>
   </thead>
   <tbody>
-    <!-- Boucle à travers l'historique des emplois -->
+    <!-- --Boucle à travers l'historique des emplois -->
     @foreach($emploisHistories as $emploiHistory)
       <tr>          
           <!-- Affiche le nom de l'utilisateur ou un tiret si l'utilisateur n'existe pas -->
