@@ -13,6 +13,11 @@ class EmploisExport implements FromCollection
     */
     public function collection()
     {
-        return Emploi::all();
+        // $emploisQuery = Emploi::filter($request);
+    
+         // 5-Pagination
+        //  $emplois = $emploisQuery->paginate(4);
+        $emplois = Emploi::all();
+        return view('admin.emplois.excel', compact('emplois'));
     }
 }
