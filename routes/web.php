@@ -37,7 +37,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add'); // 06 - -Ajouter un nouvel employé  
     Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store'); // 07 - -Enregistrer un nouvel employé
     Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view'); // 08 -- Voir les détails d'un employé
-    Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit'); // 09 - Éditer un employé
+    Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('admin.employees.edit'); // 09 - -Éditer un employé
     Route::patch('admin/employees/update/{id}', [EmployeesController::class, 'update'])->name('admin.employees.update'); // 10 - Mettre à jour un employé
     Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // 11 - Supprimer un employé
   
