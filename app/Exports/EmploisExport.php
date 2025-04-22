@@ -11,7 +11,7 @@ class EmploisExport implements FromView // -Déclare la classe EmploisExport qui
     // --Méthode qui retourne la vue à utiliser pour l'exportation
     public function view(): View
     {
-        // Récupération de tous les emplois depuis la base de données
+        // --Récupération de tous les emplois depuis la base de données
         return view(
             'admin.emplois.excel', // Chemin de la vue à utiliser pour l'exportation
             [
