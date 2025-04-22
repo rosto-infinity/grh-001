@@ -16,7 +16,7 @@ class EmployeesExport implements FromView
      */
     public function view(): View
     {
-        // Récupère tous les utilisateurs (employés) de la base de données
+        // --Récupère tous les utilisateurs (employés) de la base de données
         $employees = User::all();
         
         // Retourne la vue 'admin.employees.excel' avec les données des employés
