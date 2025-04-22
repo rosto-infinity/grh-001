@@ -1,9 +1,9 @@
 <table>
   <thead>
   <tr>
-    <th>Job title</th>
-    <th>Min Salary</th>
-    <th>Max Salary</th>
+    <th width='20' align='center'>Job title</th>
+    <th width='20' align='center'>Min Salary</th>
+    <th width='20' align='center'>Max Salary</th>
 
     <th>Date de création</th>
   </tr>
@@ -12,10 +12,10 @@
 
     @foreach ($emplois as $emploi)
     <tr> 
-        <td>{{ $emploi->emploi_title }}</td>
-        <td>{{ $emploi->min_salary }}</td>
-        <td>{{ $emploi->max_salary }}</td>
-        <td>{{ $emploi->created_at}}</td>
+        <td width='40'>{{ $emploi->emploi_title }}</td>
+        <td width='20' align='center'>{{ $emploi->min_salary }}</td>
+        <td width='20' align='center'>{{ $emploi->max_salary }}</td>
+        <td width='20' align='center'>{{ $emploi->created_at}}</td>
     </tr>
     @endforeach
 

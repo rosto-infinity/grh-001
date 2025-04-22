@@ -16,6 +16,9 @@
                         </h3>
                     </div>
                     <div class="text-right col-sm-6">
+                        <a href="{{ route('admin.emplois.excel') }}" class='btn btn-success'>
+                            <i class="fas fa-file-excel" aria-hidden="true"></i> Export Exel
+                        </a>
                         <a href="{{ route('admin.emplois.add') }}" class="btn btn-primary">Ajouter une nouvelle emplois</a>
                     </div>
                 </div>
@@ -77,11 +80,8 @@
                                                     <i class="nav-icon fas fa-search"></i> Recherche
                                                 </button>
                                                 <a href="{{ route('admin.emplois') }}" class='mt-8 btn btn-success'>
-                                                    <i class="fas fa-refresh" aria-hidden="true"></i> Réinitialiser
-                                                </a>
-                                                <a href="{{ route('admin.emplois.excel') }}" class='mt-8 btn btn-success'>
-                                                    <i class="fas fa-refresh" aria-hidden="true"></i> Exel
-                                                </a>
+                                                    <i class="fas fa-refresh"></i> Réinitialiser
+                                                </a>  
                                             </div>
                                         </div>
                                     </div>
@@ -127,10 +127,10 @@
                                                 <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.emplois.view', $emploi->id) }}" class="btn btn-info btn-sm">
-                                                        <i class="nav-icon fas fa-eye mr-1"></i> View
+                                                        <i class="nav-icon fas fa-eye mr-1"></i>
                                                     </a>
                                                     <a href="{{ route('admin.emplois.edit', $emploi->id) }}" class="btn btn-warning btn-sm">
-                                                        <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
+                                                        <i class="nav-icon fas fa-pencil-alt mr-1"></i>
                                                     </a>
                                                     
                                                     <!-- 5---Formulaire pour la suppression -->
@@ -139,7 +139,7 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet emplois ?');">
-                                                            <i class="nav-icon fas fa-trash-alt mr-1"></i> Supprimer
+                                                            <i class="nav-icon fas fa-trash-alt mr-1"></i>
                                                         </button>
                                                     </form>
                                                     

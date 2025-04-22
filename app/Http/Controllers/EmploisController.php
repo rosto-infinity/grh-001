@@ -76,7 +76,8 @@ public function update(EmploiRequest $request, $id)
 }
     public function excel()
 {
-    return Excel::download(new EmploisExport, 'invoices.xlsx');
+    $fileName = now()->format('d-m-Y H.i.s');
+    return Excel::download(new EmploisExport, 'Emplois_' .$fileName  .'.xlsx');
 }
 
 }
