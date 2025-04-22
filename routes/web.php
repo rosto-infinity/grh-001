@@ -13,7 +13,7 @@ use App\Models\EmploiHistory;
 // -Route principale qui redirige vers la méthode 'home' du ProductController
 Route::get('/', [ProductController::class, 'home'])->name('home');
 
-// Route pour le tableau de bord, accessible uniquement aux utilisateurs authentifiés et vérifiés
+// --Route pour le tableau de bord, accessible uniquement aux utilisateurs authentifiés et vérifiés
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
