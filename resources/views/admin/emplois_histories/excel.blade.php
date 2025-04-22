@@ -15,7 +15,7 @@
       <tr>          
           <!-- --Affiche le nom de l'utilisateur ou un tiret si l'utilisateur n'existe pas -->
           <td width='20' align='center'>{{ $emploiHistory->user ? $emploiHistory->user->name : '—' }}</td>
-          <!-- Affiche le titre de l'emploi ou un tiret si l'emploi n'existe pas -->
+          <!-- --Affiche le titre de l'emploi ou un tiret si l'emploi n'existe pas -->
           <td width='20' align='center'>{{ $emploiHistory->emploi ? $emploiHistory->emploi->emploi_title : '—' }}</td>
           <!-- Affiche la date de début de l'emploi -->
           <td width='20' align='center'>{{ $emploiHistory->start_date }}</td>
