@@ -126,7 +126,7 @@ class EmploiHistoryController extends Controller
     // --Génère un nom de fichier basé sur la date et l'heure actuelles
     $fileName = now()->format('d-m-Y H.i.s');
     
-    // Télécharge le fichier Excel avec les données d'historique des emplois
+    //-- Télécharge le fichier Excel avec les données d'historique des emplois
     return Excel::download(new EmploiHistoryExport, 'EmploisHistories_' . $fileName . '.xlsx');
 }
 
