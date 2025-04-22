@@ -47,7 +47,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/emplois/filter', [EmploisController::class, 'filter'])->name('admin.emplois.filter'); // 13 - -Filtrer les emplois
     Route::get('admin/emplois/add', [EmploisController::class, 'add'])->name('admin.emplois.add'); // 14 -- Ajouter un nouvel emploi
     Route::post('admin/emplois/add', [EmploisController::class, 'store'])->name('admin.emplois.store'); // 15 -- Enregistrer un nouvel emploi
-    Route::get('admin/emplois/view/{id}', [EmploisController::class, 'view'])->name('admin.emplois.view'); // 16 - Voir les détails d'un emploi
+    Route::get('admin/emplois/view/{id}', [EmploisController::class, 'view'])->name('admin.emplois.view'); // 16 - -Voir les détails d'un emploi
     Route::get('admin/emplois/edit/{id}', [EmploisController::class, 'edit'])->name('admin.emplois.edit'); // 17 - Éditer un emploi
     Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update'); // 18 - Mettre à jour un emploi
     Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy'); // 19 - Supprimer un emploi
