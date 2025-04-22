@@ -42,7 +42,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/employees/delete/{id}', [EmployeesController::class, 'destroy'])->name('admin.employees.destroy'); // 11 - -Supprimer un employé
   
     // --Routes pour les Emplois
-    Route::get('admin/emplois', [EmploisController::class, 'index'])->name('admin.emplois'); // 12 - Lister tous les emplois
+    Route::get('admin/emplois', [EmploisController::class, 'index'])->name('admin.emplois'); // 12 - -Lister tous les emplois
     Route::get('admin/emplois/excel', [EmploisController::class, 'excel'])->name('admin.emplois.excel'); // 20 - Exporter les emplois au format Excel
     Route::get('admin/emplois/filter', [EmploisController::class, 'filter'])->name('admin.emplois.filter'); // 13 - Filtrer les emplois
     Route::get('admin/emplois/add', [EmploisController::class, 'add'])->name('admin.emplois.add'); // 14 - Ajouter un nouvel emploi
