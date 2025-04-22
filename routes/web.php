@@ -31,9 +31,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
   
     // 2 - -Routes pour les Employés
-    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard'); // 03 - -Tableau de bord administrateur
+    Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard'); // 03 - Tableau de bord administrateur
     Route::get('admin/employees', [EmployeesController::class, 'index'])->name('admin.employees'); // 04 - Lister tous les employés
-    Route::get('admin/employees/excel', [EmployeesController::class, 'excel'])->name('admin.employees.excel'); // 05 - Exporter les employés au format Excel
+    Route::get('admin/employees/excel', [EmployeesController::class, 'excel'])->name('admin.employees.excel'); // 05 - --Exporter les employés au format Excel
     Route::get('admin/employees/add', [EmployeesController::class, 'add'])->name('admin.employees.add'); // 06 - Ajouter un nouvel employé  
     Route::post('admin/employees/add', [EmployeesController::class, 'store'])->name('admin.employees.store'); // 07 - Enregistrer un nouvel employé
     Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view'])->name('admin.employees.view'); // 08 - Voir les détails d'un employé
