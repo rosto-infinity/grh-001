@@ -21,7 +21,7 @@ class EmployeesExport implements FromView
         
         // --Retourne la vue 'admin.employees.excel' avec les données des employés
         return view('admin.employees.excel', [
-            'employees' => $employees // Passe les données des employés à la vue
+            'employees' => $employees // ---Passe les données des employés à la vue
         ]);
     }
 
