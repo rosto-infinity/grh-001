@@ -43,6 +43,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
   
     // --Routes pour les Emplois
     Route::get('admin/emplois', [EmploisController::class, 'index'])->name('admin.emplois'); // 12 - Lister tous les emplois
+    Route::get('admin/emplois/excel', [EmploisController::class, 'excel'])->name('admin.emplois.excel'); // 20 - Exporter les emplois au format Excel
     Route::get('admin/emplois/filter', [EmploisController::class, 'filter'])->name('admin.emplois.filter'); // 13 - Filtrer les emplois
     Route::get('admin/emplois/add', [EmploisController::class, 'add'])->name('admin.emplois.add'); // 14 - Ajouter un nouvel emploi
     Route::post('admin/emplois/add', [EmploisController::class, 'store'])->name('admin.emplois.store'); // 15 - Enregistrer un nouvel emploi
@@ -50,7 +51,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/emplois/edit/{id}', [EmploisController::class, 'edit'])->name('admin.emplois.edit'); // 17 - Éditer un emploi
     Route::patch('admin/emplois/update/{id}', [EmploisController::class, 'update'])->name('admin.emplois.update'); // 18 - Mettre à jour un emploi
     Route::delete('admin/emplois/delete/{id}', [EmploisController::class, 'destroy'])->name('admin.emplois.destroy'); // 19 - Supprimer un emploi
-    Route::get('admin/emplois/excel', [EmploisController::class, 'excel'])->name('admin.emplois.excel'); // 20 - Exporter les emplois au format Excel
 });
 
 // Routes pour l'historique des emplois
