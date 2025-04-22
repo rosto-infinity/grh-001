@@ -15,7 +15,7 @@ class EmploiHistoryExport implements FromView
      */
     public function view(): View
     {
-        // Chargement des utilisateurs et des emplois
+        // --Chargement des utilisateurs et des emplois
         $users = User::all();
         $emplois = Emploi::all();
 
