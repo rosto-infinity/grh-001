@@ -72,12 +72,15 @@
                                                 <input type="date" class="form-control" id="date" name="date" value="{{ Request::get('date') }}">
                                             </div>
                                 
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-4">
                                                 <button type="submit" class="mt-8 mr-2 btn btn-primary">
                                                     <i class="nav-icon fas fa-search"></i> Recherche
                                                 </button>
                                                 <a href="{{ route('admin.emplois') }}" class='mt-8 btn btn-success'>
                                                     <i class="fas fa-refresh" aria-hidden="true"></i> Réinitialiser
+                                                </a>
+                                                <a href="{{ route('admin.emplois.excel') }}" class='mt-8 btn btn-success'>
+                                                    <i class="fas fa-refresh" aria-hidden="true"></i> Exel
                                                 </a>
                                             </div>
                                         </div>

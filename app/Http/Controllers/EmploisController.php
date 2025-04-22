@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EmploisExport;
 use App\Models\Emploi;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmploiRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmploisController extends Controller
 {
@@ -71,6 +73,10 @@ public function update(EmploiRequest $request, $id)
 
     // 7 - -Rediriger ou retourner une réponse
     return redirect()->route('admin.emplois')->with('success', 'emploi deleted successfully.');
+}
+    public function excel()
+{
+    return Excel::download(new EmploisExport, 'invoices.xlsx');
 }
 
 }

@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Exports;
+namespace App\Exports; // -Déclare le namespace de la classe
 
-use App\Models\Emploi;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use App\Models\Emploi; // Importe le modèle Emploi pour l'utiliser dans cette classe
+use Illuminate\Contracts\View\View; // Importe l'interface View pour le type de retour
+use Maatwebsite\Excel\Concerns\FromView; // Importe l'interface FromView pour l'exportation Excel
 
-class EmploisExport implements FromCollection
+class EmploisExport implements FromView // Déclare la classe EmploisExport qui implémente l'interface FromView
 {
-    // app/Exports/EmploisExport.php
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    // Méthode qui retourne la vue à utiliser pour l'exportation
+    public function view(): View
     {
-        // $emploisQuery = Emploi::filter($request);
-    
-         // 5-Pagination
-        //  $emplois = $emploisQuery->paginate(4);
-        $emplois = Emploi::all();
-        return view('admin.emplois.excel', compact('emplois'));
+        // Récupération de tous les emplois depuis la base de données
+        return view(
+            'admin.emplois.excel', // Chemin de la vue à utiliser pour l'exportation
+            [
+                'emplois' => Emploi::all() // Passe les emplois récupérés à la vue
+            ]
+        );
     }
 }
