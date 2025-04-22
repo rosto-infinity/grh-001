@@ -19,7 +19,7 @@
           <td width='20' align='center'>{{ $emploiHistory->emploi ? $emploiHistory->emploi->emploi_title : '—' }}</td>
           <!-- --Affiche la date de début de l'emploi -->
           <td width='20' align='center'>{{ $emploiHistory->start_date }}</td>
-          <!-- Affiche la date de fin de l'emploi -->
+          <!-- --Affiche la date de fin de l'emploi -->
           <td width='20' align='center'>{{ $emploiHistory->end_date }}</td>
           <!-- Affiche la date de création de l'historique de l'emploi -->
           <td width='20' align='center'>{{ $emploiHistory->created_at }}</td> 
