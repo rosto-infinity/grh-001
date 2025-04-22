@@ -16,6 +16,9 @@
                         </h3>
                     </div>
                     <div class="text-right col-sm-6">
+                        <a href="{{ route('admin.employees.excel') }}" class='btn btn-success'>
+                            <i class="fas fa-file-excel"></i> Export Exel
+                        </a>
                         <a href="{{ route('admin.employees.add') }}" class="btn btn-primary">Ajouter une nouvelle Employees</a>
                     </div>
                 </div>
@@ -136,10 +139,10 @@
                                                 <td>{{ $employee->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td class="e">
                                                     <a href="{{ route('admin.employees.view', $employee->id) }}" class="btn btn-info btn-sm">
-                                                        <i class="nav-icon fas fa-eye mr-1"></i> View
+                                                        <i class="nav-icon fas fa-eye mr-1"></i> 
                                                     </a>
                                                     <a href="{{ route('admin.employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">
-                                                        <i class="nav-icon fas fa-pencil-alt mr-1"></i> Modifier
+                                                        <i class="nav-icon fas fa-pencil-alt mr-1"></i> 
                                                     </a>
                                                     
                                                     <!-- 5-Formulaire pour la suppression -->
@@ -148,7 +151,7 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
                                                             onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');">
-                                                            <i class="nav-icon fas fa-trash-alt mr-1"></i> Supprimer
+                                                            <i class="nav-icon fas fa-trash-alt mr-1"></i> 
                                                         </button>
                                                     </form>
                                                  </td>

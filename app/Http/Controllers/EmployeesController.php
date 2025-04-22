@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EmployeesExport;
 use App\Models\User;
 use App\Models\Emploi;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmployeeRequest;
 use App\Services\EmployeeService;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeesController extends Controller
 {
@@ -95,5 +97,13 @@ class EmployeesController extends Controller
         $employee->delete();
 
         return redirect()->route('admin.employees')->with('success', 'Employé supprimé avec succès.');
+    }
+    public function excel()
+    {
+        // --Génère un nom de fichier basé sur la date et l'heure actuelles
+        $fileName = now()->format('d-m-Y H.i.s');
+        
+        //-- Télécharge le fichier Excel avec les données d'historique des emplois
+        return Excel::download(new EmployeesExport, 'Employees_' . $fileName . '.xlsx');
     }
 }
