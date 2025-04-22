@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
 });
 
 /**
- * 1 - Routes Administrateur
+ * 1 - --Routes Administrateur
  */
 Route::middleware(['auth', 'admin'])->group(function () {
   
