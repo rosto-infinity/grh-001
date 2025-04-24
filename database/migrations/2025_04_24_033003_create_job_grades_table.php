@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('job_grades', function (Blueprint $table) {
             $table->id(); // -Colonne id auto-incrémentée
             $table->string('grade_level'); // -Colonne pour le niveau de grade
-            $table->decimal('lowest_sal', 10, 2); // Colonne pour le salaire le plus bas
+            $table->decimal('lowest_sal', 10, 2); // -Colonne pour le salaire le plus bas
             $table->decimal('highest_sal', 10, 2); // Colonne pour le salaire le plus élevé
             $table->timestamps(); // Colonne pour les timestamps created_at et updated_at
         });
