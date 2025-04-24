@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('grade_level'); // -Colonne pour le niveau de grade
             $table->decimal('lowest_sal', 10, 2); // -Colonne pour le salaire le plus bas
             $table->decimal('highest_sal', 10, 2); // -Colonne pour le salaire le plus élevé
-            $table->timestamps(); // Colonne pour les timestamps created_at et updated_at
+            $table->timestamps(); // -Colonne pour les timestamps created_at et updated_at
         });
     }
 
