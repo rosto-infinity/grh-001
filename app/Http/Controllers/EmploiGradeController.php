@@ -50,7 +50,7 @@ class EmploiGradeController extends Controller
 
     public function edit($id)
     {
-        // 1 - Récupérer le grade par ID
+        // 1 -- Récupérer le grade par ID
         $grade = EmploiGrade::findOrFail($id);
 
         // 2 - Retourner la vue avec les données du grade
