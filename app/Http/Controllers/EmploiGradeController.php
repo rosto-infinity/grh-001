@@ -72,7 +72,7 @@ class EmploiGradeController extends Controller
         $grade = EmploiGrade::findOrFail($id); // -Trouver le grade ou échouer
         $grade->delete(); // -Supprimer le grade
 
-        // 2 - Rediriger ou retourner une réponse
+        // 2 - -Rediriger ou retourner une réponse
         return redirect()->route('admin.emplois_grades')->with('success', 'Grade supprimé avec succès.');
     }
 
