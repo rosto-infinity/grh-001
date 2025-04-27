@@ -48,7 +48,7 @@
                                                 <input type="text" class="form-control" id="grade_level" name="grade_level" placeholder="Entrez votre grade_level" value="{{ Request::get('grade_level') }}">
                                             </div>
                                 
-                                            {{-- Filtrer par lowest_salary --}}
+                                            {{-- --Filtrer par lowest_salary --}}
                                             <div class="form-group col-md-3">
                                                 <label for="lowest_salary">lowest_salary</label>
                                                 <input type="number" class="form-control" id="lowest_salary" name="lowest_salary" placeholder="Entrez votre lowest_salary" value="{{ Request::get('lowest_salary') }}">
