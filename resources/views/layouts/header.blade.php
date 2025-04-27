@@ -182,7 +182,7 @@
             </a>
         </li>
           <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+            <a href="{{ route('admin.emploi_grades')}}" class="nav-link  {{ Request::segment(2) === 'grade_level' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-star"></i>
                 <p>Jobs  Grades</p>
             </a>

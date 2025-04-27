@@ -19,7 +19,7 @@
                         <a href="{{ route('admin.emplois.excel') }}" class='btn btn-success'>
                             <i class="fas fa-file-excel" aria-hidden="true"></i> Export Exel
                         </a>
-                        <a href="{{ route('admin.emplois.add') }}" class="btn btn-primary">Ajouter une nouvelle emplois</a>
+                        <a href="{{ route('') }}" class="btn btn-primary">Ajouter une nouvelle emploi Grade</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -39,7 +39,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- --form start -->
-                                <form method="get" action="{{ route('admin.emplois') }}">
+                                <form method="get" action="{{ route('admin.emploi_grades') }}">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-3">

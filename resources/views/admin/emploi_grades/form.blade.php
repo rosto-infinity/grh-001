@@ -9,10 +9,10 @@
       <div class="container-fluid">
           <div class="row mb-2">
               <div class="col-sm-6">
-                  <h3>Ajouter une nouvelle emplois</h3>
+                  <h3>Ajouter une nouvelle emploi Grade</h3>
               </div>
               <div class="text-right col-sm-6">
-                  <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
+                  <a href="{{ route('admin.emploi_grades') }}" class="btn btn-secondary">Retour à la liste</a>
               </div>
           </div>
       </div><!-- /.container-fluid -->
@@ -24,7 +24,7 @@
               <div class="col-md-12">
                   <div class="card card-primary">
                       <div class="card-header">
-                          <h3 class="card-title">Informations sur l'emplois</h3>
+                          <h3 class="card-title">Informations sur l'emploi Grade</h3>
                       </div>
                       <!-- /.card-header -->
                       <!-- form start -->
@@ -45,20 +45,20 @@
                           <div class="card-body">
                               <div class="row">
 
-                                  {{-- 32 First Name --}}
+                                  {{-- grade_level --}}
                                   <div class="form-group col-md-6">
-                                      <label for="emploi_title">Job<span class="text-red-600">*</span> </label>
-                                      <input type="text" class="form-control @error('emploi_title') is-invalid @enderror"
-                                          value="{{ old('emploi_title')}}" id="emploi_title" name="emploi_title"
-                                          placeholder="emploi_title">
+                                      <label for="grade_level">grade_level<span class="text-red-600">*</span> </label>
+                                      <input type="text" class="form-control @error('grade_level') is-invalid @enderror"
+                                          value="{{ old('grade_level')}}" id="grade_level" name="grade_level"
+                                          placeholder="grade_level">
 
                                       <!-- Affichage de l'erreur pour name -->
-                                      @error('emploi_title')
+                                      @error('grade_level')
                                           <div class="text-red-600">{{ $message }}</div>
                                       @enderror
                                   </div>
 
-                                  {{-- 4-Last Name --}}
+                                  {{-- lowest_salary --}}
                                   <div class="form-group col-md-6">
                                       <label for="min_salary">Min Salary <span class="text-red-600">*</span> </label>
                                       <input type="number" class="form-control @error('min_salary') is-invalid @enderror"
@@ -89,7 +89,7 @@
                           </div>
 
                           <div class="card-footer">
-                              <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Annuler</a>
+                              <a href="{{ route('admin.emploi_grades') }}" class="btn btn-secondary">Annuler</a>
                               <button type="submit" class="btn btn-primary float-right">Ajouter</button>
                           </div>
                       </form>
