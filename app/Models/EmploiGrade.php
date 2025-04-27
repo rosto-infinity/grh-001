@@ -10,6 +10,6 @@ class EmploiGrade extends Model
     protected $fillable = [
         'grade_level',    // -Le niveau de grade (ex. : Junior, Senior, etc.)
         'lowest_salary',  // -Le salaire le plus bas associé à ce grade
-        'highest_salary'  // Le salaire le plus élevé associé à ce grade
+        'highest_salary'  // -Le salaire le plus élevé associé à ce grade
     ];
 }
