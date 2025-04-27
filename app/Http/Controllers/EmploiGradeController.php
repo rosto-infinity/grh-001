@@ -36,7 +36,7 @@ class EmploiGradeController extends Controller
         // 1. -Valider la requête
         EmploiGrade::create($request->validated());
 
-        // 2. Rediriger ou retourner une réponse
+        // 2.- Rediriger ou retourner une réponse
         return redirect()->route('admin.emplois_grades')->with('success', 'Grade ajouté avec succès.');
     }
 
