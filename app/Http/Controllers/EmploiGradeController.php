@@ -42,7 +42,7 @@ class EmploiGradeController extends Controller
 
     public function view($id)
     {
-        // 1 - Récupérer les données du grade par ID
+        // 1 - -Récupérer les données du grade par ID
         $grade = EmploiGrade::findOrFail($id); // Trouver ou échouer
 
         // return view('admin.emplois_grades.view', compact('grade'));
