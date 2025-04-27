@@ -66,7 +66,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/emplois_grades', [EmploiGradeController::class, 'index'])->name('admin.emploi_grades'); // 21 - Lister tous les grades d'emploi
     Route::get('admin/emplois_grades/excel', [EmploiGradeController::class, 'excel'])->name('admin.emplois_grades.excel'); // 22 - --Exporter les grades d'emploi au format Excel
     Route::get('admin/emplois_grades/create', [EmploiGradeController::class, 'create'])->name('admin.emplois_grades.create'); // 23 - -Formulaire de création d'un grade d'emploi
-    Route::post('admin/emplois_grades', [EmploiGradeController::class, 'store'])->name('admin.emplois_grades.store'); // 24 - Enregistrer un nouveau grade d'emploi
+    Route::post('admin/emplois_grades', [EmploiGradeController::class, 'store'])->name('admin.emplois_grades.store'); // 24 -- Enregistrer un nouveau grade d'emploi
     Route::get('admin/emplois_grades/{id}', [EmploiGradeController::class, 'show'])->name('admin.emplois_grades.show'); // 25 - Voir les détails d'un grade d'emploi
     Route::get('admin/emplois_grades/{id}/edit', [EmploiGradeController::class, 'edit'])->name('admin.emplois_grades.edit'); // 26 - Éditer un grade d'emploi
     Route::patch('admin/emplois_grades/{id}', [EmploiGradeController::class, 'update'])->name('admin.emplois_grades.update'); // 27 - Mettre à jour un grade d'emploi
