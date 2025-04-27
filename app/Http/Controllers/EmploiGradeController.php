@@ -68,7 +68,7 @@ class EmploiGradeController extends Controller
 
     public function destroy($id)
     {
-        // 1 - Supprimer le grade par ID
+        // 1 - -Supprimer le grade par ID
         $grade = EmploiGrade::findOrFail($id); // Trouver le grade ou échouer
         $grade->delete(); // Supprimer le grade
 
