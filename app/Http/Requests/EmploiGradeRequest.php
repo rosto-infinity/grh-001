@@ -25,7 +25,7 @@ class EmploiGradeRequest extends FormRequest
             // -Grades d'emploi
             'grade_level' => 'required|string|max:100|unique:emploi_grades,grade_level,' . $this->route('id'),
             'lowest_salary' => 'required|numeric|min:0|max:250000',
-            'highest_salary' => 'required|numeric|min:0|max:500000|gte:lowest_salary', // Vérifie que highest_salary >= lowest_salary
+            'highest_salary' => 'required|numeric|min:0|max:500000|gte:lowest_salary', // -Vérifie que highest_salary >= lowest_salary
         ];
     }
 
