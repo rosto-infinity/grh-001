@@ -125,11 +125,11 @@
                                                     </a>
                                                     
                                                     <!-- 5---Formulaire pour la suppression -->
-                                                    <form action="#" method="POST" style="display:inline;">
+                                                    <form action="{{ route('admin.emplois_grades.destroy', $emploi_grade->id )}}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet emplois ?');">
+                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet emploi grade ?');">
                                                             <i class="nav-icon fas fa-trash-alt mr-1"></i>
                                                         </button>
                                                     </form>
