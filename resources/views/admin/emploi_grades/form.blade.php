@@ -71,15 +71,15 @@
                                       @enderror
                                   </div>
 
-                                  {{-- 2--Email--}}
+                                  {{-- highest_salary--}}
                                   <div class="form-group col-md-6">
-                                      <label for="max_salary">Max Salary <span class="text-red-600">*</span> </label>
-                                      <input type="number" class="form-control @error('max_salary') is-invalid @enderror"
-                                          value="{{ old('max_salary')}}" id="max_salary" name="max_salary"
-                                          placeholder="Entrez max_salary">
+                                      <label for="highest_salary">highest salary <span class="text-red-600">*</span> </label>
+                                      <input type="number" class="form-control @error('highest_salary') is-invalid @enderror"
+                                          value="{{ old('highest_salary')}}" id="highest_salary" name="highest_salary"
+                                          placeholder="Entrez highest_salary">
 
-                                      <!-- Affichage de l'erreur pour max_salary -->
-                                      @error('max_salary')
+                                      <!-- Affichage de l'erreur pour highest_salary -->
+                                      @error('highest_salary')
                                           <div class="invalid-feedback">{{ $message }}</div>
                                       @enderror
                                   </div>
