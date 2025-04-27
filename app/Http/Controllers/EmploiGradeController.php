@@ -33,7 +33,7 @@ class EmploiGradeController extends Controller
      */
     public function store(EmploiGradeRequest $request)
     {
-        // 1. Valider la requête
+        // 1. -Valider la requête
         EmploiGrade::create($request->validated());
 
         // 2. Rediriger ou retourner une réponse
