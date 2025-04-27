@@ -60,13 +60,13 @@
 
                                   {{-- lowest_salary --}}
                                   <div class="form-group col-md-6">
-                                      <label for="min_salary">Min Salary <span class="text-red-600">*</span> </label>
-                                      <input type="number" class="form-control @error('min_salary') is-invalid @enderror"
-                                          value="{{ old('min_salary')}}" id="min_salary" name="min_salary"
-                                          placeholder="Entrez min_salary">
+                                      <label for="lowest_salary">lowest salary  <span class="text-red-600">*</span> </label>
+                                      <input type="number" class="form-control @error('lowest_salary') is-invalid @enderror"
+                                          value="{{ old('lowest_salary')}}" id="lowest_salary" name="lowest_salary"
+                                          placeholder="Entrez lowest_salary">
 
-                                      <!-- Affichage de l'erreur pour min_salary -->
-                                      @error('min_salary')
+                                      <!-- Affichage de l'erreur pour lowest_salary -->
+                                      @error('lowest_salary')
                                           <div class="invalid-feedback">{{ $message }}</div>
                                       @enderror
                                   </div>
