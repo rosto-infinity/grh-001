@@ -61,7 +61,7 @@
                             </select>
                           </div>
                                             <div class="form-group col-md-3">
-                                                <label for="min_salary'">Min Salary</label>
+                                                <label for="min_salary">Min Salary</label>
                                                 <input type="number" class="form-control" id="min_salary" name="min_salary" placeholder="Entrez votre min_salary" value="{{ Request::get('min_salary') }}">
                                             </div>
                                 

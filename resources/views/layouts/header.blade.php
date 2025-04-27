@@ -175,18 +175,20 @@
             </a>
         </li>
         {{-- Jobs  History --}}
-          <li class="nav-item">
+        <li class="nav-item">
             <a href="{{ route('admin.emplois_histories')}}" class="nav-link {{ Request::segment(2) === 'emplois_histories' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-history"></i>
                 <p>Jobs  History</p>
             </a>
         </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.emploi_grades')}}" class="nav-link  {{ Request::segment(2) === 'grade_level' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-star"></i>
+
+        <li class="nav-item">
+            <a href="{{ route('admin.emplois_grades')}}" class="nav-link {{ Request::segment(2) === 'emplois_grades' ? 'active' : '' }}">
+                <i class="nav-icon fas fa-history"></i>
                 <p>Jobs  Grades</p>
             </a>
         </li>
+        
         <li class="nav-item">
           <a href="{{ route('admin.dashboard')}}" class="nav-link">
               <i class="nav-icon fas fa-asterisk "></i>

@@ -12,7 +12,7 @@
                   <h3>Ajouter une nouvelle emploi Grade</h3>
               </div>
               <div class="text-right col-sm-6">
-                  <a href="{{ route('admin.emploi_grades') }}" class="btn btn-secondary">Retour à la liste</a>
+                  <a href="{{ route('admin.emplois_grades') }}" class="btn btn-secondary">Retour à la liste</a>
               </div>
           </div>
       </div><!-- /.container-fluid -->
@@ -89,7 +89,7 @@
                           </div>
 
                           <div class="card-footer">
-                              <a href="{{ route('admin.emploi_grades') }}" class="btn btn-secondary">Annuler</a>
+                              <a href="{{ route('admin.emplois_grades') }}" class="btn btn-secondary">Annuler</a>
                               <button type="submit" class="btn btn-primary float-right">Ajouter</button>
                           </div>
                       </form>

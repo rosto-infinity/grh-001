@@ -11,15 +11,15 @@
                     <div class="col-sm-6">
                         <h3>Listes des emplois(Total :
                             <span class="bg-green-600 rounded-full text-white">
-                                {{ $emplois->total() }}
+                                {{ $emploi_grades->total() }}
                             </span>)
                         </h3>
                     </div>
                     <div class="text-right col-sm-6">
-                        <a href="{{ route('admin.emplois.excel') }}" class='btn btn-success'>
+                        <a href="#" class='btn btn-success'>
                             <i class="fas fa-file-excel" aria-hidden="true"></i> Export Exel
                         </a>
-                        <a href="{{ route('') }}" class="btn btn-primary">Ajouter une nouvelle emploi Grade</a>
+                        <a href="{{ route('admin.emplois_grades.add') }}" class="btn btn-primary">Ajouter une nouvelle emplois</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -39,35 +39,24 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- --form start -->
-                                <form method="get" action="{{ route('admin.emploi_grades') }}">
+                                <form method="get" action="#">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-3">
-                                                <label for="emploi_title">Job title
+                                                <label for="grade_level">grade_level
                                                 </label>
-                                                <input type="text" class="form-control" id="emploi_title" name="emploi_title" placeholder="Entrez votre emploi_title" value="{{ Request::get('emploi_title') }}">
+                                                <input type="text" class="form-control" id="grade_level" name="grade_level" placeholder="Entrez votre grade_level" value="{{ Request::get('grade_level') }}">
                                             </div>
                                  {{-- Filtrer par emploi --}}
-                          <div class="form-group col-md-3">
-                            <label for="emploi_title">Emploi</label>
-                            <select name="emploi_title" id="emploi_title"
-                                    class="form-control">
-                              <option value="">-- Tous les emplois --</option>
-                              @foreach($emplois as $emploi)
-                                <option value="{{ $emploi->emploi_title }}" @selected(request('emploi_title'))>
-                                  {{ $emploi->emploi_title }}
-                                </option>
-                              @endforeach
-                            </select>
-                          </div>
+                         
                                             <div class="form-group col-md-3">
-                                                <label for="min_salary'">Min Salary</label>
-                                                <input type="number" class="form-control" id="min_salary" name="min_salary" placeholder="Entrez votre min_salary" value="{{ Request::get('min_salary') }}">
+                                                <label for="lowest_salary">lowest_salary</label>
+                                                <input type="number" class="form-control" id="lowest_salary" name="lowest_salary" placeholder="Entrez votre lowest_salary" value="{{ Request::get('lowest_salary') }}">
                                             </div>
                                 
                                             <div class="form-group col-md-3">
-                                                <label for="max_salary">Max salary</label>
-                                                <input type="number" class="form-control" id="max_salary" name="max_salary" placeholder="max_salary" value="{{ Request::get('max_salary') }}">
+                                                <label for="highest_salary">Max salary</label>
+                                                <input type="number" class="form-control" id="highest_salary" name="highest_salary" placeholder="highest_salary" value="{{ Request::get('highest_salary') }}">
                                             </div>
                                 
                                             <div class="form-group col-md-3">
@@ -79,7 +68,7 @@
                                                 <button type="submit" class="mt-8 mr-2 btn btn-primary">
                                                     <i class="nav-icon fas fa-search"></i> Recherche
                                                 </button>
-                                                <a href="{{ route('admin.emplois') }}" class='mt-8 btn btn-success'>
+                                                <a href="#" class='mt-8 btn btn-success'>
                                                     <i class="fas fa-sync-alt"></i> Réinitialiser
                                                 </a>  
                                             </div>
@@ -111,30 +100,30 @@
                                         </tr>
                                     </thead>
                                     <tbody> 
-                                        @if ($emplois->isEmpty()) 
+                                        @if ($emploi_grades->isEmpty()) 
                                         <tr>
                                             <td  colspan="6" class="text-center"> 
-                                                 Aucun emplois... 
+                                                 Aucun emploi_grade... 
                                          </td>
                                         </tr>
                                         @else
-                                        @foreach ($emplois as $emploi)
+                                        @foreach ($emploi_grades as $emploi_grade)
                                             <tr> 
-                                                <td>{{ $emploi->emploi_title }}</td>
-                                                <td>{{ $emploi->min_salary }}</td>
-                                                <td>{{ $emploi->max_salary }}</td>
+                                                <td>{{ $emploi_grade->emploi_title }}</td>
+                                                <td>{{ $emploi_grade->lowest_salary }}</td>
+                                                <td>{{ $emploi_grade->max_salary }}</td>
                                                
-                                                <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                                                <td>{{ $emploi_grade->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.emplois.view', $emploi->id) }}" class="btn btn-info btn-sm">
+                                                    <a href="#"" class="btn btn-info btn-sm">
                                                         <i class="nav-icon fas fa-eye mr-1"></i>
                                                     </a>
-                                                    <a href="{{ route('admin.emplois.edit', $emploi->id) }}" class="btn btn-warning btn-sm">
+                                                    <a href="#" class="btn btn-warning btn-sm">
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i>
                                                     </a>
                                                     
                                                     <!-- 5---Formulaire pour la suppression -->
-                                                    <form action="{{ route('admin.emplois.destroy', $emploi->id) }}" method="POST" style="display:inline;">
+                                                    <form action="#" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
@@ -151,7 +140,7 @@
                                     </tbody>
                                 </table>
                                 <div class="pr-5 py-5 flex float-right">
-                                    {{ $emplois->links() }}
+                                    {{ $emploi_grades->links() }}
                                 </div>
                             </div>
                             <!-- /.card-body -->
