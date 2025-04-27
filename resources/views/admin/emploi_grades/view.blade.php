@@ -2,19 +2,17 @@
 
 @section('content')
 
-<!-- 01-Wrapper de contenu principal -->
+<!-- 01 - Wrapper de contenu principal -->
 <div class="content-wrapper">
-    <!-- 2-En-tête de contenu (Page header) -->
+    <!-- 02 - En-tête de contenu (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <!-- 3-Titre de l'emploi affiché -->
-                    <h3>Emploi : {{ $emploi->emploi_title }}</h3>
+                    <h3>Détails du Grade d'Emploi : {{ $emploi_grade->grade_level }}</h3>
                 </div>
                 <div class="text-right col-sm-6">
-                    <!-- 4-Bouton pour revenir à la liste des emplois -->
-                    <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
+                    <a href="{{ route('admin.emplois_grades') }}" class="btn btn-secondary">Retour à la liste</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -26,38 +24,34 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <!-- 5-Titre de la carte d'informations -->
-                            <h3 class="card-title">Informations sur l'emploi</h3>
+                            <h3 class="card-title">Informations sur le Grade d'Emploi</h3>
                         </div>
-                        <!-- 6-Fin de l'en-tête de carte -->
-                        <h1>Détails de l'emploi</h1>
-
-                        <!-- 7-Tableau affichant les détails de l'emploi -->
+                        <!-- 03 - Tableau affichant les détails du grade d'emploi -->
                         <table class="table table-bordered">
                             <tr>
-                                <th>Titre du poste</th>
-                                <td>{{ $emploi->emploi_title }}</td>
+                                <th>Niveau de Grade</th>
+                                <td>{{ $emploi_grade->grade_level }}</td>
                             </tr>
                             <tr>
                                 <th>Salaire Minimum</th>
-                                <td>{{ $emploi->min_salary }} FCFA</td>
+                                <td>{{ $emploi_grade->lowest_salary }} FCFA</td>
                             </tr>
                             <tr>
                                 <th>Salaire Maximum</th>
-                                <td>{{ $emploi->max_salary }} FCFA</td>
+                                <td>{{ $emploi_grade->highest_salary }} FCFA</td>
                             </tr>
                             <tr>
-                                <th>Date de création</th>
-                                <td>{{ $emploi->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                                <th>Date de Création</th>
+                                <td>{{ $emploi_grade->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                             </tr>
                             <tr>
-                                <th>Date de mise à jour</th>
-                                <td>{{ $emploi->updated_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
+                                <th>Date de Mise à Jour</th>
+                                <td>{{ $emploi_grade->updated_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                             </tr>
                         </table>
 
-                        <!--8-Bouton pour retourner à la liste des emplois -->
-                        <a href="{{ route('admin.emplois') }}" class="btn btn-primary">Retour à la liste des emplois</a>
+                        <!-- 04 - Bouton pour retourner à la liste des grades d'emploi -->
+                        <a href="{{ route('admin.emplois_grades') }}" class="btn btn-primary">Retour à la liste des grades d'emploi</a>
                     </div>
                     <!-- Fin de la carte -->
                 </div>

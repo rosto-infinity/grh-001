@@ -14,7 +14,7 @@
                 </div>
                 <div class="text-right col-sm-6">
                     <!-- 10-Bouton pour revenir à la liste des emplois -->
-                    <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Retour à la liste</a>
+                    <a href="{{ route('admin.emplois_grades') }}" class="btn btn-secondary">Retour à la liste</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -31,7 +31,7 @@
                         </div>
                         <!-- Fin de l'en-tête de carte -->
                         <!-- 12--Début du formulaire -->
-                        <form method="POST" action="{{ route('admin.emplois.update', $emploi->id) }}"
+                        <form method="POST" action="{{ route('admin.emplois_grades.update', $emploi_grade->id) }}"
                             enctype="multipart/form-data">  
                             @csrf <!-- Protection CSRF -->
                             @method('PATCH') <!-- Méthode PATCH pour la mise à jour -->
@@ -50,51 +50,52 @@
                             <div class="card-body">
                                 <div class="row">
   
-                                    {{-- 14-Champ pour le titre du poste --}}
+                                    {{-- grade_level --}}
                                     <div class="form-group col-md-6">
-                                        <label for="emploi_title">Job<span class="text-red-600">*</span> </label>
-                                        <input type="text" class="form-control @error('emploi_title') is-invalid @enderror"
-                                            value="{{ old('emploi_title', $emploi->emploi_title)}}" id="emploi_title" name="emploi_title"
-                                            placeholder="emploi_title">
+                                        <label for="grade_level">grade_level<span class="text-red-600">*</span> </label>
+                                        <input type="text" class="form-control @error('grade_level') is-invalid @enderror"
+                                            value="{{ old('grade_level', $emploi_grade->grade_level)}}" id="grade_level" name="grade_level"
+                                            placeholder="grade_level">
   
-                                        <!-- 14-Affichage de l'erreur pour emploi_title -->
-                                        @error('emploi_title')
+                                        <!-- Affichage de l'erreur pour name -->
+                                        @error('grade_level')
+                                            <div class="text-red-600">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+  
+                                    {{-- lowest_salary --}}
+                                    <div class="form-group col-md-6">
+                                        <label for="lowest_salary">lowest salary  <span class="text-red-600">*</span> </label>
+                                        <input type="number" class="form-control @error('lowest_salary') is-invalid @enderror"
+                                            value="{{ old('lowest_salary', $emploi_grade->lowest_salary)}}" id="lowest_salary" name="lowest_salary"
+                                            placeholder="Entrez lowest_salary">
+  
+                                        <!-- Affichage de l'erreur pour lowest_salary -->
+                                        @error('lowest_salary')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
   
-                                    {{-- 16-Champ pour le salaire minimum --}}
+                                    {{-- highest_salary--}}
                                     <div class="form-group col-md-6">
-                                        <label for="min_salary">Min Salary <span class="text-red-600">*</span> </label>
-                                        <input type="number" class="form-control @error('min_salary') is-invalid @enderror"
-                                            value="{{ old('min_salary', $emploi->min_salary)}}" id="min_salary" name="min_salary"
-                                            placeholder="Entrez min_salary">
+                                        <label for="highest_salary">highest salary <span class="text-red-600">*</span> </label>
+                                        <input type="number" class="form-control @error('highest_salary') is-invalid @enderror"
+                                            value="{{ old('highest_salary', $emploi_grade->highest_salary)}}" id="highest_salary" name="highest_salary"
+                                            placeholder="Entrez highest_salary">
   
-                                        <!-- 17-Affichage de l'erreur pour min_salary -->
-                                        @error('min_salary')
+                                        <!-- Affichage de l'erreur pour highest_salary -->
+                                        @error('highest_salary')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
   
-                                    {{-- 18-Champ pour le salaire maximum --}}
-                                    <div class="form-group col-md-6">
-                                        <label for="max_salary">Max Salary <span class="text-red-600">*</span> </label>
-                                        <input type="number" class="form-control @error('max_salary') is-invalid @enderror"
-                                            value="{{ old('max_salary',$emploi->max_salary)}}" id="max_salary" name="max_salary"
-                                            placeholder="Entrez max_salary">
-  
-                                        <!-- 19-Affichage de l'erreur pour max_salary -->
-                                        @error('max_salary')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-  
+                                
                                 </div>
                             </div>
   
                             <div class="card-footer">
                                 <!-- 20--Bouton pour annuler la modification -->
-                                <a href="{{ route('admin.emplois') }}" class="btn btn-secondary">Annuler</a>
+                                <a href="{{ route('admin.emplois_grades') }}" class="btn btn-secondary">Annuler</a>
                                 <!-- 21-Bouton pour soumettre le formulaire -->
                                 <button type="submit" class="btn btn-primary float-right">Modifier</button>
                             </div>

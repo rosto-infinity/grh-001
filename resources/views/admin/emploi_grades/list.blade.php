@@ -16,7 +16,7 @@
                         </h3>
                     </div>
                     <div class="text-right col-sm-6">
-                        <a href="#" class='btn btn-success'>
+                        <a href="{{ route('admin.emplois_grades.excel') }}" class='btn btn-success'>
                             <i class="fas fa-file-excel" aria-hidden="true"></i> Export Exel
                         </a>
                         <a href="{{ route('admin.emplois_grades.add') }}" class="btn btn-primary">Ajouter une nouvelle emplois</a>
@@ -70,7 +70,7 @@
                                                 <button type="submit" class="mt-8 mr-2 btn btn-primary">
                                                     <i class="nav-icon fas fa-search"></i> Recherche
                                                 </button>
-                                                <a href="#" class='mt-8 btn btn-success'>
+                                                <a href="{{ route('admin.emplois_grades') }}" class='mt-8 btn btn-success'>
                                                     <i class="fas fa-sync-alt"></i> Réinitialiser
                                                 </a>  
                                             </div>
@@ -117,10 +117,10 @@
                                                
                                                 <td>{{ $emploi_grade->created_at->translatedFormat('l d/m/Y \à H\h:i') }}</td>
                                                 <td>
-                                                    <a href="#"" class="btn btn-info btn-sm">
+                                                    <a href="{{ route('admin.emplois_grades.view', $emploi_grade->id) }}" class="btn btn-info btn-sm">
                                                         <i class="nav-icon fas fa-eye mr-1"></i>
                                                     </a>
-                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                    <a href="{{ route('admin.emplois_grades.edit', $emploi_grade->id )}}" class="btn btn-warning btn-sm">
                                                         <i class="nav-icon fas fa-pencil-alt mr-1"></i>
                                                     </a>
                                                     
