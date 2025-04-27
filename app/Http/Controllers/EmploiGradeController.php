@@ -59,7 +59,7 @@ class EmploiGradeController extends Controller
 
     public function update(EmploiGradeRequest $request, $id)
     {
-        $grade = EmploiGrade::findOrFail($id); // Trouver le grade ou échouer
+        $grade = EmploiGrade::findOrFail($id); // -Trouver le grade ou échouer
         // 1 - Mettre à jour le grade avec les données validées
         $grade->update($request->validated());
 
