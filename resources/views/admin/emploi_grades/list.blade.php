@@ -54,7 +54,7 @@
                                                 <input type="number" class="form-control" id="lowest_salary" name="lowest_salary" placeholder="Entrez votre lowest_salary" value="{{ Request::get('lowest_salary') }}">
                                             </div>
                                 
-                                            {{-- Filtrer par Highest Salary --}}
+                                            {{-- --Filtrer par Highest Salary --}}
                                             <div class="form-group col-md-3">
                                                 <label for="highest_salary">Highest Salary</label>
                                                 <input type="number" class="form-control" id="highest_salary" name="highest_salary" placeholder="highest_salary" value="{{ Request::get('highest_salary') }}">
