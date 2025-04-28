@@ -27,7 +27,7 @@ class RegionController extends Controller
     }
 
     /**
-     * Summary of store
+     * -Summary of store
      * @param \App\Http\Requests\RegionRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
