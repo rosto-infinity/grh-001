@@ -37,6 +37,10 @@ class EmploiGrade extends Model
         if ($request->filled('date')) {
             $query->whereDate('created_at', $request->input('date'));
         }
+        // 07---Filtrage par date de Mise à jour
+        if ($request->filled('dateUpdate')) {
+            $query->whereDate('updated_at', $request->input('dateUpdate'));
+        }
     
         return $query;
     }

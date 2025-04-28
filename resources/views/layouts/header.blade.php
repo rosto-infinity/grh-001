@@ -184,7 +184,7 @@
 
         <li class="nav-item">
             <a href="{{ route('admin.emplois_grades')}}" class="nav-link {{ Request::segment(2) === 'emplois_grades' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-history"></i>
+                <i class="nav-icon fas fa-square"></i>
                 <p>Jobs  Grades</p>
             </a>
         </li>
