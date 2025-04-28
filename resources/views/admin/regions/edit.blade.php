@@ -27,7 +27,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <!-- 11-Titre de la carte d'informations -->
-                            <h3 class="card-title">Informations sur l'emplois</h3>
+                            <h3 class="card-title">Informations sur la region</h3>
                         </div>
                         <!-- Fin de l'en-tête de carte -->
                         <!-- 12--Début du formulaire -->
