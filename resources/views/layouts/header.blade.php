@@ -193,7 +193,7 @@
 
           {{-- Regions --}}
           <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+            <a href="{{ route('admin.regions')}}" class="nav-link {{ Request::segment(2) === 'regions' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-asterisk "></i>
                 <p>Regions</p>
             </a>
