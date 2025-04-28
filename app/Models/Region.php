@@ -10,7 +10,7 @@ class Region extends Model
 {
     // 1 --Les attributs qui peuvent être remplis en masse
     protected $fillable = [
-        'region_name',  // - Le nom de la région
+        'region_name',  // -- Le nom de la région
         'created_at',   // - Date de création
         'updated_at'    // - Date de mise à jour
     ];
