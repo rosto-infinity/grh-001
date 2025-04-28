@@ -22,7 +22,7 @@ class Region extends Model
             $query->where('region_name', $request->input('region_name'));
         }
 
-        // 3 - Filtrage par date de création
+        // 3 - -Filtrage par date de création
         if ($request->filled('date')) {
             $query->whereDate('created_at', $request->input('date'));
         }
