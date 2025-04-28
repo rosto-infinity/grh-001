@@ -15,7 +15,7 @@ class RegionExport implements FromView // D-éclare la classe RegionExport qui i
         return view(
             'admin.regions.excel', //--- Chemin de la vue à utiliser pour l'exportation
             [
-                'regions' => Region::all() // Passe les régions récupérées à la vue
+                'regions' => Region::all() // --Passe les régions récupérées à la vue
             ]
         );
     }
