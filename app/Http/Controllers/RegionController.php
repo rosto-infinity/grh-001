@@ -50,7 +50,7 @@ class RegionController extends Controller
 
     public function edit($id)
     {
-        // 1 - Récupérer la région par ID
+        // 1 -è Récupérer la région par ID
         $region = Region::findOrFail($id);
 
         // 2 - Retourner la vue avec les données de la région
