@@ -53,7 +53,7 @@ class RegionController extends Controller
         // 1 -è Récupérer la région par ID
         $region = Region::findOrFail($id);
 
-        // 2 - Retourner la vue avec les données de la région
+        // 2 - -Retourner la vue avec les données de la région
         return view('admin.regions.edit', compact('region'));
     }
 
