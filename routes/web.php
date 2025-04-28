@@ -74,7 +74,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/emplois_grades/{id}', [EmploiGradeController::class, 'destroy'])->name('admin.emplois_grades.destroy'); // 28 - --Supprimer un grade d'emploi
     
     //Regions
-    Route::get('admin/regions', [RegionController::class, 'index'])->name('admin.regions'); // 21 - Lister tous les regions
+    Route::get('admin/regions', [RegionController::class, 'index'])->name('admin.regions'); //  Lister tous les regions
     Route::get('admin/regions/excel', [RegionController::class, 'excel'])->name('admin.regions.excel'); // 22 - --Exporter les regions au format Excel
     Route::get('admin/regions/add', [RegionController::class, 'add'])->name('admin.regions.add'); // 23 - -Formulaire de création d'une regions
     Route::post('admin/regions/add', [RegionController::class, 'store'])->name('admin.regions.store'); // 24 -- Enregistrer d'une nouveau regions
