@@ -36,7 +36,7 @@ class RegionController extends Controller
         // 1. -- Valider la requête
         Region::create($request->validated());
 
-        // 2. - Rediriger ou retourner une réponse
+        // 2. -- Rediriger ou retourner une réponse
         return redirect()->route('admin.regions')->with('success', 'Région ajoutée avec succès.');
     }
 
