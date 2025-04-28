@@ -72,7 +72,7 @@ class RegionController extends Controller
         $region = Region::findOrFail($id); // Trouver la région ou échouer
         $region->delete(); // Supprimer la région
 
-        // 2 - Rediriger ou retourner une réponse
+        // 2 - -Rediriger ou retourner une réponse
         return redirect()
               ->route('admin.regions')
               ->with('success', 'Région supprimée avec succès.');
