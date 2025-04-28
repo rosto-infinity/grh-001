@@ -68,7 +68,7 @@ class RegionController extends Controller
 
     public function destroy($id)
     {
-        // 1 - Supprimer la région par ID
+        // 1 - -Supprimer la région par ID
         $region = Region::findOrFail($id); // Trouver la région ou échouer
         $region->delete(); // Supprimer la région
 
