@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\RegionController;
 use App\Models\EmploiHistory;
 
 // -Route principale qui redirige vers la méthode 'home' du ProductController
@@ -71,15 +72,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/emplois_grades/{id}/edit', [EmploiGradeController::class, 'edit'])->name('admin.emplois_grades.edit'); // 26 - --Éditer un grade d'emploi
     Route::patch('admin/emplois_grades/{id}', [EmploiGradeController::class, 'update'])->name('admin.emplois_grades.update'); // 27 - ---Mettre à jour un grade d'emploi
     Route::delete('admin/emplois_grades/{id}', [EmploiGradeController::class, 'destroy'])->name('admin.emplois_grades.destroy'); // 28 - --Supprimer un grade d'emploi
+    
     //Regions
-    Route::get('admin/emplois_grades', [EmploiGradeController::class, 'index'])->name('admin.emplois_grades'); // 21 - Lister tous les grades d'emploi
-    Route::get('admin/emplois_grades/excel', [EmploiGradeController::class, 'excel'])->name('admin.emplois_grades.excel'); // 22 - --Exporter les grades d'emploi au format Excel
-    Route::get('admin/emplois_grades/add', [EmploiGradeController::class, 'add'])->name('admin.emplois_grades.add'); // 23 - -Formulaire de création d'un grade d'emploi
-    Route::post('admin/emplois_grades/add', [EmploiGradeController::class, 'store'])->name('admin.emplois_grades.store'); // 24 -- Enregistrer un nouveau grade d'emploi
-    Route::get('admin/emplois_grades/{id}', [EmploiGradeController::class, 'view'])->name('admin.emplois_grades.view'); // 25 - -Voir les détails d'un grade d'emploi
-    Route::get('admin/emplois_grades/{id}/edit', [EmploiGradeController::class, 'edit'])->name('admin.emplois_grades.edit'); // 26 - --Éditer un grade d'emploi
-    Route::patch('admin/emplois_grades/{id}', [EmploiGradeController::class, 'update'])->name('admin.emplois_grades.update'); // 27 - ---Mettre à jour un grade d'emploi
-    Route::delete('admin/emplois_grades/{id}', [EmploiGradeController::class, 'destroy'])->name('admin.emplois_grades.destroy'); // 28 - --Supprimer un grade d'emploi
+    Route::get('admin/regions', [RegionController::class, 'index'])->name('admin.regions'); // 21 - Lister tous les regions
+    Route::get('admin/regions/excel', [RegionController::class, 'excel'])->name('admin.regions.excel'); // 22 - --Exporter les regions au format Excel
+    Route::get('admin/regions/add', [RegionController::class, 'add'])->name('admin.regions.add'); // 23 - -Formulaire de création d'une regions
+    Route::post('admin/regions/add', [RegionController::class, 'store'])->name('admin.regions.store'); // 24 -- Enregistrer d'une nouveau regions
+    Route::get('admin/regions/{id}', [RegionController::class, 'view'])->name('admin.regions.view'); // 25 - -Voir les détails d'une regions
+    Route::get('admin/regions/{id}/edit', [RegionController::class, 'edit'])->name('admin.regions.edit'); // 26 - --Éditer d'une regions
+    Route::patch('admin/regions/{id}', [RegionController::class, 'update'])->name('admin.regions.update'); // 27 - ---Mettre à jour d'une regions
+    Route::delete('admin/regions/{id}', [RegionController::class, 'destroy'])->name('admin.regions.destroy'); // 28 - --Supprimer d'une regions
 });
 
 
