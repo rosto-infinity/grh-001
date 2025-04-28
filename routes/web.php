@@ -81,7 +81,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/regions/{id}', [RegionController::class, 'view'])->name('admin.regions.view'); // Voir les détails d'une regions
     Route::get('admin/regions/{id}/edit', [RegionController::class, 'edit'])->name('admin.regions.edit'); //Éditer d'une regions
     Route::patch('admin/regions/{id}', [RegionController::class, 'update'])->name('admin.regions.update'); // Mettre à jour d'une regions
-    Route::delete('admin/regions/{id}', [RegionController::class, 'destroy'])->name('admin.regions.destroy'); // 28 - --Supprimer d'une regions
+    Route::delete('admin/regions/{id}', [RegionController::class, 'destroy'])->name('admin.regions.destroy'); // Supprimer d'une regions
 });
 
 
