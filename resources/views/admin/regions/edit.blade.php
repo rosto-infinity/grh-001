@@ -9,11 +9,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <!-- 9-Titre de la page pour modifier un emploi -->
+                    <!-- 9-Titre de la page pour modifier un region -->
                     <h3>Modifier une nouvelle region</h3>
                 </div>
                 <div class="text-right col-sm-6">
-                    <!-- 10-Bouton pour revenir à la liste des emplois -->
+                    <!-- 10-Bouton pour revenir à la liste des regions -->
                     <a href="{{ route('admin.regions') }}" class="btn btn-secondary">Retour à la liste</a>
                 </div>
             </div>
