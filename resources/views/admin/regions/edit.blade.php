@@ -50,7 +50,7 @@
                             <div class="card-body">
                                 <div class="row">
   
-                                    {{-- region_name --}}
+                                    {{--- region_name --}}
                                     <div class="form-group col-md-6">
                                         <label for="region_name">region_name<span class="text-red-600">*</span> </label>
                                         <input type="text" class="form-control @error('region_name') is-invalid @enderror"
