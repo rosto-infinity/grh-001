@@ -11,7 +11,7 @@ class RegionExport implements FromView // D-éclare la classe RegionExport qui i
     // -Méthode qui retourne la vue à utiliser pour l'exportation
     public function view(): View
     {
-        // Récupération de toutes les régions depuis la base de données
+        // --Récupération de toutes les régions depuis la base de données
         return view(
             'admin.regions.excel', // Chemin de la vue à utiliser pour l'exportation
             [
