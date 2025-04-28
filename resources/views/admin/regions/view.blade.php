@@ -4,7 +4,7 @@
 
 <!-- 01 --- Wrapper de contenu principal -->
 <div class="content-wrapper">
-    <!-- 02 - En-tête de contenu (Page header) -->
+    <!-- 02 - --En-tête de contenu (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
