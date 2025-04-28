@@ -6,7 +6,7 @@ use App\Models\Region; // -Importe le modèle Region pour l'utiliser dans cette 
 use Illuminate\Contracts\View\View; // -Importe l'interface View pour le type de retour
 use Maatwebsite\Excel\Concerns\FromView; // -Importe l'interface FromView pour l'exportation Excel
 
-class RegionExport implements FromView // Déclare la classe RegionExport qui implémente l'interface FromView
+class RegionExport implements FromView // D-éclare la classe RegionExport qui implémente l'interface FromView
 {
     // Méthode qui retourne la vue à utiliser pour l'exportation
     public function view(): View
