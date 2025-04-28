@@ -15,7 +15,7 @@ class RegionController extends Controller
         // 1  Utilisation de la méthode filter du modèle regions
         $regionsQuery = Region::filter($request);
 
-        // 2 - Pagination
+        // 2 -- Pagination
         $regions = $regionsQuery->paginate(4);
 
         return view('admin.regions.list', compact('regions'));
