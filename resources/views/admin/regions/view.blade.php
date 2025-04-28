@@ -26,7 +26,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Informations sur la Région</h3>
                         </div>
-                        <!-- 03 - Tableau affichant les détails de la région -->
+                        <!-- 03 --- Tableau affichant les détails de la région -->
                         <table class="table table-bordered">
                             <tr>
                                 <th>Nom de la Région</th>
