@@ -59,7 +59,7 @@ class RegionController extends Controller
 
     public function update(RegionRequest $request, $id)
     {
-        $region = Region::findOrFail($id); // Trouver la région ou échouer
+        $region = Region::findOrFail($id); // -Trouver la région ou échouer
         // 1 -- Mettre à jour la région avec les données validées
         $region->update($request->validated());
 
