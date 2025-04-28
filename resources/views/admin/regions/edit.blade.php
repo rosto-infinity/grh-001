@@ -13,7 +13,7 @@
                     <h3>Modifier une nouvelle region</h3>
                 </div>
                 <div class="text-right col-sm-6">
-                    <!-- 10-Bouton pour revenir à la liste des regions -->
+                    <!--- 10-Bouton pour revenir à la liste des regions -->
                     <a href="{{ route('admin.regions') }}" class="btn btn-secondary">Retour à la liste</a>
                 </div>
             </div>
