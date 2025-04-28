@@ -27,7 +27,7 @@ class Region extends Model
             $query->whereDate('created_at', $request->input('date'));
         }
 
-        // 4 - Filtrage par date de mise à jour
+        // 4 - -Filtrage par date de mise à jour
         if ($request->filled('dateUpdate')) {
             $query->whereDate('updated_at', $request->input('dateUpdate'));
         }
