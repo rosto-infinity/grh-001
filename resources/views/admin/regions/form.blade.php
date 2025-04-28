@@ -52,7 +52,7 @@
                                           value="{{ old('region_name')}}" id="region_name" name="region_name"
                                           placeholder="region_name">
 
-                                      <!-- Affichage de l'erreur pour name -->
+                                      <!-- __Affichage de l'erreur pour name -->
                                       @error('region_name')
                                           <div class="text-red-600">{{ $message }}</div>
                                       @enderror
