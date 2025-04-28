@@ -12,7 +12,7 @@ class Region extends Model
     protected $fillable = [
         'region_name',  // -- Le nom de la région
         'created_at',   // -- Date de création
-        'updated_at'    // - Date de mise à jour
+        'updated_at'    // -- Date de mise à jour
     ];
 
     public function scopeFilter(Builder $query, Request $request)
