@@ -174,6 +174,7 @@
                 <p>Jobs</p>
             </a>
         </li>
+
         {{-- Jobs  History --}}
         <li class="nav-item">
             <a href="{{ route('admin.emplois_histories')}}" class="nav-link {{ Request::segment(2) === 'emplois_histories' ? 'active' : '' }}">
@@ -182,44 +183,57 @@
             </a>
         </li>
 
+        {{-- Jobs  Grades --}}
         <li class="nav-item">
             <a href="{{ route('admin.emplois_grades')}}" class="nav-link {{ Request::segment(2) === 'emplois_grades' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-square"></i>
+                <i class="nav-icon fas fa-star"></i>
                 <p>Jobs  Grades</p>
             </a>
         </li>
+
+          {{-- Regions --}}
+          <li class="nav-item">
+            <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                <i class="nav-icon fas fa-asterisk "></i>
+                <p>Regions</p>
+            </a>
+         </li>
         
-        <li class="nav-item">
-          <a href="{{ route('admin.dashboard')}}" class="nav-link">
-              <i class="nav-icon fas fa-asterisk "></i>
-              <p>Regions</p>
-          </a>
-       </li>
+     {{-- Departement --}}
+         <li class="nav-item">
+             <a href="{{ route('admin.dashboard')}}" class="nav-link">
+                 <i class="nav-icon fas fa-building"></i>
+                 <p>Departement</p>
+             </a>
+         </li>
+           
+        {{-- Countries --}}
        <li class="nav-item">
         <a href="{{ route('admin.dashboard')}}" class="nav-link">
             <i class="nav-icon fas fa-flag"></i>
             <p>Countries</p>
         </a>
-    </li>
-          <li class="nav-item">
+      </li>
+
+      {{-- Locations --}}
+       <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
-                <i class="nav-icon fas fa-building"></i>
+                <i class="nav-icon fas fa-map-marker-alt"></i>
                 <p>Locations</p>
             </a>
         </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.dashboard')}}" class="nav-link">
-                <i class="nav-icon fas fa-building"></i>
-                <p>Departement</p>
-            </a>
-        </li>
-          <li class="nav-item">
+      
+
+         {{-- Manager --}}
+        <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-building"></i>
                 <p>Manager</p>
             </a>
         </li>
-          <li class="nav-item">
+
+        {{-- Pay Roll --}}
+        <li class="nav-item">
             <a href="{{ route('admin.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-building"></i>
                 <p>Pay Roll</p>
