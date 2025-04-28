@@ -42,7 +42,7 @@
                             </tr>
                         </table>
 
-                        <!-- 04 - Bouton pour retourner à la liste des régions -->
+                        <!-- 04 - --Bouton pour retourner à la liste des régions -->
                         <a href="{{ route('admin.regions') }}" class="btn btn-primary">Retour à la liste des régions</a>
                     </div>
                     <!-- Fin de la carte -->
