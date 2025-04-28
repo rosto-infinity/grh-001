@@ -17,7 +17,7 @@ class Region extends Model
 
     public function scopeFilter(Builder $query, Request $request)
     {
-        // 2 - Filtrage par region_name
+        // 2 -- Filtrage par region_name
         if ($request->filled('region_name')) {
             $query->where('region_name', $request->input('region_name'));
         }
