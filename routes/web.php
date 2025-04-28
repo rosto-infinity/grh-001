@@ -75,7 +75,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     
     //Regions
     Route::get('admin/regions', [RegionController::class, 'index'])->name('admin.regions'); //  Lister tous les regions
-    Route::get('admin/regions/excel', [RegionController::class, 'excel'])->name('admin.regions.excel'); // 22 - --Exporter les regions au format Excel
+    Route::get('admin/regions/excel', [RegionController::class, 'excel'])->name('admin.regions.excel'); // Exporter les regions au format Excel
     Route::get('admin/regions/add', [RegionController::class, 'add'])->name('admin.regions.add'); // 23 - -Formulaire de création d'une regions
     Route::post('admin/regions/add', [RegionController::class, 'store'])->name('admin.regions.store'); // 24 -- Enregistrer d'une nouveau regions
     Route::get('admin/regions/{id}', [RegionController::class, 'view'])->name('admin.regions.view'); // 25 - -Voir les détails d'une regions
