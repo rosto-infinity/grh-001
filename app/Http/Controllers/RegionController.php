@@ -12,7 +12,7 @@ class RegionController extends Controller
 {
     public function index(Request $request)
     {
-        // 1 - Utilisation de la méthode filter du modèle regions
+        // 1  Utilisation de la méthode filter du modèle regions
         $regionsQuery = Region::filter($request);
 
         // 2 - Pagination
