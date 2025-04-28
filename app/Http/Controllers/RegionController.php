@@ -33,7 +33,7 @@ class RegionController extends Controller
      */
     public function store(RegionRequest $request)
     {
-        // 1. - Valider la requête
+        // 1. -- Valider la requête
         Region::create($request->validated());
 
         // 2. - Rediriger ou retourner une réponse
