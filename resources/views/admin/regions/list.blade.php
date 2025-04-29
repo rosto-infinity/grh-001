@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3>Listes des emplois (Total :
+                    <h3>Listes des regions (Total :
                         <span class="bg-green-600 rounded-full text-white">
                             {{ $regions->total() }}
                         </span>)
@@ -19,7 +19,7 @@
                     <a href="{{ route('admin.regions.excel') }}" class='btn btn-success'>
                         <i class="fas fa-file-excel" aria-hidden="true"></i> Exporter vers Excel
                     </a>
-                    <a href="{{ route('admin.regions.add') }}" class="btn btn-primary">Ajouter un nouvel emploi</a>
+                    <a href="{{ route('admin.regions.add') }}" class="btn btn-primary">Ajouter une nouvelle region</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -34,13 +34,13 @@
                     <div class="col-md-12">
                         <div class="mr-2 card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Rechercher un emploi</h3>
+                                <h3 class="card-title">Rechercher une region</h3>
                             </div>
                             <form method="get" action="#">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="form-group col-md-3">
-                                            <label for="region_name">Niveau de Grade</label>
+                                            <label for="region_name">nom de la Region</label>
                                             <input type="text" class="form-control" id="region_name" name="region_name" placeholder="Entrez le niveau de grade" value="{{ Request::get('region_name') }}">
                                         </div>
 
