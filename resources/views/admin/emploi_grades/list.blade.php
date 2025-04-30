@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Listes des emplois(Total :
+                        <h3>Listes le Grade d'Emploi Total (:
                             <span class="bg-green-600 rounded-full text-white">
                                 {{ $emploi_grades->total() }}
                             </span>)
@@ -19,7 +19,7 @@
                         <a href="{{ route('admin.emplois_grades.excel') }}" class='btn btn-success'>
                             <i class="fas fa-file-excel" aria-hidden="true"></i> Export Exel
                         </a>
-                        <a href="{{ route('admin.emplois_grades.add') }}" class="btn btn-primary">Ajouter une nouvelle emplois</a>
+                        <a href="{{ route('admin.emplois_grades.add') }}" class="btn btn-primary">Ajouter le Grade d'Emploi</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -35,7 +35,7 @@
                         <div class="col-md-12">
                             <div class="mr-2 card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Rechercher une emplois</h3>
+                                    <h3 class="card-title">Rechercher le Grade d'Emploi</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- --form start -->
